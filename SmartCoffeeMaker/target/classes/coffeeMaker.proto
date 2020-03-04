@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.coffee_maker";
+option java_outer_classname = "CoffeeMakerServiceImpl";
+
+package coffeeMaker;
+
+service CoffeeMakerService{
+    rpc setBrewingType(BrewType) returns (StringResponse);
+    rpc beginBrewing(Empty) returns (stream StringResponse);
+}
+
+message BrewType{
+    enum type {
+        CRAFF = 0;
+        HALF_CRAFF = 1;
+        SINGLE_CUP = 2;
+    }
+}
+
+message StringResponse{
+    string text = 1;
+}
+
+message Empty{
+
+}

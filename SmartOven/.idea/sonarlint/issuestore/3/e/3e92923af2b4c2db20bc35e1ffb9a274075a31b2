@@ -1,14 +1,14 @@
 
 [
-squid:S106@"9Replace this use of System.out or System.err by a logger.(ƒĞ‘ùıÿÿÿÿ8å„Î´‰.
-dsquid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8¿±ç†‰.
-Fsquid:S1604:"(Make this anonymous inner class a lambda(öÛ’™8É›Û´‰.
-Usquid:S1135"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8¿±ç†‰.
-[
 squid:S106$"9Replace this use of System.out or System.err by a logger.(Éªşıùÿÿÿÿ8‰ë¾¶‰.
-V
-squid:S106,"9Replace this use of System.out or System.err by a logger.(ø±…Â8÷ï“³‰.
-Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¿±ç†‰.
+Fsquid:S1604:"(Make this anonymous inner class a lambda(öÛ’™8É›Û´‰.
+dsquid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8¿±ç†‰.
+[
+squid:S106@"9Replace this use of System.out or System.err by a logger.(ƒĞ‘ùıÿÿÿÿ8å„Î´‰.
 U
 squid:S1066"9Replace this use of System.out or System.err by a logger.(Äºİz8÷ï“³‰.
+Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¿±ç†‰.
+V
+squid:S106,"9Replace this use of System.out or System.err by a logger.(ø±…Â8÷ï“³‰.
+Usquid:S1135"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8¿±ç†‰.
 ¤squid:S11860"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(€ñ”İùÿÿÿÿ8÷ï“³‰.
