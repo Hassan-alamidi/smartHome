@@ -1,0 +1,17 @@
+
+Esquid:S3077".Remove the "volatile" keyword from this field.(˜„ 
+Msquid:S1172É".Remove this unused method parameter "request".(ƒ§¯¯8’—¹…‰.
+Rsquid:S1172Ğ".Remove this unused method parameter "request".(¶¨Îãúÿÿÿÿ8’—¹…‰.
+isquid:S00119Š"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(•ïÁš8’—¹…‰.
+osquid:S1301´"KReplace this "switch" statement by "if" statements to increase readability.(Ã“’‰úÿÿÿÿ8’—¹…‰.
+Lsquid:S3077~".Remove the "volatile" keyword from this field.(ÖÜß8’—¹…‰.
+Msquid:S1172Â".Remove this unused method parameter "request".(Õøÿæ8’—¹…‰.
+isquid:S00119Š"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(•ïÁš8’—¹…‰.
+rsquid:ModifiersOrderCheck»"EReorder the modifiers to comply with the Java Language Specification.(Œ¿ÆË8’—¹…‰.
+Xsquid:S2388Ú"9Prefix this call to "getServiceDescriptor" with "super.".(ÙØ¿Ï8’—¹…‰.
+psquid:S11920"RUse already-defined constant 'SERVICE_NAME' instead of duplicating its value here.(Ë²³¡8é¯¿âˆ.
+Msquid:S1172»".Remove this unused method parameter "request".(õ¹“8’—¹…‰.
+wsquid:ModifiersOrderCheck·"EReorder the modifiers to comply with the Java Language Specification.(ÿÓÄùÿÿÿÿ8’—¹…‰.
+Lsquid:S3077>".Remove the "volatile" keyword from this field.(˜„ 8é¯¿âˆ.
+Qsquid:S3077^".Remove the "volatile" keyword from this field.(êƒñ£ÿÿÿÿÿ8é¯¿âˆ.
+Rsquid:S3077Ş".Remove the "volatile" keyword from this field.(¸Í«ûşÿÿÿÿ8’—¹…‰.

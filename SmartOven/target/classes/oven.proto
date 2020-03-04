@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.oven";
+option java_outer_classname = "OvenServiceImpl";
+
+package oven;
+
+service OvenService{
+    rpc changeTemp(floatRequest) returns (StringResponse);
+    rpc setTimer(floatRequest) returns (StringResponse);
+    rpc changeSetting(OvenSetting) returns (StringResponse);
+    rpc startCooking(Empty) returns (stream StringResponse);
+}
+
+message floatRequest{
+    float value = 1;
+}
+
+message StringResponse{
+    string text = 1;
+}
+
+message OvenSetting{
+    enum Setting {
+        GRILL = 0;
+        FAN_ASSISTED = 1;
+        UNASSISTED = 2;
+    }
+
+    Setting setting = 1;
+}
+
+message Empty{
+
+}

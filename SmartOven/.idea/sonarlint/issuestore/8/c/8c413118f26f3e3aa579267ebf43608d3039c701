@@ -1,0 +1,13 @@
+
+Fsquid:S1148H"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¿‹ñ…‰.
+Rsquid:S1068"/Remove this unused "desiredTemp" private field.(ºõ­Ùüÿÿÿÿ8øÕçˆ.
+dsquid:S2142G"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8¿‹ñ…‰.
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(ú¤ô–ıÿÿÿÿ8ÔÌçæˆ.
+}squid:S1450"ZRemove the "desiredTemp" field and declare it as a local variable in the relevant methods.(ºõ­Ùüÿÿÿÿ8Áı€èˆ.
+ysquid:S1450"VRemove the "setting" field and declare it as a local variable in the relevant methods.(¸¾²ÿÿÿÿÿ8‘¶æ…‰.
+Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¾®Ûæˆ.
+dsquid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ò¶È8³òéæˆ.
+Rsquid:S1068"/Remove this unused "currentTemp" private field.(¡ÈÄüÿÿÿÿ8øÕçˆ.
+[
+squid:S106F"9Replace this use of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ8Ş“ä¶‰.
