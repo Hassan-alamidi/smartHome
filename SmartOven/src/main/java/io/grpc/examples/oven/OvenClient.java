@@ -31,7 +31,7 @@ public class OvenClient {
     }
 
     private static void setTimer(){
-        floatRequest request = floatRequest.newBuilder().setValue(200).build();
+        FloatRequest request = FloatRequest.newBuilder().setValue(200).build();
         StringResponse response = blockingStub.setTimer(request);
         System.out.println(response.getText());
     }

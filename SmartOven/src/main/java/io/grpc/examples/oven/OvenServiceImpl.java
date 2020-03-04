@@ -15,10 +15,10 @@ public final class OvenServiceImpl {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_oven_floatRequest_descriptor;
+    internal_static_oven_FloatRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_oven_floatRequest_fieldAccessorTable;
+      internal_static_oven_FloatRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_oven_StringResponse_descriptor;
   static final 
@@ -43,14 +43,14 @@ public final class OvenServiceImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\noven.proto\022\004oven\"\035\n\014floatRequest\022\r\n\005va" +
+      "\n\noven.proto\022\004oven\"\035\n\014FloatRequest\022\r\n\005va" +
       "lue\030\001 \001(\002\"\036\n\016StringResponse\022\014\n\004text\030\001 \001(" +
       "\t\"q\n\013OvenSetting\022*\n\007setting\030\001 \001(\0162\031.oven" +
       ".OvenSetting.Setting\"6\n\007Setting\022\t\n\005GRILL" +
       "\020\000\022\020\n\014FAN_ASSISTED\020\001\022\016\n\nUNASSISTED\020\002\"\007\n\005" +
       "Empty2\352\001\n\013OvenService\0226\n\nchangeTemp\022\022.ov" +
-      "en.floatRequest\032\024.oven.StringResponse\0224\n" +
-      "\010setTimer\022\022.oven.floatRequest\032\024.oven.Str" +
+      "en.FloatRequest\032\024.oven.StringResponse\0224\n" +
+      "\010setTimer\022\022.oven.FloatRequest\032\024.oven.Str" +
       "ingResponse\0228\n\rchangeSetting\022\021.oven.Oven" +
       "Setting\032\024.oven.StringResponse\0223\n\014startCo" +
       "oking\022\013.oven.Empty\032\024.oven.StringResponse" +
@@ -69,11 +69,11 @@ public final class OvenServiceImpl {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_oven_floatRequest_descriptor =
+    internal_static_oven_FloatRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_oven_floatRequest_fieldAccessorTable = new
+    internal_static_oven_FloatRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_oven_floatRequest_descriptor,
+        internal_static_oven_FloatRequest_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_oven_StringResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);

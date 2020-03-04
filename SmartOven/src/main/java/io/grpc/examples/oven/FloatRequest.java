@@ -4,18 +4,18 @@
 package io.grpc.examples.oven;
 
 /**
- * Protobuf type {@code oven.floatRequest}
+ * Protobuf type {@code oven.FloatRequest}
  */
-public  final class floatRequest extends
+public  final class FloatRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:oven.floatRequest)
-    floatRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:oven.FloatRequest)
+    FloatRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use floatRequest.newBuilder() to construct.
-  private floatRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use FloatRequest.newBuilder() to construct.
+  private FloatRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private floatRequest() {
+  private FloatRequest() {
     value_ = 0F;
   }
 
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private floatRequest(
+  private FloatRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -69,15 +69,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.grpc.examples.oven.OvenServiceImpl.internal_static_oven_floatRequest_descriptor;
+    return io.grpc.examples.oven.OvenServiceImpl.internal_static_oven_FloatRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grpc.examples.oven.OvenServiceImpl.internal_static_oven_floatRequest_fieldAccessorTable
+    return io.grpc.examples.oven.OvenServiceImpl.internal_static_oven_FloatRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grpc.examples.oven.floatRequest.class, io.grpc.examples.oven.floatRequest.Builder.class);
+            io.grpc.examples.oven.FloatRequest.class, io.grpc.examples.oven.FloatRequest.Builder.class);
   }
 
   public static final int VALUE_FIELD_NUMBER = 1;
@@ -129,10 +129,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.grpc.examples.oven.floatRequest)) {
+    if (!(obj instanceof io.grpc.examples.oven.FloatRequest)) {
       return super.equals(obj);
     }
-    io.grpc.examples.oven.floatRequest other = (io.grpc.examples.oven.floatRequest) obj;
+    io.grpc.examples.oven.FloatRequest other = (io.grpc.examples.oven.FloatRequest) obj;
 
     boolean result = true;
     result = result && (
@@ -158,69 +158,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grpc.examples.oven.floatRequest parseFrom(
+  public static io.grpc.examples.oven.FloatRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.grpc.examples.oven.floatRequest parseFrom(
+  public static io.grpc.examples.oven.FloatRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grpc.examples.oven.floatRequest parseFrom(
+  public static io.grpc.examples.oven.FloatRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.grpc.examples.oven.floatRequest parseFrom(
+  public static io.grpc.examples.oven.FloatRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grpc.examples.oven.floatRequest parseFrom(byte[] data)
+  public static io.grpc.examples.oven.FloatRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.grpc.examples.oven.floatRequest parseFrom(
+  public static io.grpc.examples.oven.FloatRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grpc.examples.oven.floatRequest parseFrom(java.io.InputStream input)
+  public static io.grpc.examples.oven.FloatRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.grpc.examples.oven.floatRequest parseFrom(
+  public static io.grpc.examples.oven.FloatRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.grpc.examples.oven.floatRequest parseDelimitedFrom(java.io.InputStream input)
+  public static io.grpc.examples.oven.FloatRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.grpc.examples.oven.floatRequest parseDelimitedFrom(
+  public static io.grpc.examples.oven.FloatRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.grpc.examples.oven.floatRequest parseFrom(
+  public static io.grpc.examples.oven.FloatRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.grpc.examples.oven.floatRequest parseFrom(
+  public static io.grpc.examples.oven.FloatRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -233,7 +233,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.grpc.examples.oven.floatRequest prototype) {
+  public static Builder newBuilder(io.grpc.examples.oven.FloatRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -249,26 +249,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code oven.floatRequest}
+   * Protobuf type {@code oven.FloatRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:oven.floatRequest)
-      io.grpc.examples.oven.floatRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:oven.FloatRequest)
+      io.grpc.examples.oven.FloatRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.grpc.examples.oven.OvenServiceImpl.internal_static_oven_floatRequest_descriptor;
+      return io.grpc.examples.oven.OvenServiceImpl.internal_static_oven_FloatRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grpc.examples.oven.OvenServiceImpl.internal_static_oven_floatRequest_fieldAccessorTable
+      return io.grpc.examples.oven.OvenServiceImpl.internal_static_oven_FloatRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grpc.examples.oven.floatRequest.class, io.grpc.examples.oven.floatRequest.Builder.class);
+              io.grpc.examples.oven.FloatRequest.class, io.grpc.examples.oven.FloatRequest.Builder.class);
     }
 
-    // Construct using io.grpc.examples.oven.floatRequest.newBuilder()
+    // Construct using io.grpc.examples.oven.FloatRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -294,17 +294,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.grpc.examples.oven.OvenServiceImpl.internal_static_oven_floatRequest_descriptor;
+      return io.grpc.examples.oven.OvenServiceImpl.internal_static_oven_FloatRequest_descriptor;
     }
 
     @java.lang.Override
-    public io.grpc.examples.oven.floatRequest getDefaultInstanceForType() {
-      return io.grpc.examples.oven.floatRequest.getDefaultInstance();
+    public io.grpc.examples.oven.FloatRequest getDefaultInstanceForType() {
+      return io.grpc.examples.oven.FloatRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public io.grpc.examples.oven.floatRequest build() {
-      io.grpc.examples.oven.floatRequest result = buildPartial();
+    public io.grpc.examples.oven.FloatRequest build() {
+      io.grpc.examples.oven.FloatRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -312,8 +312,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public io.grpc.examples.oven.floatRequest buildPartial() {
-      io.grpc.examples.oven.floatRequest result = new io.grpc.examples.oven.floatRequest(this);
+    public io.grpc.examples.oven.FloatRequest buildPartial() {
+      io.grpc.examples.oven.FloatRequest result = new io.grpc.examples.oven.FloatRequest(this);
       result.value_ = value_;
       onBuilt();
       return result;
@@ -353,16 +353,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.grpc.examples.oven.floatRequest) {
-        return mergeFrom((io.grpc.examples.oven.floatRequest)other);
+      if (other instanceof io.grpc.examples.oven.FloatRequest) {
+        return mergeFrom((io.grpc.examples.oven.FloatRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.grpc.examples.oven.floatRequest other) {
-      if (other == io.grpc.examples.oven.floatRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.grpc.examples.oven.FloatRequest other) {
+      if (other == io.grpc.examples.oven.FloatRequest.getDefaultInstance()) return this;
       if (other.getValue() != 0F) {
         setValue(other.getValue());
       }
@@ -381,11 +381,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.grpc.examples.oven.floatRequest parsedMessage = null;
+      io.grpc.examples.oven.FloatRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.grpc.examples.oven.floatRequest) e.getUnfinishedMessage();
+        parsedMessage = (io.grpc.examples.oven.FloatRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -433,41 +433,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:oven.floatRequest)
+    // @@protoc_insertion_point(builder_scope:oven.FloatRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:oven.floatRequest)
-  private static final io.grpc.examples.oven.floatRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:oven.FloatRequest)
+  private static final io.grpc.examples.oven.FloatRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.grpc.examples.oven.floatRequest();
+    DEFAULT_INSTANCE = new io.grpc.examples.oven.FloatRequest();
   }
 
-  public static io.grpc.examples.oven.floatRequest getDefaultInstance() {
+  public static io.grpc.examples.oven.FloatRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<floatRequest>
-      PARSER = new com.google.protobuf.AbstractParser<floatRequest>() {
+  private static final com.google.protobuf.Parser<FloatRequest>
+      PARSER = new com.google.protobuf.AbstractParser<FloatRequest>() {
     @java.lang.Override
-    public floatRequest parsePartialFrom(
+    public FloatRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new floatRequest(input, extensionRegistry);
+      return new FloatRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<floatRequest> parser() {
+  public static com.google.protobuf.Parser<FloatRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<floatRequest> getParserForType() {
+  public com.google.protobuf.Parser<FloatRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public io.grpc.examples.oven.floatRequest getDefaultInstanceForType() {
+  public io.grpc.examples.oven.FloatRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

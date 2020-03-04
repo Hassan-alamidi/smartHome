@@ -3,8 +3,8 @@
 
 package io.grpc.examples.oven;
 
-public interface floatRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:oven.floatRequest)
+public interface FloatRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:oven.FloatRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**

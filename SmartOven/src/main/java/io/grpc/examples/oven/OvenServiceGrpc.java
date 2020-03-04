@@ -27,28 +27,28 @@ public final class OvenServiceGrpc {
   public static final String SERVICE_NAME = "oven.OvenService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<io.grpc.examples.oven.floatRequest,
+  private static volatile io.grpc.MethodDescriptor<io.grpc.examples.oven.FloatRequest,
       io.grpc.examples.oven.StringResponse> getChangeTempMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "changeTemp",
-      requestType = io.grpc.examples.oven.floatRequest.class,
+      requestType = io.grpc.examples.oven.FloatRequest.class,
       responseType = io.grpc.examples.oven.StringResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<io.grpc.examples.oven.floatRequest,
+  public static io.grpc.MethodDescriptor<io.grpc.examples.oven.FloatRequest,
       io.grpc.examples.oven.StringResponse> getChangeTempMethod() {
-    io.grpc.MethodDescriptor<io.grpc.examples.oven.floatRequest, io.grpc.examples.oven.StringResponse> getChangeTempMethod;
+    io.grpc.MethodDescriptor<io.grpc.examples.oven.FloatRequest, io.grpc.examples.oven.StringResponse> getChangeTempMethod;
     if ((getChangeTempMethod = OvenServiceGrpc.getChangeTempMethod) == null) {
       synchronized (OvenServiceGrpc.class) {
         if ((getChangeTempMethod = OvenServiceGrpc.getChangeTempMethod) == null) {
           OvenServiceGrpc.getChangeTempMethod = getChangeTempMethod = 
-              io.grpc.MethodDescriptor.<io.grpc.examples.oven.floatRequest, io.grpc.examples.oven.StringResponse>newBuilder()
+              io.grpc.MethodDescriptor.<io.grpc.examples.oven.FloatRequest, io.grpc.examples.oven.StringResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "oven.OvenService", "changeTemp"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.grpc.examples.oven.floatRequest.getDefaultInstance()))
+                  io.grpc.examples.oven.FloatRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   io.grpc.examples.oven.StringResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new OvenServiceMethodDescriptorSupplier("changeTemp"))
@@ -59,28 +59,28 @@ public final class OvenServiceGrpc {
      return getChangeTempMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<io.grpc.examples.oven.floatRequest,
+  private static volatile io.grpc.MethodDescriptor<io.grpc.examples.oven.FloatRequest,
       io.grpc.examples.oven.StringResponse> getSetTimerMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "setTimer",
-      requestType = io.grpc.examples.oven.floatRequest.class,
+      requestType = io.grpc.examples.oven.FloatRequest.class,
       responseType = io.grpc.examples.oven.StringResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<io.grpc.examples.oven.floatRequest,
+  public static io.grpc.MethodDescriptor<io.grpc.examples.oven.FloatRequest,
       io.grpc.examples.oven.StringResponse> getSetTimerMethod() {
-    io.grpc.MethodDescriptor<io.grpc.examples.oven.floatRequest, io.grpc.examples.oven.StringResponse> getSetTimerMethod;
+    io.grpc.MethodDescriptor<io.grpc.examples.oven.FloatRequest, io.grpc.examples.oven.StringResponse> getSetTimerMethod;
     if ((getSetTimerMethod = OvenServiceGrpc.getSetTimerMethod) == null) {
       synchronized (OvenServiceGrpc.class) {
         if ((getSetTimerMethod = OvenServiceGrpc.getSetTimerMethod) == null) {
           OvenServiceGrpc.getSetTimerMethod = getSetTimerMethod = 
-              io.grpc.MethodDescriptor.<io.grpc.examples.oven.floatRequest, io.grpc.examples.oven.StringResponse>newBuilder()
+              io.grpc.MethodDescriptor.<io.grpc.examples.oven.FloatRequest, io.grpc.examples.oven.StringResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "oven.OvenService", "setTimer"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.grpc.examples.oven.floatRequest.getDefaultInstance()))
+                  io.grpc.examples.oven.FloatRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   io.grpc.examples.oven.StringResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new OvenServiceMethodDescriptorSupplier("setTimer"))
@@ -184,14 +184,14 @@ public final class OvenServiceGrpc {
 
     /**
      */
-    public void changeTemp(io.grpc.examples.oven.floatRequest request,
+    public void changeTemp(io.grpc.examples.oven.FloatRequest request,
         io.grpc.stub.StreamObserver<io.grpc.examples.oven.StringResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getChangeTempMethod(), responseObserver);
     }
 
     /**
      */
-    public void setTimer(io.grpc.examples.oven.floatRequest request,
+    public void setTimer(io.grpc.examples.oven.FloatRequest request,
         io.grpc.stub.StreamObserver<io.grpc.examples.oven.StringResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getSetTimerMethod(), responseObserver);
     }
@@ -216,14 +216,14 @@ public final class OvenServiceGrpc {
             getChangeTempMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                io.grpc.examples.oven.floatRequest,
+                io.grpc.examples.oven.FloatRequest,
                 io.grpc.examples.oven.StringResponse>(
                   this, METHODID_CHANGE_TEMP)))
           .addMethod(
             getSetTimerMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                io.grpc.examples.oven.floatRequest,
+                io.grpc.examples.oven.FloatRequest,
                 io.grpc.examples.oven.StringResponse>(
                   this, METHODID_SET_TIMER)))
           .addMethod(
@@ -264,7 +264,7 @@ public final class OvenServiceGrpc {
 
     /**
      */
-    public void changeTemp(io.grpc.examples.oven.floatRequest request,
+    public void changeTemp(io.grpc.examples.oven.FloatRequest request,
         io.grpc.stub.StreamObserver<io.grpc.examples.oven.StringResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getChangeTempMethod(), getCallOptions()), request, responseObserver);
@@ -272,7 +272,7 @@ public final class OvenServiceGrpc {
 
     /**
      */
-    public void setTimer(io.grpc.examples.oven.floatRequest request,
+    public void setTimer(io.grpc.examples.oven.FloatRequest request,
         io.grpc.stub.StreamObserver<io.grpc.examples.oven.StringResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSetTimerMethod(), getCallOptions()), request, responseObserver);
@@ -315,14 +315,14 @@ public final class OvenServiceGrpc {
 
     /**
      */
-    public io.grpc.examples.oven.StringResponse changeTemp(io.grpc.examples.oven.floatRequest request) {
+    public io.grpc.examples.oven.StringResponse changeTemp(io.grpc.examples.oven.FloatRequest request) {
       return blockingUnaryCall(
           getChannel(), getChangeTempMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public io.grpc.examples.oven.StringResponse setTimer(io.grpc.examples.oven.floatRequest request) {
+    public io.grpc.examples.oven.StringResponse setTimer(io.grpc.examples.oven.FloatRequest request) {
       return blockingUnaryCall(
           getChannel(), getSetTimerMethod(), getCallOptions(), request);
     }
@@ -364,7 +364,7 @@ public final class OvenServiceGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<io.grpc.examples.oven.StringResponse> changeTemp(
-        io.grpc.examples.oven.floatRequest request) {
+        io.grpc.examples.oven.FloatRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getChangeTempMethod(), getCallOptions()), request);
     }
@@ -372,7 +372,7 @@ public final class OvenServiceGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<io.grpc.examples.oven.StringResponse> setTimer(
-        io.grpc.examples.oven.floatRequest request) {
+        io.grpc.examples.oven.FloatRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getSetTimerMethod(), getCallOptions()), request);
     }
@@ -409,11 +409,11 @@ public final class OvenServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_CHANGE_TEMP:
-          serviceImpl.changeTemp((io.grpc.examples.oven.floatRequest) request,
+          serviceImpl.changeTemp((io.grpc.examples.oven.FloatRequest) request,
               (io.grpc.stub.StreamObserver<io.grpc.examples.oven.StringResponse>) responseObserver);
           break;
         case METHODID_SET_TIMER:
-          serviceImpl.setTimer((io.grpc.examples.oven.floatRequest) request,
+          serviceImpl.setTimer((io.grpc.examples.oven.FloatRequest) request,
               (io.grpc.stub.StreamObserver<io.grpc.examples.oven.StringResponse>) responseObserver);
           break;
         case METHODID_CHANGE_SETTING:

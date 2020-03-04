@@ -33,7 +33,7 @@ public class OvenServer extends OvenServiceImplBase {
     }
 
     @Override
-    public void changeTemp(floatRequest request, StreamObserver<StringResponse> responseObserver) {
+    public void changeTemp(FloatRequest request, StreamObserver<StringResponse> responseObserver) {
         desiredTemp = request.getValue();
 
         response = StringResponse.newBuilder().setText("desired temp has been set").build();
@@ -42,7 +42,7 @@ public class OvenServer extends OvenServiceImplBase {
     }
 
     @Override
-    public void setTimer(floatRequest request, StreamObserver<StringResponse> responseObserver) {
+    public void setTimer(FloatRequest request, StreamObserver<StringResponse> responseObserver) {
         timer = request.getValue();
 
         response = StringResponse.newBuilder().setText("timer has been set").build();
