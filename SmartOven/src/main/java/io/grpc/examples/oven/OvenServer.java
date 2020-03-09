@@ -10,6 +10,11 @@ import java.io.IOException;
 
 public class OvenServer extends OvenServiceImplBase {
 
+    private static final float MAX_TEMP = 250;
+    private static final float MIN_TEMP = 0;
+
+    private OvenStatus.Status ovenStatus = OvenStatus.Status.OFF;
+
     private float desiredTemp = 0;
     private float currentTemp = 0;
     private float timer = 0;
@@ -34,9 +39,11 @@ public class OvenServer extends OvenServiceImplBase {
 
     @Override
     public void changeTemp(FloatRequest request, StreamObserver<StringResponse> responseObserver) {
-        desiredTemp = request.getValue();
-
-        response = StringResponse.newBuilder().setText("desired temp has been set").build();
+        float val = request.getValue();
+        val = val >= MAX_TEMP ? MAX_TEMP : val;
+        val = val <= MIN_TEMP ? MIN_TEMP : val;
+        desiredTemp = val;
+        response = StringResponse.newBuilder().setText("desired temp has been set to: " + desiredTemp).build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
@@ -44,7 +51,6 @@ public class OvenServer extends OvenServiceImplBase {
     @Override
     public void setTimer(FloatRequest request, StreamObserver<StringResponse> responseObserver) {
         timer = request.getValue();
-
         response = StringResponse.newBuilder().setText("timer has been set").build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
@@ -59,24 +65,68 @@ public class OvenServer extends OvenServiceImplBase {
     }
 
     @Override
-    public void startCooking(Empty request, StreamObserver<StringResponse> responseObserver) {
-        if(timer > 0){
-            for (float i = timer; i > 0; i--) {
-                try {
-                    Thread.sleep(1000);
-                    response = StringResponse.newBuilder().setText("Time Left: " + i).build();
-                    responseObserver.onNext(response);
-                    Context.current().isCancelled();
-                    System.out.println(i);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-            response = StringResponse.newBuilder().setText("ding ding ding..... ding ding ding, cooking completed").build();
-        }else {
-            response = StringResponse.newBuilder().setText("Timer not set").build();
-        }
-        responseObserver.onNext(response);
+    public void getCurrentStatus(Empty request, StreamObserver<OvenStatus> responseObserver) {
+        OvenStatus resp = OvenStatus.newBuilder().setStatus(ovenStatus).build();
+        responseObserver.onNext(resp);
         responseObserver.onCompleted();
+    }
+
+    @Override
+    public StreamObserver<OvenStatus> startCooking(StreamObserver<StringResponse> responseObserver) {
+        return new StreamObserver<OvenStatus>() {
+
+            @Override
+            public void onNext(OvenStatus status) {
+                OvenStatus.Status newStatus = status.getStatus();
+                try {
+                    if(newStatus.equals(OvenStatus.Status.PRE_HEAT)){
+                        ovenStatus = newStatus;
+                        responseObserver.onNext(StringResponse.newBuilder()
+                                                    .setText("Oven is now pre-heating")
+                                                    .build());
+                        while (currentTemp < desiredTemp){
+                           Thread.sleep(100);
+                           currentTemp++;
+                           System.out.println("the temp is: " + currentTemp);
+                        }
+                        ovenStatus = OvenStatus.Status.READY;
+                        response = StringResponse.newBuilder().setText("Oven is at temp, current temp is: " + currentTemp).build();
+                    }else if(timer > 0 && newStatus.equals(OvenStatus.Status.COOKING)){
+                        ovenStatus = newStatus;
+                        for (float i = timer; i > 0; i--) {
+                            Thread.sleep(1000);
+                            responseObserver.onNext(StringResponse.newBuilder()
+                                                        .setText("Time Left: " + i + ", current temp is: " + currentTemp)
+                                                        .build());
+                            System.out.println(i);
+                            currentTemp = currentTemp < desiredTemp ? (currentTemp + 5) : currentTemp;
+                        }
+                        response = StringResponse.newBuilder().setText("ding ding ding..... ding ding ding, cooking completed").build();
+                    }else {
+                        ovenStatus = OvenStatus.Status.OFF;
+                        response = StringResponse.newBuilder().setText("Timer not set or oven is turned off").build();
+                        responseObserver.onNext(response);
+                        responseObserver.onCompleted();
+                    }
+                } catch (InterruptedException e) {
+                        e.printStackTrace();
+                }
+                responseObserver.onNext(response);
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onCompleted() {
+                responseObserver.onNext( StringResponse.newBuilder().setText("Oven is turning off").build());
+                responseObserver.onCompleted();
+                ovenStatus = OvenStatus.Status.OFF;
+                timer = 0;
+                currentTemp = 0;
+            }
+        };
     }
 }

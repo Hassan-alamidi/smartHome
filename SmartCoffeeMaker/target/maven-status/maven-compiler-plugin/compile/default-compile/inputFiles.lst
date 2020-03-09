@@ -3,6 +3,8 @@
 /home/hassan/Documents/CollegeProjects/distributedSystems/smartHome/SmartCoffeeMaker/src/main/java/io/grpc/examples/coffee_maker/StringResponse.java
 /home/hassan/Documents/CollegeProjects/distributedSystems/smartHome/SmartCoffeeMaker/src/main/java/io/grpc/examples/coffee_maker/CoffeeMakerServiceImpl.java
 /home/hassan/Documents/CollegeProjects/distributedSystems/smartHome/SmartCoffeeMaker/src/main/java/io/grpc/examples/coffee_maker/EmptyOrBuilder.java
+/home/hassan/Documents/CollegeProjects/distributedSystems/smartHome/SmartCoffeeMaker/src/main/java/io/grpc/examples/coffee_maker/CoffeeMakerClient.java
 /home/hassan/Documents/CollegeProjects/distributedSystems/smartHome/SmartCoffeeMaker/src/main/java/io/grpc/examples/coffee_maker/CoffeeMakerServiceGrpc.java
+/home/hassan/Documents/CollegeProjects/distributedSystems/smartHome/SmartCoffeeMaker/src/main/java/io/grpc/examples/coffee_maker/CoffeeMakerServer.java
 /home/hassan/Documents/CollegeProjects/distributedSystems/smartHome/SmartCoffeeMaker/src/main/java/io/grpc/examples/coffee_maker/StringResponseOrBuilder.java
 /home/hassan/Documents/CollegeProjects/distributedSystems/smartHome/SmartCoffeeMaker/src/main/java/io/grpc/examples/coffee_maker/BrewType.java

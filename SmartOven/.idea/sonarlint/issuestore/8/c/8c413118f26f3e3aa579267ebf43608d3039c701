@@ -1,13 +1,17 @@
 
-Fsquid:S1148H"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¿‹ñ…‰.
-Rsquid:S1068"/Remove this unused "currentTemp" private field.(¡ÈÄüÿÿÿÿ8øÕçˆ.
-}squid:S1450"ZRemove the "desiredTemp" field and declare it as a local variable in the relevant methods.(ºõ­Ùüÿÿÿÿ8Áı€èˆ.
-Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¾®Ûæˆ.
-[
-squid:S106"9Replace this use of System.out or System.err by a logger.(ú¤ô–ıÿÿÿÿ8ÔÌçæˆ.
-dsquid:S2142G"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8¿‹ñ…‰.
-Rsquid:S1068"/Remove this unused "desiredTemp" private field.(ºõ­Ùüÿÿÿÿ8øÕçˆ.
-ysquid:S1450"VRemove the "setting" field and declare it as a local variable in the relevant methods.(¸¾²ÿÿÿÿÿ8‘¶æ…‰.
-dsquid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ò¶È8³òéæˆ.
-[
-squid:S106F"9Replace this use of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ8Ş“ä¶‰.
+Q
+java:S1068"/Remove this unused "currentTemp" private field.(¡ÈÄüÿÿÿÿ8ûÚÒÏŠ.
+E
+java:S1148M"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ûÚÒÏŠ.
+E
+java:S1148""#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ûÚÒÏŠ.
+c
+java:S2142!"FEither re-interrupt this method or rethrow the "InterruptedException".(ò¶È8ûÚÒÏŠ.
+|
+java:S1450"ZRemove the "desiredTemp" field and declare it as a local variable in the relevant methods.(ºõ­Ùüÿÿÿÿ8ÎØˆ‚‹.
+c
+java:S2142L"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ûÚÒÏŠ.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ú¤ô–ıÿÿÿÿ8ûÚÒÏŠ.
+Z	java:S106K"9Replace this use of System.out or System.err by a logger.(´‹¹öşÿÿÿÿ8ûÚÒÏŠ.
+x
+java:S1450"VRemove the "setting" field and declare it as a local variable in the relevant methods.(¸¾²ÿÿÿÿÿ8ûÚÒÏŠ.

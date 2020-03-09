@@ -124,27 +124,59 @@ public final class OvenServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<io.grpc.examples.oven.Empty,
+      io.grpc.examples.oven.OvenStatus> getGetCurrentStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getCurrentStatus",
+      requestType = io.grpc.examples.oven.Empty.class,
+      responseType = io.grpc.examples.oven.OvenStatus.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<io.grpc.examples.oven.Empty,
+      io.grpc.examples.oven.OvenStatus> getGetCurrentStatusMethod() {
+    io.grpc.MethodDescriptor<io.grpc.examples.oven.Empty, io.grpc.examples.oven.OvenStatus> getGetCurrentStatusMethod;
+    if ((getGetCurrentStatusMethod = OvenServiceGrpc.getGetCurrentStatusMethod) == null) {
+      synchronized (OvenServiceGrpc.class) {
+        if ((getGetCurrentStatusMethod = OvenServiceGrpc.getGetCurrentStatusMethod) == null) {
+          OvenServiceGrpc.getGetCurrentStatusMethod = getGetCurrentStatusMethod = 
+              io.grpc.MethodDescriptor.<io.grpc.examples.oven.Empty, io.grpc.examples.oven.OvenStatus>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "oven.OvenService", "getCurrentStatus"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.examples.oven.Empty.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  io.grpc.examples.oven.OvenStatus.getDefaultInstance()))
+                  .setSchemaDescriptor(new OvenServiceMethodDescriptorSupplier("getCurrentStatus"))
+                  .build();
+          }
+        }
+     }
+     return getGetCurrentStatusMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<io.grpc.examples.oven.OvenStatus,
       io.grpc.examples.oven.StringResponse> getStartCookingMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "startCooking",
-      requestType = io.grpc.examples.oven.Empty.class,
+      requestType = io.grpc.examples.oven.OvenStatus.class,
       responseType = io.grpc.examples.oven.StringResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<io.grpc.examples.oven.Empty,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<io.grpc.examples.oven.OvenStatus,
       io.grpc.examples.oven.StringResponse> getStartCookingMethod() {
-    io.grpc.MethodDescriptor<io.grpc.examples.oven.Empty, io.grpc.examples.oven.StringResponse> getStartCookingMethod;
+    io.grpc.MethodDescriptor<io.grpc.examples.oven.OvenStatus, io.grpc.examples.oven.StringResponse> getStartCookingMethod;
     if ((getStartCookingMethod = OvenServiceGrpc.getStartCookingMethod) == null) {
       synchronized (OvenServiceGrpc.class) {
         if ((getStartCookingMethod = OvenServiceGrpc.getStartCookingMethod) == null) {
           OvenServiceGrpc.getStartCookingMethod = getStartCookingMethod = 
-              io.grpc.MethodDescriptor.<io.grpc.examples.oven.Empty, io.grpc.examples.oven.StringResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              io.grpc.MethodDescriptor.<io.grpc.examples.oven.OvenStatus, io.grpc.examples.oven.StringResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "oven.OvenService", "startCooking"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.grpc.examples.oven.Empty.getDefaultInstance()))
+                  io.grpc.examples.oven.OvenStatus.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   io.grpc.examples.oven.StringResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new OvenServiceMethodDescriptorSupplier("startCooking"))
@@ -205,9 +237,16 @@ public final class OvenServiceGrpc {
 
     /**
      */
-    public void startCooking(io.grpc.examples.oven.Empty request,
+    public void getCurrentStatus(io.grpc.examples.oven.Empty request,
+        io.grpc.stub.StreamObserver<io.grpc.examples.oven.OvenStatus> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetCurrentStatusMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<io.grpc.examples.oven.OvenStatus> startCooking(
         io.grpc.stub.StreamObserver<io.grpc.examples.oven.StringResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getStartCookingMethod(), responseObserver);
+      return asyncUnimplementedStreamingCall(getStartCookingMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -234,10 +273,17 @@ public final class OvenServiceGrpc {
                 io.grpc.examples.oven.StringResponse>(
                   this, METHODID_CHANGE_SETTING)))
           .addMethod(
-            getStartCookingMethod(),
-            asyncServerStreamingCall(
+            getGetCurrentStatusMethod(),
+            asyncUnaryCall(
               new MethodHandlers<
                 io.grpc.examples.oven.Empty,
+                io.grpc.examples.oven.OvenStatus>(
+                  this, METHODID_GET_CURRENT_STATUS)))
+          .addMethod(
+            getStartCookingMethod(),
+            asyncBidiStreamingCall(
+              new MethodHandlers<
+                io.grpc.examples.oven.OvenStatus,
                 io.grpc.examples.oven.StringResponse>(
                   this, METHODID_START_COOKING)))
           .build();
@@ -288,10 +334,18 @@ public final class OvenServiceGrpc {
 
     /**
      */
-    public void startCooking(io.grpc.examples.oven.Empty request,
+    public void getCurrentStatus(io.grpc.examples.oven.Empty request,
+        io.grpc.stub.StreamObserver<io.grpc.examples.oven.OvenStatus> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetCurrentStatusMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<io.grpc.examples.oven.OvenStatus> startCooking(
         io.grpc.stub.StreamObserver<io.grpc.examples.oven.StringResponse> responseObserver) {
-      asyncServerStreamingCall(
-          getChannel().newCall(getStartCookingMethod(), getCallOptions()), request, responseObserver);
+      return asyncBidiStreamingCall(
+          getChannel().newCall(getStartCookingMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -336,10 +390,9 @@ public final class OvenServiceGrpc {
 
     /**
      */
-    public java.util.Iterator<io.grpc.examples.oven.StringResponse> startCooking(
-        io.grpc.examples.oven.Empty request) {
-      return blockingServerStreamingCall(
-          getChannel(), getStartCookingMethod(), getCallOptions(), request);
+    public io.grpc.examples.oven.OvenStatus getCurrentStatus(io.grpc.examples.oven.Empty request) {
+      return blockingUnaryCall(
+          getChannel(), getGetCurrentStatusMethod(), getCallOptions(), request);
     }
   }
 
@@ -384,12 +437,21 @@ public final class OvenServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getChangeSettingMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.examples.oven.OvenStatus> getCurrentStatus(
+        io.grpc.examples.oven.Empty request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetCurrentStatusMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CHANGE_TEMP = 0;
   private static final int METHODID_SET_TIMER = 1;
   private static final int METHODID_CHANGE_SETTING = 2;
-  private static final int METHODID_START_COOKING = 3;
+  private static final int METHODID_GET_CURRENT_STATUS = 3;
+  private static final int METHODID_START_COOKING = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -420,9 +482,9 @@ public final class OvenServiceGrpc {
           serviceImpl.changeSetting((io.grpc.examples.oven.OvenSetting) request,
               (io.grpc.stub.StreamObserver<io.grpc.examples.oven.StringResponse>) responseObserver);
           break;
-        case METHODID_START_COOKING:
-          serviceImpl.startCooking((io.grpc.examples.oven.Empty) request,
-              (io.grpc.stub.StreamObserver<io.grpc.examples.oven.StringResponse>) responseObserver);
+        case METHODID_GET_CURRENT_STATUS:
+          serviceImpl.getCurrentStatus((io.grpc.examples.oven.Empty) request,
+              (io.grpc.stub.StreamObserver<io.grpc.examples.oven.OvenStatus>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -434,6 +496,9 @@ public final class OvenServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_START_COOKING:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.startCooking(
+              (io.grpc.stub.StreamObserver<io.grpc.examples.oven.StringResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -488,6 +553,7 @@ public final class OvenServiceGrpc {
               .addMethod(getChangeTempMethod())
               .addMethod(getSetTimerMethod())
               .addMethod(getChangeSettingMethod())
+              .addMethod(getGetCurrentStatusMethod())
               .addMethod(getStartCookingMethod())
               .build();
         }

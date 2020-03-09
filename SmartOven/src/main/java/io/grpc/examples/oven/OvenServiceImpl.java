@@ -30,6 +30,11 @@ public final class OvenServiceImpl {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_oven_OvenSetting_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_oven_OvenStatus_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_oven_OvenStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_oven_Empty_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -47,15 +52,19 @@ public final class OvenServiceImpl {
       "lue\030\001 \001(\002\"\036\n\016StringResponse\022\014\n\004text\030\001 \001(" +
       "\t\"q\n\013OvenSetting\022*\n\007setting\030\001 \001(\0162\031.oven" +
       ".OvenSetting.Setting\"6\n\007Setting\022\t\n\005GRILL" +
-      "\020\000\022\020\n\014FAN_ASSISTED\020\001\022\016\n\nUNASSISTED\020\002\"\007\n\005" +
-      "Empty2\352\001\n\013OvenService\0226\n\nchangeTemp\022\022.ov" +
-      "en.FloatRequest\032\024.oven.StringResponse\0224\n" +
-      "\010setTimer\022\022.oven.FloatRequest\032\024.oven.Str" +
-      "ingResponse\0228\n\rchangeSetting\022\021.oven.Oven" +
-      "Setting\032\024.oven.StringResponse\0223\n\014startCo" +
-      "oking\022\013.oven.Empty\032\024.oven.StringResponse" +
-      "0\001B*\n\025io.grpc.examples.ovenB\017OvenService" +
-      "ImplP\001b\006proto3"
+      "\020\000\022\020\n\014FAN_ASSISTED\020\001\022\016\n\nUNASSISTED\020\002\"n\n\n" +
+      "OvenStatus\022\'\n\006status\030\001 \001(\0162\027.oven.OvenSt" +
+      "atus.Status\"7\n\006Status\022\007\n\003OFF\020\000\022\014\n\010PRE_HE" +
+      "AT\020\001\022\t\n\005READY\020\002\022\013\n\007COOKING\020\003\"\007\n\005Empty2\244\002" +
+      "\n\013OvenService\0226\n\nchangeTemp\022\022.oven.Float" +
+      "Request\032\024.oven.StringResponse\0224\n\010setTime" +
+      "r\022\022.oven.FloatRequest\032\024.oven.StringRespo" +
+      "nse\0228\n\rchangeSetting\022\021.oven.OvenSetting\032" +
+      "\024.oven.StringResponse\0221\n\020getCurrentStatu" +
+      "s\022\013.oven.Empty\032\020.oven.OvenStatus\022:\n\014star" +
+      "tCooking\022\020.oven.OvenStatus\032\024.oven.String" +
+      "Response(\0010\001B*\n\025io.grpc.examples.ovenB\017O" +
+      "venServiceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -87,8 +96,14 @@ public final class OvenServiceImpl {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_oven_OvenSetting_descriptor,
         new java.lang.String[] { "Setting", });
-    internal_static_oven_Empty_descriptor =
+    internal_static_oven_OvenStatus_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_oven_OvenStatus_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_oven_OvenStatus_descriptor,
+        new java.lang.String[] { "Status", });
+    internal_static_oven_Empty_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_oven_Empty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_oven_Empty_descriptor,

@@ -2,12 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3aa48051-080e-447b-aa71-6eeeefa18442" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/src/main/java/io/grpc/examples/coffee_maker/BrewType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/src/main/java/io/grpc/examples/coffee_maker/BrewType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/src/main/java/io/grpc/examples/coffee_maker/BrewTypeOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/src/main/java/io/grpc/examples/coffee_maker/BrewTypeOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/src/main/java/io/grpc/examples/coffee_maker/CoffeeMakerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/src/main/java/io/grpc/examples/coffee_maker/CoffeeMakerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/src/main/java/io/grpc/examples/oven/BrewType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/src/main/java/io/grpc/examples/oven/BrewTypeOrBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/src/main/java/io/grpc/examples/oven/CoffeeMakerServiceGrpc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/src/main/java/io/grpc/examples/oven/Empty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/src/main/java/io/grpc/examples/oven/EmptyOrBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/src/main/java/io/grpc/examples/oven/OvenServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/src/main/java/io/grpc/examples/oven/StringResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/src/main/java/io/grpc/examples/oven/StringResponseOrBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/src/main/resources/coffeeMaker.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/src/main/resources/coffeeMaker.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/target/SmartCoffeeMaker-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/target/SmartCoffeeMaker-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/coffeeMaker.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/coffeeMaker.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/io/grpc/examples/coffee_maker/BrewType$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/io/grpc/examples/coffee_maker/BrewType$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/io/grpc/examples/coffee_maker/BrewType$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/io/grpc/examples/coffee_maker/BrewType$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/io/grpc/examples/coffee_maker/BrewType$type$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/io/grpc/examples/coffee_maker/BrewType$type$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/io/grpc/examples/coffee_maker/BrewType$type.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/io/grpc/examples/coffee_maker/BrewType$type.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/io/grpc/examples/coffee_maker/BrewType.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/io/grpc/examples/coffee_maker/BrewType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/io/grpc/examples/coffee_maker/BrewTypeOrBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/io/grpc/examples/coffee_maker/BrewTypeOrBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/io/grpc/examples/coffee_maker/CoffeeMakerServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/io/grpc/examples/coffee_maker/CoffeeMakerServiceImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/io/grpc/examples/coffee_maker/CoffeeMakerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/target/classes/io/grpc/examples/coffee_maker/CoffeeMakerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SmartCoffeeMaker/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../SmartCoffeeMaker/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/e/3e92923af2b4c2db20bc35e1ffb9a274075a31b2" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/e/3e92923af2b4c2db20bc35e1ffb9a274075a31b2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/45459966e415324a1681ad6ea4cbceb27828f054" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/45459966e415324a1681ad6ea4cbceb27828f054" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8c413118f26f3e3aa579267ebf43608d3039c701" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8c413118f26f3e3aa579267ebf43608d3039c701" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/grpc/examples/oven/OvenClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/grpc/examples/oven/OvenClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/grpc/examples/oven/OvenServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/grpc/examples/oven/OvenServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/grpc/examples/oven/OvenServiceGrpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/grpc/examples/oven/OvenServiceGrpc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/grpc/examples/oven/OvenServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/grpc/examples/oven/OvenServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/oven.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/oven.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc$MethodHandlers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc$MethodHandlers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc$OvenServiceBaseDescriptorSupplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc$OvenServiceBaseDescriptorSupplier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc$OvenServiceBlockingStub.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc$OvenServiceBlockingStub.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc$OvenServiceFileDescriptorSupplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc$OvenServiceFileDescriptorSupplier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc$OvenServiceFutureStub.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc$OvenServiceFutureStub.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc$OvenServiceImplBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc$OvenServiceImplBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc$OvenServiceMethodDescriptorSupplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc$OvenServiceMethodDescriptorSupplier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc$OvenServiceStub.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc$OvenServiceStub.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/OvenServiceGrpc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/grpc/examples/oven/floatRequestOrBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/oven.proto" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/oven.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,13 +79,39 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SmartCoffeeMaker" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.OvenClient">
-    <configuration name="OvenClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.CoffeeMakerClient">
+    <configuration name="CoffeeMakerClient" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.grpc.examples.coffee_maker.CoffeeMakerClient" />
+      <module name="SmartCoffeeMaker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.grpc.examples.coffee_maker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CoffeeMakerServer" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.grpc.examples.coffee_maker.CoffeeMakerServer" />
+      <module name="SmartCoffeeMaker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.grpc.examples.coffee_maker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OvenClient" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.grpc.examples.oven.OvenClient" />
       <module name="SmartOven" />
       <extension name="coverage">
@@ -56,7 +124,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OvenServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="OvenServer" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.grpc.examples.oven.OvenServer" />
       <module name="SmartOven" />
       <extension name="coverage">
@@ -69,12 +137,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.OvenClient" />
-        <item itemvalue="Application.OvenServer" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -90,57 +152,87 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="640" y="230" width="343" height="465" key="#com.intellij.ide.util.MemberChooser" timestamp="1583345888250">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state x="2368" y="251" width="374" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1583533609755">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
+    <state x="2368" y="251" width="374" height="575" key="#com.intellij.ide.util.MemberChooser/0.27.1600.873/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1583533609755" />
     <state x="2368" y="251" width="374" height="575" key="#com.intellij.ide.util.MemberChooser/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1582976021425" />
-    <state x="640" y="230" width="343" height="465" key="#com.intellij.ide.util.MemberChooser/0.27.1600.873@0.27.1600.873" timestamp="1583345888250" />
-    <state x="578" y="260" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583345957470">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state x="640" y="230" width="343" height="465" key="#com.intellij.ide.util.MemberChooser/0.27.1600.873@0.27.1600.873" timestamp="1583505815588" />
+    <state x="2243" y="276" width="624" height="526" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1583399257251">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
+    <state x="2243" y="276" width="624" height="526" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1583399257251" />
+    <state x="2294" y="288" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583525460844">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2294" y="288" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1600.873/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1583525460844" />
     <state x="2293" y="288" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1582913078043" />
     <state x="578" y="260" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1600.873@0.27.1600.873" timestamp="1583345957470" />
-    <state x="619" y="267" width="374" height="392" key="FileChooserDialogImpl" timestamp="1583344651440">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state x="743" y="447" width="374" height="392" key="FileChooserDialogImpl" timestamp="1583745660386">
+      <screen x="0" y="207" width="1920" height="873" />
     </state>
-    <state x="2343" y="297" width="424" height="484" key="FileChooserDialogImpl/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1582899088018" />
+    <state x="2343" y="297" width="424" height="484" key="FileChooserDialogImpl/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1583401724158" />
     <state x="619" y="267" width="374" height="392" key="FileChooserDialogImpl/0.27.1600.873@0.27.1600.873" timestamp="1583344651440" />
-    <state width="1554" height="164" key="GridCell.Tab.0.bottom" timestamp="1583345936516">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state x="743" y="447" key="FileChooserDialogImpl/1920.180.1600.900/0.207.1920.873@0.207.1920.873" timestamp="1583745660386" />
+    <state width="1874" height="216" key="GridCell.Tab.0.bottom" timestamp="1583535874031">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
+    <state width="1874" height="216" key="GridCell.Tab.0.bottom/0.27.1600.873/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1583535874031" />
     <state width="1874" height="218" key="GridCell.Tab.0.bottom/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1583088198741" />
-    <state width="1554" height="164" key="GridCell.Tab.0.bottom/0.27.1600.873@0.27.1600.873" timestamp="1583345936516" />
-    <state width="1554" height="164" key="GridCell.Tab.0.center" timestamp="1583345936516">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state width="1554" height="164" key="GridCell.Tab.0.bottom/0.27.1600.873@0.27.1600.873" timestamp="1583506545498" />
+    <state width="1874" height="216" key="GridCell.Tab.0.center" timestamp="1583535874031">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
+    <state width="1874" height="216" key="GridCell.Tab.0.center/0.27.1600.873/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1583535874031" />
     <state width="1874" height="218" key="GridCell.Tab.0.center/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1583088198740" />
-    <state width="1554" height="164" key="GridCell.Tab.0.center/0.27.1600.873@0.27.1600.873" timestamp="1583345936516" />
-    <state width="1554" height="164" key="GridCell.Tab.0.left" timestamp="1583345936515">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state width="1554" height="164" key="GridCell.Tab.0.center/0.27.1600.873@0.27.1600.873" timestamp="1583506545497" />
+    <state width="1874" height="216" key="GridCell.Tab.0.left" timestamp="1583535874031">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
+    <state width="1874" height="216" key="GridCell.Tab.0.left/0.27.1600.873/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1583535874031" />
     <state width="1874" height="218" key="GridCell.Tab.0.left/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1583088198740" />
-    <state width="1554" height="164" key="GridCell.Tab.0.left/0.27.1600.873@0.27.1600.873" timestamp="1583345936515" />
-    <state width="1554" height="164" key="GridCell.Tab.0.right" timestamp="1583345936516">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state width="1554" height="164" key="GridCell.Tab.0.left/0.27.1600.873@0.27.1600.873" timestamp="1583506545497" />
+    <state width="1874" height="216" key="GridCell.Tab.0.right" timestamp="1583535874031">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
+    <state width="1874" height="216" key="GridCell.Tab.0.right/0.27.1600.873/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1583535874031" />
     <state width="1874" height="218" key="GridCell.Tab.0.right/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1583088198741" />
-    <state width="1554" height="164" key="GridCell.Tab.0.right/0.27.1600.873@0.27.1600.873" timestamp="1583345936516" />
-    <state x="536" y="257" width="819" height="602" key="NewModule_or_Project.wizard" timestamp="1583344655973">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state width="1554" height="164" key="GridCell.Tab.0.right/0.27.1600.873@0.27.1600.873" timestamp="1583506545497" />
+    <state width="1874" height="354" key="GridCell.Tab.1.bottom" timestamp="1583531777076">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
+    <state width="1874" height="354" key="GridCell.Tab.1.bottom/0.27.1600.873/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1583531777076" />
+    <state width="1874" height="354" key="GridCell.Tab.1.center" timestamp="1583531777076">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="354" key="GridCell.Tab.1.center/0.27.1600.873/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1583531777076" />
+    <state width="1874" height="354" key="GridCell.Tab.1.left" timestamp="1583531777076">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="354" key="GridCell.Tab.1.left/0.27.1600.873/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1583531777076" />
+    <state width="1874" height="354" key="GridCell.Tab.1.right" timestamp="1583531777076">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="354" key="GridCell.Tab.1.right/0.27.1600.873/1600.0.1920.1080/3520.0.1920.1080@1600.0.1920.1080" timestamp="1583531777076" />
+    <state x="2243" y="285" width="819" height="691" key="NewModule_or_Project.wizard" timestamp="1583401726752">
+      <screen x="1600" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2243" y="285" width="819" height="691" key="NewModule_or_Project.wizard/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1583401726752" />
     <state x="536" y="257" width="819" height="602" key="NewModule_or_Project.wizard/0.27.1600.873@0.27.1600.873" timestamp="1583344655973" />
-    <state x="400" y="216" width="1101" height="684" key="SettingsEditor" timestamp="1583344710577">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state x="2080" y="235" width="1101" height="684" key="SettingsEditor" timestamp="1583401711330">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
-    <state x="2080" y="235" width="1024" height="845" key="SettingsEditor/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1582896342475" />
+    <state x="2080" y="235" width="1024" height="845" key="SettingsEditor/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1583401711330" />
     <state x="400" y="216" width="1101" height="684" key="SettingsEditor/0.27.1600.873@0.27.1600.873" timestamp="1583344710577" />
-    <state x="456" y="290" key="com.intellij.ide.util.TipDialog" timestamp="1583343928849">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state x="2147" y="325" key="com.intellij.ide.util.TipDialog" timestamp="1583399330391">
+      <screen x="1600" y="0" width="1920" height="1080" />
     </state>
+    <state x="2147" y="325" key="com.intellij.ide.util.TipDialog/0.27.1600.873/1600.0.1920.1080@1600.0.1920.1080" timestamp="1583399330391" />
     <state x="456" y="290" key="com.intellij.ide.util.TipDialog/0.27.1600.873@0.27.1600.873" timestamp="1583343928849" />
-    <state x="109" y="160" width="1372" height="605" key="new project wizard" timestamp="1583344220592">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state x="131" y="340" width="1372" height="605" key="new project wizard" timestamp="1583745694927">
+      <screen x="0" y="207" width="1920" height="873" />
     </state>
     <state x="109" y="160" width="1372" height="605" key="new project wizard/0.27.1600.873@0.27.1600.873" timestamp="1583344220592" />
+    <state x="131" y="340" key="new project wizard/1920.180.1600.900/0.207.1920.873@0.207.1920.873" timestamp="1583745694927" />
   </component>
 </project>

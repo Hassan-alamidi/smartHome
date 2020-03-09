@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private BrewType() {
+    brewType_ = 0;
   }
 
   @java.lang.Override
@@ -31,6 +32,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -41,6 +43,12 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          case 8: {
+            int rawValue = input.readEnum();
+
+            brewType_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -79,13 +87,13 @@ private static final long serialVersionUID = 0L;
   public enum type
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>CRAFF = 0;</code>
+     * <code>CARAFE = 0;</code>
      */
-    CRAFF(0),
+    CARAFE(0),
     /**
-     * <code>HALF_CRAFF = 1;</code>
+     * <code>HALF_CARAFE = 1;</code>
      */
-    HALF_CRAFF(1),
+    HALF_CARAFE(1),
     /**
      * <code>SINGLE_CUP = 2;</code>
      */
@@ -94,13 +102,13 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
-     * <code>CRAFF = 0;</code>
+     * <code>CARAFE = 0;</code>
      */
-    public static final int CRAFF_VALUE = 0;
+    public static final int CARAFE_VALUE = 0;
     /**
-     * <code>HALF_CRAFF = 1;</code>
+     * <code>HALF_CARAFE = 1;</code>
      */
-    public static final int HALF_CRAFF_VALUE = 1;
+    public static final int HALF_CARAFE_VALUE = 1;
     /**
      * <code>SINGLE_CUP = 2;</code>
      */
@@ -125,8 +133,8 @@ private static final long serialVersionUID = 0L;
 
     public static type forNumber(int value) {
       switch (value) {
-        case 0: return CRAFF;
-        case 1: return HALF_CRAFF;
+        case 0: return CARAFE;
+        case 1: return HALF_CARAFE;
         case 2: return SINGLE_CUP;
         default: return null;
       }
@@ -180,6 +188,23 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:coffeeMaker.BrewType.type)
   }
 
+  public static final int BREWTYPE_FIELD_NUMBER = 1;
+  private int brewType_;
+  /**
+   * <code>.coffeeMaker.BrewType.type BrewType = 1;</code>
+   */
+  public int getBrewTypeValue() {
+    return brewType_;
+  }
+  /**
+   * <code>.coffeeMaker.BrewType.type BrewType = 1;</code>
+   */
+  public io.grpc.examples.coffee_maker.BrewType.type getBrewType() {
+    @SuppressWarnings("deprecation")
+    io.grpc.examples.coffee_maker.BrewType.type result = io.grpc.examples.coffee_maker.BrewType.type.valueOf(brewType_);
+    return result == null ? io.grpc.examples.coffee_maker.BrewType.type.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -194,6 +219,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (brewType_ != io.grpc.examples.coffee_maker.BrewType.type.CARAFE.getNumber()) {
+      output.writeEnum(1, brewType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -203,6 +231,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (brewType_ != io.grpc.examples.coffee_maker.BrewType.type.CARAFE.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(1, brewType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -219,6 +251,7 @@ private static final long serialVersionUID = 0L;
     io.grpc.examples.coffee_maker.BrewType other = (io.grpc.examples.coffee_maker.BrewType) obj;
 
     boolean result = true;
+    result = result && brewType_ == other.brewType_;
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -230,6 +263,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + BREWTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + brewType_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -363,6 +398,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      brewType_ = 0;
+
       return this;
     }
 
@@ -389,6 +426,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public io.grpc.examples.coffee_maker.BrewType buildPartial() {
       io.grpc.examples.coffee_maker.BrewType result = new io.grpc.examples.coffee_maker.BrewType(this);
+      result.brewType_ = brewType_;
       onBuilt();
       return result;
     }
@@ -437,6 +475,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(io.grpc.examples.coffee_maker.BrewType other) {
       if (other == io.grpc.examples.coffee_maker.BrewType.getDefaultInstance()) return this;
+      if (other.brewType_ != 0) {
+        setBrewTypeValue(other.getBrewTypeValue());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -463,6 +504,51 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private int brewType_ = 0;
+    /**
+     * <code>.coffeeMaker.BrewType.type BrewType = 1;</code>
+     */
+    public int getBrewTypeValue() {
+      return brewType_;
+    }
+    /**
+     * <code>.coffeeMaker.BrewType.type BrewType = 1;</code>
+     */
+    public Builder setBrewTypeValue(int value) {
+      brewType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.coffeeMaker.BrewType.type BrewType = 1;</code>
+     */
+    public io.grpc.examples.coffee_maker.BrewType.type getBrewType() {
+      @SuppressWarnings("deprecation")
+      io.grpc.examples.coffee_maker.BrewType.type result = io.grpc.examples.coffee_maker.BrewType.type.valueOf(brewType_);
+      return result == null ? io.grpc.examples.coffee_maker.BrewType.type.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.coffeeMaker.BrewType.type BrewType = 1;</code>
+     */
+    public Builder setBrewType(io.grpc.examples.coffee_maker.BrewType.type value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      brewType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.coffeeMaker.BrewType.type BrewType = 1;</code>
+     */
+    public Builder clearBrewType() {
+      
+      brewType_ = 0;
+      onChanged();
       return this;
     }
     @java.lang.Override

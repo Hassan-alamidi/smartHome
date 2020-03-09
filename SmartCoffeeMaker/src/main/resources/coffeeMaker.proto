@@ -13,10 +13,12 @@ service CoffeeMakerService{
 
 message BrewType{
     enum type {
-        CRAFF = 0;
-        HALF_CRAFF = 1;
+        CARAFE = 0;
+        HALF_CARAFE = 1;
         SINGLE_CUP = 2;
     }
+
+    type BrewType = 1;
 }
 
 message StringResponse{

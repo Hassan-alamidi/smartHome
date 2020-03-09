@@ -8,11 +8,14 @@ io/grpc/examples/coffee_maker/EmptyOrBuilder.class
 io/grpc/examples/coffee_maker/BrewTypeOrBuilder.class
 io/grpc/examples/coffee_maker/StringResponse$1.class
 io/grpc/examples/coffee_maker/StringResponseOrBuilder.class
+io/grpc/examples/coffee_maker/CoffeeMakerServer.class
 io/grpc/examples/coffee_maker/CoffeeMakerServiceGrpc$CoffeeMakerServiceImplBase.class
+io/grpc/examples/coffee_maker/CoffeeMakerClient.class
 io/grpc/examples/coffee_maker/CoffeeMakerServiceGrpc$CoffeeMakerServiceFutureStub.class
 io/grpc/examples/coffee_maker/Empty$1.class
 io/grpc/examples/coffee_maker/StringResponse.class
 io/grpc/examples/coffee_maker/StringResponse$Builder.class
+io/grpc/examples/coffee_maker/CoffeeMakerServer$1.class
 io/grpc/examples/coffee_maker/BrewType$Builder.class
 io/grpc/examples/coffee_maker/CoffeeMakerServiceGrpc$CoffeeMakerServiceBaseDescriptorSupplier.class
 io/grpc/examples/coffee_maker/CoffeeMakerServiceGrpc$MethodHandlers.class

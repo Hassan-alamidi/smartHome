@@ -10,7 +10,8 @@ service OvenService{
     rpc changeTemp(FloatRequest) returns (StringResponse);
     rpc setTimer(FloatRequest) returns (StringResponse);
     rpc changeSetting(OvenSetting) returns (StringResponse);
-    rpc startCooking(Empty) returns (stream StringResponse);
+    rpc getCurrentStatus(Empty) returns (OvenStatus);
+    rpc startCooking(stream OvenStatus) returns (stream StringResponse);
 }
 
 message FloatRequest{
@@ -29,6 +30,16 @@ message OvenSetting{
     }
 
     Setting setting = 1;
+}
+
+message OvenStatus{
+    enum Status{
+        OFF = 0;
+        PRE_HEAT = 1;
+        READY = 2;
+        COOKING = 3;
+    }
+    Status status = 1;
 }
 
 message Empty{
