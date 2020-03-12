@@ -28,6 +28,7 @@ public class CoffeeMakerServer extends CoffeeMakerServiceImplBase {
             System.out.println("Server is listening");
             server.awaitTermination();
         } catch (IOException | InterruptedException e) {
+            //TODO handle this properly
             e.printStackTrace();
         }
     }
@@ -67,6 +68,7 @@ public class CoffeeMakerServer extends CoffeeMakerServiceImplBase {
                     Thread.sleep(1000);
                     System.out.println(i);
                 } catch (InterruptedException e) {
+                    //TODO handle this properly
                     e.printStackTrace();
                 }
             }

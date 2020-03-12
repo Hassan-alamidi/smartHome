@@ -25,6 +25,14 @@ public class CoffeeMakerClient {
         }
     }
 
+    public static void setupClient(final String name, final int port){
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8000)
+                .usePlaintext()
+                .build();
+        asyncStub = CoffeeMakerServiceGrpc.newStub(channel);
+        blockingStub = CoffeeMakerServiceGrpc.newBlockingStub(channel);
+    }
+
     public static void setBrewingType(){
         BrewType brewType = BrewType.newBuilder().setBrewType(BrewType.type.SINGLE_CUP).build();
         StringResponse response = blockingStub.setBrewingType(brewType);

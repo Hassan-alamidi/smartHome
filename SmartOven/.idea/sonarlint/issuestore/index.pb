@@ -11,3 +11,9 @@ d
 4src/main/java/io/grpc/examples/oven/OvenSetting.java,f/5/f5b52dbe7a009a2c71c820e6763c526acc9ed6cc
 c
 3src/main/java/io/grpc/examples/oven/OvenClient.java,3/e/3e92923af2b4c2db20bc35e1ffb9a274075a31b2
+`
+0src/main/java/com/jmDNS/ServiceRegistration.java,a/7/a721a7a37a65bb38f329d57faeaeb246acd98f9f
+r
+Bsrc/main/java/io/grpc/examples/coffee_maker/CoffeeMakerClient.java,4/4/44c3b9f05ebf85dd318a1e0dd3e2a9950b2ef389
+r
+Bsrc/main/java/io/grpc/examples/coffee_maker/CoffeeMakerServer.java,3/f/3f7f12e030bdc99da732534532449f5a86e1077d
