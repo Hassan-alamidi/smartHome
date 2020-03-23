@@ -3,12 +3,12 @@
 
 package io.grpc.examples.oven;
 
-public interface FloatRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:oven.FloatRequest)
+public interface IntRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:oven.IntRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>float value = 1;</code>
+   * <code>int32 value = 1;</code>
    */
-  float getValue();
+  int getValue();
 }

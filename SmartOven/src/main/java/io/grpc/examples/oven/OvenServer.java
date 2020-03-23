@@ -10,8 +10,8 @@ import java.io.IOException;
 
 public class OvenServer extends OvenServiceImplBase {
 
-    private static final float MAX_TEMP = 250;
-    private static final float MIN_TEMP = 0;
+    private static final int MAX_TEMP = 250;
+    private static final int MIN_TEMP = 0;
 
     private OvenStatus.Status ovenStatus = OvenStatus.Status.OFF;
 
@@ -38,7 +38,7 @@ public class OvenServer extends OvenServiceImplBase {
     }
 
     @Override
-    public void changeTemp(FloatRequest request, StreamObserver<StringResponse> responseObserver) {
+    public void changeTemp(IntRequest request, StreamObserver<StringResponse> responseObserver) {
         float val = request.getValue();
         val = val >= MAX_TEMP ? MAX_TEMP : val;
         val = val <= MIN_TEMP ? MIN_TEMP : val;
@@ -49,7 +49,7 @@ public class OvenServer extends OvenServiceImplBase {
     }
 
     @Override
-    public void setTimer(FloatRequest request, StreamObserver<StringResponse> responseObserver) {
+    public void setTimer(IntRequest request, StreamObserver<StringResponse> responseObserver) {
         timer = request.getValue();
         response = StringResponse.newBuilder().setText("timer has been set").build();
         responseObserver.onNext(response);

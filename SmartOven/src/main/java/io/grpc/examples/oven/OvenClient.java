@@ -16,12 +16,13 @@ public class OvenClient {
 
 
     public static void main(String[] args){
+        //NOTE this main class is unneeded, it is only used for testing
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8080).usePlaintext().build();
         asyncStub = OvenServiceGrpc.newStub(channel);
         blockingStub = OvenServiceGrpc.newBlockingStub(channel);
-        setTimer();
-        setTemp();
-        startCooking();
+        //setTimer();
+        //setTemp();
+        //startCooking();
 
         try {
             Thread.sleep(300000);
@@ -31,20 +32,30 @@ public class OvenClient {
         }
     }
 
-    public static void setTemp(){
-        FloatRequest request = FloatRequest.newBuilder().setValue(300).build();
+    public void setupClient(final String name, final int port){
+        ManagedChannel channel = ManagedChannelBuilder.forAddress(name, port)
+                .usePlaintext()
+                .build();
+        asyncStub = OvenServiceGrpc.newStub(channel);
+        blockingStub = OvenServiceGrpc.newBlockingStub(channel);
+    }
+
+    public void setTemp(){
+        //TODO pass temp in
+        IntRequest request = IntRequest.newBuilder().setValue(300).build();
         StringResponse response = blockingStub.changeTemp(request);
         System.out.println(response.getText());
     }
 
-    private static void setTimer(){
-        FloatRequest request = FloatRequest.newBuilder().setValue(200).build();
+    public void setTimer(){
+        //TODO pass timer in
+        IntRequest request = IntRequest.newBuilder().setValue(200).build();
         StringResponse response = blockingStub.setTimer(request);
         System.out.println(response.getText());
     }
 
-    private static void startCooking(){
-
+    public void startCooking(){
+        //remember using bi-directional to allow early turn off
         StreamObserver<StringResponse> responseStreamObserver = new StreamObserver<StringResponse>() {
             @Override
             public void onNext(StringResponse stringResponse) {

@@ -15,10 +15,10 @@ public final class OvenServiceImpl {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_oven_FloatRequest_descriptor;
+    internal_static_oven_IntRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_oven_FloatRequest_fieldAccessorTable;
+      internal_static_oven_IntRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_oven_StringResponse_descriptor;
   static final 
@@ -48,23 +48,23 @@ public final class OvenServiceImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\noven.proto\022\004oven\"\035\n\014FloatRequest\022\r\n\005va" +
-      "lue\030\001 \001(\002\"\036\n\016StringResponse\022\014\n\004text\030\001 \001(" +
-      "\t\"q\n\013OvenSetting\022*\n\007setting\030\001 \001(\0162\031.oven" +
-      ".OvenSetting.Setting\"6\n\007Setting\022\t\n\005GRILL" +
-      "\020\000\022\020\n\014FAN_ASSISTED\020\001\022\016\n\nUNASSISTED\020\002\"n\n\n" +
-      "OvenStatus\022\'\n\006status\030\001 \001(\0162\027.oven.OvenSt" +
-      "atus.Status\"7\n\006Status\022\007\n\003OFF\020\000\022\014\n\010PRE_HE" +
-      "AT\020\001\022\t\n\005READY\020\002\022\013\n\007COOKING\020\003\"\007\n\005Empty2\244\002" +
-      "\n\013OvenService\0226\n\nchangeTemp\022\022.oven.Float" +
-      "Request\032\024.oven.StringResponse\0224\n\010setTime" +
-      "r\022\022.oven.FloatRequest\032\024.oven.StringRespo" +
-      "nse\0228\n\rchangeSetting\022\021.oven.OvenSetting\032" +
-      "\024.oven.StringResponse\0221\n\020getCurrentStatu" +
-      "s\022\013.oven.Empty\032\020.oven.OvenStatus\022:\n\014star" +
-      "tCooking\022\020.oven.OvenStatus\032\024.oven.String" +
-      "Response(\0010\001B*\n\025io.grpc.examples.ovenB\017O" +
-      "venServiceImplP\001b\006proto3"
+      "\n\noven.proto\022\004oven\"\033\n\nIntRequest\022\r\n\005valu" +
+      "e\030\001 \001(\005\"\036\n\016StringResponse\022\014\n\004text\030\001 \001(\t\"" +
+      "q\n\013OvenSetting\022*\n\007setting\030\001 \001(\0162\031.oven.O" +
+      "venSetting.Setting\"6\n\007Setting\022\t\n\005GRILL\020\000" +
+      "\022\020\n\014FAN_ASSISTED\020\001\022\016\n\nUNASSISTED\020\002\"n\n\nOv" +
+      "enStatus\022\'\n\006status\030\001 \001(\0162\027.oven.OvenStat" +
+      "us.Status\"7\n\006Status\022\007\n\003OFF\020\000\022\014\n\010PRE_HEAT" +
+      "\020\001\022\t\n\005READY\020\002\022\013\n\007COOKING\020\003\"\007\n\005Empty2\240\002\n\013" +
+      "OvenService\0224\n\nchangeTemp\022\020.oven.IntRequ" +
+      "est\032\024.oven.StringResponse\0222\n\010setTimer\022\020." +
+      "oven.IntRequest\032\024.oven.StringResponse\0228\n" +
+      "\rchangeSetting\022\021.oven.OvenSetting\032\024.oven" +
+      ".StringResponse\0221\n\020getCurrentStatus\022\013.ov" +
+      "en.Empty\032\020.oven.OvenStatus\022:\n\014startCooki" +
+      "ng\022\020.oven.OvenStatus\032\024.oven.StringRespon" +
+      "se(\0010\001B*\n\025io.grpc.examples.ovenB\017OvenSer" +
+      "viceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -78,11 +78,11 @@ public final class OvenServiceImpl {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_oven_FloatRequest_descriptor =
+    internal_static_oven_IntRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_oven_FloatRequest_fieldAccessorTable = new
+    internal_static_oven_IntRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_oven_FloatRequest_descriptor,
+        internal_static_oven_IntRequest_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_oven_StringResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);

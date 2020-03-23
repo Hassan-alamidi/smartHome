@@ -7,15 +7,15 @@ option java_outer_classname = "OvenServiceImpl";
 package oven;
 
 service OvenService{
-    rpc changeTemp(FloatRequest) returns (StringResponse);
-    rpc setTimer(FloatRequest) returns (StringResponse);
+    rpc changeTemp(IntRequest) returns (StringResponse);
+    rpc setTimer(IntRequest) returns (StringResponse);
     rpc changeSetting(OvenSetting) returns (StringResponse);
     rpc getCurrentStatus(Empty) returns (OvenStatus);
     rpc startCooking(stream OvenStatus) returns (stream StringResponse);
 }
 
-message FloatRequest{
-    float value = 1;
+message IntRequest{
+    int32 value = 1;
 }
 
 message StringResponse{
