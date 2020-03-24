@@ -9,19 +9,20 @@ import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 
 public class CoffeeMakerServer extends CoffeeMakerServiceImplBase {
-    public static final int FULL_CARAFE_BREW_TIME = 600;
-    public static final int HALF_CARAFE_BREW_TIME = 300;
-    public static final int SINGLE_CUP_BREW_TIME = 180;
 
-    public static int timer;
-    public static StringResponse response;
+    private static final int PORT = 8000;
+    private static final int FULL_CARAFE_BREW_TIME = 600;
+    private static final int HALF_CARAFE_BREW_TIME = 300;
+    private static final int SINGLE_CUP_BREW_TIME = 180;
+
+    private static int timer;
+    private static StringResponse response;
 
     public static void main(final String[] args){
         CoffeeMakerServer coffeeMakerServer = new CoffeeMakerServer();
-        int port = 8000;
 
         try {
-            Server server = ServerBuilder.forPort(port)
+            Server server = ServerBuilder.forPort(PORT)
                                         .addService(coffeeMakerServer)
                                         .build()
                                         .start();

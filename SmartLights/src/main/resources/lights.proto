@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.lights";
+option java_outer_classname = "LightsServiceImpl";
+
+package lights;
+
+service LightsService{
+    rpc toggleLights(Empty) returns(StringResponse);
+    rpc getLightsStatus(Empty) returns(StringResponse);
+    rpc changeLuminosity(stream SintRequest) returns (StringResponse);
+}
+
+message StringResponse{
+    string text = 1;
+}
+
+message SintRequest{
+    sint32 value = 1;
+}
+
+message Empty{
+
+}

@@ -16,6 +16,9 @@ public class ServiceRegistration {
 
             serviceInfo = ServiceInfo.create("_http._tcp.local.", "SmartCoffeeMaker", 8000, "path=index.html");
             jmDNS.registerService(serviceInfo);
+
+            serviceInfo = ServiceInfo.create("_http._tcp.local.", "Lights", 9000, "path=index.html");
+            jmDNS.registerService(serviceInfo);
         } catch (IOException e) {
             //TODO handle this properly
             e.printStackTrace();
