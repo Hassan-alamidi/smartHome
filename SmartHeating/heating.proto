@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+service HeatingService{
+    rpc getSystemTempSetting(Empty) returns(FloatResponse);
+    rpc changeSystemTempSettings(FloatRequest) returns(StringResponse);
+    rpc toggleHeatingSystemStatus(Empty) returns(StringResponse);
+}
+
+message StringResponse{
+    string text = 1;
+}
+
+message FloatResponse{
+    float value = 1;
+}
+
+message FloatRequest{
+    float value = 1;
+}
+
+message Empty{}

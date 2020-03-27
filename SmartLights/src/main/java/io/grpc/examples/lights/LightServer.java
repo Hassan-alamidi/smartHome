@@ -13,7 +13,7 @@ public class LightServer extends LightsServiceImplBase {
     private static int MAX_LUMENS = 1000;
     private static int MIN_LUMENS = 250;
 
-    private int currentLuminosity = 0;
+    private int currentLuminosity = 1000;
     private boolean lightOn = false;
 
     public static void main(final String[] args){
@@ -51,7 +51,6 @@ public class LightServer extends LightsServiceImplBase {
 
     @Override
     public void getLightsStatus(final Empty request, final StreamObserver<StringResponse> responseObserver) {
-        lightOn = !lightOn;
         String message;
         if(lightOn){
             message = "Lights are currently turned on, \n current luminosity is set to " + currentLuminosity;
@@ -73,7 +72,7 @@ public class LightServer extends LightsServiceImplBase {
             int beforeRequest = currentLuminosity;
             @Override
             public void onNext(SintRequest value) {
-                currentLuminosity += value.getValue();
+                currentLuminosity = value.getValue();
             }
 
             @Override

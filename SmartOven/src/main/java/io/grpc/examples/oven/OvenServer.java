@@ -6,7 +6,10 @@ import io.grpc.ServerBuilder;
 import io.grpc.examples.oven.OvenServiceGrpc.OvenServiceImplBase;
 import io.grpc.stub.StreamObserver;
 
+import javax.jmdns.JmDNS;
+import javax.jmdns.ServiceInfo;
 import java.io.IOException;
+import java.net.InetAddress;
 
 public class OvenServer extends OvenServiceImplBase {
 
@@ -20,6 +23,9 @@ public class OvenServer extends OvenServiceImplBase {
     private float timer = 0;
     private OvenSetting.Setting setting;
     private StringResponse response;
+    private static final String DEFAULT_TYPE = "_http._tcp.local.";
+    private static final String DEFAULT_PATH = "path=index.html";
+    private static JmDNS jmDNS;
 
     public static void main(String[] args){
         OvenServer ovenServer = new OvenServer();
@@ -31,6 +37,11 @@ public class OvenServer extends OvenServiceImplBase {
                     .build()
                     .start();
             System.out.println("server is listening");
+            //One Solution
+            jmDNS = JmDNS.create(InetAddress.getLocalHost());
+
+            ServiceInfo serviceInfo = ServiceInfo.create(DEFAULT_TYPE, "SmartOven", 8080, DEFAULT_PATH);
+            jmDNS.registerService(serviceInfo);
             server.awaitTermination();
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();

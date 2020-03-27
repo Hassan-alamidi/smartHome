@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.jmDNS.grpc";
+option java_outer_classname = "DnsServiceImpl";
+
+package DnsServer;
+
+service DnsService{
+    rpc selfRegistration(details) returns(Empty);
+    rpc selfUnregister(details) returns(Empty);
+}
+
+message details{
+    int32 port = 1;
+    string address = 2;
+}
+
+message Empty{}
