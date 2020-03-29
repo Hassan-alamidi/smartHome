@@ -17,25 +17,17 @@ public class main {
     //this will probably solve the issue with java skipping if statements in loops for initializations as no loop will be required
 
     public static void main(String[] args){
-        JFrame frame = new MainMenu();
-        frame.setVisible(true);
         JmDNS jmdns = null;
         try {
             jmdns = JmDNS.create(InetAddress.getLocalHost());
+            // Add a service listener
+            jmdns.addServiceListener("_http._tcp.local.", new SampleListener());
         } catch (final IOException e) {
             //TODO handle this properly, in other words, if fails whats plan B
             e.printStackTrace();
         }
-
-        // Add a service listener
-        jmdns.addServiceListener("_http._tcp.local.", new SampleListener());
-
-        try {
-            Thread.sleep(300000);
-        } catch (final InterruptedException e) {
-            // TODO remove when GUI implemented
-            e.printStackTrace();
-        }
+        JFrame frame = new MainMenu();
+        frame.setVisible(true);
     }
 
     private static class SampleListener implements ServiceListener {
@@ -46,13 +38,21 @@ public class main {
 
         public void serviceRemoved(final ServiceEvent event) {
             final ServiceInfo info = event.getInfo();
+            System.out.println(info.getName());
             if (info.getName().equals("SmartOven")) {
-                //TODO
+                ovenClient.setupClient(info.getHostAddresses()[0],info.getPort());
+                System.out.println("Oven sever removed");
             }else if(info.getName().equals("SmartCoffeeMaker")){
-                coffeeMakerClient.toggleConnected();
-                System.out.println("coffee maker has been disconnected");
+                coffeeMakerClient.setupClient(info.getHostAddresses()[0],info.getPort());
+                System.out.println("Coffee sever removed");
             }else if(info.getName().equals("Lights")){
-
+                lightClient.setupClient(info.getHostAddresses()[0],info.getPort());
+                System.out.println("Light sever removed");
+            }else if(info.getName().equals("Heating")){
+                System.out.println("Heating sever removed");
+                heatingClient.setupClient(info.getHostAddresses()[0],info.getPort());
+            }else {
+                System.out.println("Service not implemented");
             }
         }
 
@@ -60,24 +60,16 @@ public class main {
             final ServiceInfo info = event.getInfo();
             if (info.getName().equals("SmartOven")) {
                 ovenClient.setupClient(info.getHostAddresses()[0],info.getPort());
-                //ovenClient.setTemp();
-                //ovenClient.setTimer();
-                //ovenClient.startCooking();
-                System.out.println("oven sever resolved");
+                System.out.println("Oven sever resolved");
             }else if(info.getName().equals("SmartCoffeeMaker")){
                 coffeeMakerClient.setupClient(info.getHostAddresses()[0],info.getPort());
-                //coffeeMakerClient.toggleConnected();
-                System.out.println("coffee sever resolved");
-                //coffeeMakerClient.setBrewingType();
-                //coffeeMakerClient.beginBrewing();
+                System.out.println("Coffee sever resolved");
             }else if(info.getName().equals("Lights")){
                 lightClient.setupClient(info.getHostAddresses()[0],info.getPort());
-                //lightClient.changeLuminosity();
-                //lightClient.getLightsStatus();
+                System.out.println("Light sever resolved");
             }else if(info.getName().equals("Heating")){
                 System.out.println("Heating sever resolved");
                 heatingClient.setupClient(info.getHostAddresses()[0],info.getPort());
-                //heatingClient.getSystemTempSetting();
             }else {
                 System.out.println("Service not implemented");
             }

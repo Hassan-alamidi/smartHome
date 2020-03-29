@@ -562,29 +562,29 @@ public final class Heating {
 
   }
 
-  public interface FloatResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:FloatResponse)
+  public interface IntResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IntResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>float value = 1;</code>
+     * <code>int32 value = 1;</code>
      */
-    float getValue();
+    int getValue();
   }
   /**
-   * Protobuf type {@code FloatResponse}
+   * Protobuf type {@code IntResponse}
    */
-  public  static final class FloatResponse extends
+  public  static final class IntResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:FloatResponse)
-      FloatResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:IntResponse)
+      IntResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use FloatResponse.newBuilder() to construct.
-    private FloatResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use IntResponse.newBuilder() to construct.
+    private IntResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private FloatResponse() {
-      value_ = 0F;
+    private IntResponse() {
+      value_ = 0;
     }
 
     @java.lang.Override
@@ -592,7 +592,7 @@ public final class Heating {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FloatResponse(
+    private IntResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -611,9 +611,9 @@ public final class Heating {
             case 0:
               done = true;
               break;
-            case 13: {
+            case 8: {
 
-              value_ = input.readFloat();
+              value_ = input.readInt32();
               break;
             }
             default: {
@@ -637,23 +637,23 @@ public final class Heating {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Heating.internal_static_FloatResponse_descriptor;
+      return Heating.internal_static_IntResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Heating.internal_static_FloatResponse_fieldAccessorTable
+      return Heating.internal_static_IntResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Heating.FloatResponse.class, Heating.FloatResponse.Builder.class);
+              Heating.IntResponse.class, Heating.IntResponse.Builder.class);
     }
 
     public static final int VALUE_FIELD_NUMBER = 1;
-    private float value_;
+    private int value_;
     /**
-     * <code>float value = 1;</code>
+     * <code>int32 value = 1;</code>
      */
-    public float getValue() {
+    public int getValue() {
       return value_;
     }
 
@@ -671,8 +671,8 @@ public final class Heating {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (value_ != 0F) {
-        output.writeFloat(1, value_);
+      if (value_ != 0) {
+        output.writeInt32(1, value_);
       }
       unknownFields.writeTo(output);
     }
@@ -683,9 +683,9 @@ public final class Heating {
       if (size != -1) return size;
 
       size = 0;
-      if (value_ != 0F) {
+      if (value_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, value_);
+          .computeInt32Size(1, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -697,16 +697,14 @@ public final class Heating {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof Heating.FloatResponse)) {
+      if (!(obj instanceof Heating.IntResponse)) {
         return super.equals(obj);
       }
-      Heating.FloatResponse other = (Heating.FloatResponse) obj;
+      Heating.IntResponse other = (Heating.IntResponse) obj;
 
       boolean result = true;
-      result = result && (
-          java.lang.Float.floatToIntBits(getValue())
-          == java.lang.Float.floatToIntBits(
-              other.getValue()));
+      result = result && (getValue()
+          == other.getValue());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -719,76 +717,75 @@ public final class Heating {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getValue());
+      hash = (53 * hash) + getValue();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static Heating.FloatResponse parseFrom(
+    public static Heating.IntResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Heating.FloatResponse parseFrom(
+    public static Heating.IntResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Heating.FloatResponse parseFrom(
+    public static Heating.IntResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Heating.FloatResponse parseFrom(
+    public static Heating.IntResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Heating.FloatResponse parseFrom(byte[] data)
+    public static Heating.IntResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Heating.FloatResponse parseFrom(
+    public static Heating.IntResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Heating.FloatResponse parseFrom(java.io.InputStream input)
+    public static Heating.IntResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Heating.FloatResponse parseFrom(
+    public static Heating.IntResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Heating.FloatResponse parseDelimitedFrom(java.io.InputStream input)
+    public static Heating.IntResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static Heating.FloatResponse parseDelimitedFrom(
+    public static Heating.IntResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Heating.FloatResponse parseFrom(
+    public static Heating.IntResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Heating.FloatResponse parseFrom(
+    public static Heating.IntResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -801,7 +798,7 @@ public final class Heating {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(Heating.FloatResponse prototype) {
+    public static Builder newBuilder(Heating.IntResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -817,26 +814,26 @@ public final class Heating {
       return builder;
     }
     /**
-     * Protobuf type {@code FloatResponse}
+     * Protobuf type {@code IntResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:FloatResponse)
-        Heating.FloatResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:IntResponse)
+        Heating.IntResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Heating.internal_static_FloatResponse_descriptor;
+        return Heating.internal_static_IntResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Heating.internal_static_FloatResponse_fieldAccessorTable
+        return Heating.internal_static_IntResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                Heating.FloatResponse.class, Heating.FloatResponse.Builder.class);
+                Heating.IntResponse.class, Heating.IntResponse.Builder.class);
       }
 
-      // Construct using Heating.FloatResponse.newBuilder()
+      // Construct using Heating.IntResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -854,7 +851,7 @@ public final class Heating {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        value_ = 0F;
+        value_ = 0;
 
         return this;
       }
@@ -862,17 +859,17 @@ public final class Heating {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Heating.internal_static_FloatResponse_descriptor;
+        return Heating.internal_static_IntResponse_descriptor;
       }
 
       @java.lang.Override
-      public Heating.FloatResponse getDefaultInstanceForType() {
-        return Heating.FloatResponse.getDefaultInstance();
+      public Heating.IntResponse getDefaultInstanceForType() {
+        return Heating.IntResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public Heating.FloatResponse build() {
-        Heating.FloatResponse result = buildPartial();
+      public Heating.IntResponse build() {
+        Heating.IntResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -880,8 +877,8 @@ public final class Heating {
       }
 
       @java.lang.Override
-      public Heating.FloatResponse buildPartial() {
-        Heating.FloatResponse result = new Heating.FloatResponse(this);
+      public Heating.IntResponse buildPartial() {
+        Heating.IntResponse result = new Heating.IntResponse(this);
         result.value_ = value_;
         onBuilt();
         return result;
@@ -921,17 +918,17 @@ public final class Heating {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Heating.FloatResponse) {
-          return mergeFrom((Heating.FloatResponse)other);
+        if (other instanceof Heating.IntResponse) {
+          return mergeFrom((Heating.IntResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(Heating.FloatResponse other) {
-        if (other == Heating.FloatResponse.getDefaultInstance()) return this;
-        if (other.getValue() != 0F) {
+      public Builder mergeFrom(Heating.IntResponse other) {
+        if (other == Heating.IntResponse.getDefaultInstance()) return this;
+        if (other.getValue() != 0) {
           setValue(other.getValue());
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -949,11 +946,11 @@ public final class Heating {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        Heating.FloatResponse parsedMessage = null;
+        Heating.IntResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Heating.FloatResponse) e.getUnfinishedMessage();
+          parsedMessage = (Heating.IntResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -963,28 +960,28 @@ public final class Heating {
         return this;
       }
 
-      private float value_ ;
+      private int value_ ;
       /**
-       * <code>float value = 1;</code>
+       * <code>int32 value = 1;</code>
        */
-      public float getValue() {
+      public int getValue() {
         return value_;
       }
       /**
-       * <code>float value = 1;</code>
+       * <code>int32 value = 1;</code>
        */
-      public Builder setValue(float value) {
+      public Builder setValue(int value) {
         
         value_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>float value = 1;</code>
+       * <code>int32 value = 1;</code>
        */
       public Builder clearValue() {
         
-        value_ = 0F;
+        value_ = 0;
         onChanged();
         return this;
       }
@@ -1001,69 +998,69 @@ public final class Heating {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:FloatResponse)
+      // @@protoc_insertion_point(builder_scope:IntResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:FloatResponse)
-    private static final Heating.FloatResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:IntResponse)
+    private static final Heating.IntResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new Heating.FloatResponse();
+      DEFAULT_INSTANCE = new Heating.IntResponse();
     }
 
-    public static Heating.FloatResponse getDefaultInstance() {
+    public static Heating.IntResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<FloatResponse>
-        PARSER = new com.google.protobuf.AbstractParser<FloatResponse>() {
+    private static final com.google.protobuf.Parser<IntResponse>
+        PARSER = new com.google.protobuf.AbstractParser<IntResponse>() {
       @java.lang.Override
-      public FloatResponse parsePartialFrom(
+      public IntResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FloatResponse(input, extensionRegistry);
+        return new IntResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<FloatResponse> parser() {
+    public static com.google.protobuf.Parser<IntResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<FloatResponse> getParserForType() {
+    public com.google.protobuf.Parser<IntResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public Heating.FloatResponse getDefaultInstanceForType() {
+    public Heating.IntResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface FloatRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:FloatRequest)
+  public interface IntRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IntRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>float value = 1;</code>
+     * <code>int32 value = 1;</code>
      */
-    float getValue();
+    int getValue();
   }
   /**
-   * Protobuf type {@code FloatRequest}
+   * Protobuf type {@code IntRequest}
    */
-  public  static final class FloatRequest extends
+  public  static final class IntRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:FloatRequest)
-      FloatRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:IntRequest)
+      IntRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use FloatRequest.newBuilder() to construct.
-    private FloatRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use IntRequest.newBuilder() to construct.
+    private IntRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private FloatRequest() {
-      value_ = 0F;
+    private IntRequest() {
+      value_ = 0;
     }
 
     @java.lang.Override
@@ -1071,7 +1068,7 @@ public final class Heating {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FloatRequest(
+    private IntRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1090,9 +1087,9 @@ public final class Heating {
             case 0:
               done = true;
               break;
-            case 13: {
+            case 8: {
 
-              value_ = input.readFloat();
+              value_ = input.readInt32();
               break;
             }
             default: {
@@ -1116,23 +1113,23 @@ public final class Heating {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Heating.internal_static_FloatRequest_descriptor;
+      return Heating.internal_static_IntRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Heating.internal_static_FloatRequest_fieldAccessorTable
+      return Heating.internal_static_IntRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Heating.FloatRequest.class, Heating.FloatRequest.Builder.class);
+              Heating.IntRequest.class, Heating.IntRequest.Builder.class);
     }
 
     public static final int VALUE_FIELD_NUMBER = 1;
-    private float value_;
+    private int value_;
     /**
-     * <code>float value = 1;</code>
+     * <code>int32 value = 1;</code>
      */
-    public float getValue() {
+    public int getValue() {
       return value_;
     }
 
@@ -1150,8 +1147,8 @@ public final class Heating {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (value_ != 0F) {
-        output.writeFloat(1, value_);
+      if (value_ != 0) {
+        output.writeInt32(1, value_);
       }
       unknownFields.writeTo(output);
     }
@@ -1162,9 +1159,9 @@ public final class Heating {
       if (size != -1) return size;
 
       size = 0;
-      if (value_ != 0F) {
+      if (value_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, value_);
+          .computeInt32Size(1, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1176,16 +1173,14 @@ public final class Heating {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof Heating.FloatRequest)) {
+      if (!(obj instanceof Heating.IntRequest)) {
         return super.equals(obj);
       }
-      Heating.FloatRequest other = (Heating.FloatRequest) obj;
+      Heating.IntRequest other = (Heating.IntRequest) obj;
 
       boolean result = true;
-      result = result && (
-          java.lang.Float.floatToIntBits(getValue())
-          == java.lang.Float.floatToIntBits(
-              other.getValue()));
+      result = result && (getValue()
+          == other.getValue());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -1198,76 +1193,75 @@ public final class Heating {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getValue());
+      hash = (53 * hash) + getValue();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static Heating.FloatRequest parseFrom(
+    public static Heating.IntRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Heating.FloatRequest parseFrom(
+    public static Heating.IntRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Heating.FloatRequest parseFrom(
+    public static Heating.IntRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Heating.FloatRequest parseFrom(
+    public static Heating.IntRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Heating.FloatRequest parseFrom(byte[] data)
+    public static Heating.IntRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Heating.FloatRequest parseFrom(
+    public static Heating.IntRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Heating.FloatRequest parseFrom(java.io.InputStream input)
+    public static Heating.IntRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Heating.FloatRequest parseFrom(
+    public static Heating.IntRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Heating.FloatRequest parseDelimitedFrom(java.io.InputStream input)
+    public static Heating.IntRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static Heating.FloatRequest parseDelimitedFrom(
+    public static Heating.IntRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Heating.FloatRequest parseFrom(
+    public static Heating.IntRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Heating.FloatRequest parseFrom(
+    public static Heating.IntRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1280,7 +1274,7 @@ public final class Heating {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(Heating.FloatRequest prototype) {
+    public static Builder newBuilder(Heating.IntRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1296,26 +1290,26 @@ public final class Heating {
       return builder;
     }
     /**
-     * Protobuf type {@code FloatRequest}
+     * Protobuf type {@code IntRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:FloatRequest)
-        Heating.FloatRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:IntRequest)
+        Heating.IntRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Heating.internal_static_FloatRequest_descriptor;
+        return Heating.internal_static_IntRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Heating.internal_static_FloatRequest_fieldAccessorTable
+        return Heating.internal_static_IntRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                Heating.FloatRequest.class, Heating.FloatRequest.Builder.class);
+                Heating.IntRequest.class, Heating.IntRequest.Builder.class);
       }
 
-      // Construct using Heating.FloatRequest.newBuilder()
+      // Construct using Heating.IntRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1333,7 +1327,7 @@ public final class Heating {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        value_ = 0F;
+        value_ = 0;
 
         return this;
       }
@@ -1341,17 +1335,17 @@ public final class Heating {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Heating.internal_static_FloatRequest_descriptor;
+        return Heating.internal_static_IntRequest_descriptor;
       }
 
       @java.lang.Override
-      public Heating.FloatRequest getDefaultInstanceForType() {
-        return Heating.FloatRequest.getDefaultInstance();
+      public Heating.IntRequest getDefaultInstanceForType() {
+        return Heating.IntRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public Heating.FloatRequest build() {
-        Heating.FloatRequest result = buildPartial();
+      public Heating.IntRequest build() {
+        Heating.IntRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1359,8 +1353,8 @@ public final class Heating {
       }
 
       @java.lang.Override
-      public Heating.FloatRequest buildPartial() {
-        Heating.FloatRequest result = new Heating.FloatRequest(this);
+      public Heating.IntRequest buildPartial() {
+        Heating.IntRequest result = new Heating.IntRequest(this);
         result.value_ = value_;
         onBuilt();
         return result;
@@ -1400,17 +1394,17 @@ public final class Heating {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Heating.FloatRequest) {
-          return mergeFrom((Heating.FloatRequest)other);
+        if (other instanceof Heating.IntRequest) {
+          return mergeFrom((Heating.IntRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(Heating.FloatRequest other) {
-        if (other == Heating.FloatRequest.getDefaultInstance()) return this;
-        if (other.getValue() != 0F) {
+      public Builder mergeFrom(Heating.IntRequest other) {
+        if (other == Heating.IntRequest.getDefaultInstance()) return this;
+        if (other.getValue() != 0) {
           setValue(other.getValue());
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1428,11 +1422,11 @@ public final class Heating {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        Heating.FloatRequest parsedMessage = null;
+        Heating.IntRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Heating.FloatRequest) e.getUnfinishedMessage();
+          parsedMessage = (Heating.IntRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1442,28 +1436,28 @@ public final class Heating {
         return this;
       }
 
-      private float value_ ;
+      private int value_ ;
       /**
-       * <code>float value = 1;</code>
+       * <code>int32 value = 1;</code>
        */
-      public float getValue() {
+      public int getValue() {
         return value_;
       }
       /**
-       * <code>float value = 1;</code>
+       * <code>int32 value = 1;</code>
        */
-      public Builder setValue(float value) {
+      public Builder setValue(int value) {
         
         value_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>float value = 1;</code>
+       * <code>int32 value = 1;</code>
        */
       public Builder clearValue() {
         
-        value_ = 0F;
+        value_ = 0;
         onChanged();
         return this;
       }
@@ -1480,41 +1474,41 @@ public final class Heating {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:FloatRequest)
+      // @@protoc_insertion_point(builder_scope:IntRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:FloatRequest)
-    private static final Heating.FloatRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:IntRequest)
+    private static final Heating.IntRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new Heating.FloatRequest();
+      DEFAULT_INSTANCE = new Heating.IntRequest();
     }
 
-    public static Heating.FloatRequest getDefaultInstance() {
+    public static Heating.IntRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<FloatRequest>
-        PARSER = new com.google.protobuf.AbstractParser<FloatRequest>() {
+    private static final com.google.protobuf.Parser<IntRequest>
+        PARSER = new com.google.protobuf.AbstractParser<IntRequest>() {
       @java.lang.Override
-      public FloatRequest parsePartialFrom(
+      public IntRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FloatRequest(input, extensionRegistry);
+        return new IntRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<FloatRequest> parser() {
+    public static com.google.protobuf.Parser<IntRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<FloatRequest> getParserForType() {
+    public com.google.protobuf.Parser<IntRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public Heating.FloatRequest getDefaultInstanceForType() {
+    public Heating.IntRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1938,15 +1932,15 @@ public final class Heating {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_StringResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_FloatResponse_descriptor;
+    internal_static_IntResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_FloatResponse_fieldAccessorTable;
+      internal_static_IntResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_FloatRequest_descriptor;
+    internal_static_IntRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_FloatRequest_fieldAccessorTable;
+      internal_static_IntRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Empty_descriptor;
   private static final 
@@ -1962,13 +1956,13 @@ public final class Heating {
   static {
     java.lang.String[] descriptorData = {
       "\n\rheating.proto\"\036\n\016StringResponse\022\014\n\004tex" +
-      "t\030\001 \001(\t\"\036\n\rFloatResponse\022\r\n\005value\030\001 \001(\002\"" +
-      "\035\n\014FloatRequest\022\r\n\005value\030\001 \001(\002\"\007\n\005Empty2" +
-      "\262\001\n\016HeatingService\022.\n\024getSystemTempSetti" +
-      "ng\022\006.Empty\032\016.FloatResponse\022:\n\030changeSyst" +
-      "emTempSettings\022\r.FloatRequest\032\017.StringRe" +
-      "sponse\0224\n\031toggleHeatingSystemStatus\022\006.Em" +
-      "pty\032\017.StringResponseb\006proto3"
+      "t\030\001 \001(\t\"\034\n\013IntResponse\022\r\n\005value\030\001 \001(\005\"\033\n" +
+      "\nIntRequest\022\r\n\005value\030\001 \001(\005\"\007\n\005Empty2\256\001\n\016" +
+      "HeatingService\022,\n\024getSystemTempSetting\022\006" +
+      ".Empty\032\014.IntResponse\0228\n\030changeSystemTemp" +
+      "Settings\022\013.IntRequest\032\017.StringResponse\0224" +
+      "\n\031toggleHeatingSystemStatus\022\006.Empty\032\017.St" +
+      "ringResponseb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1988,17 +1982,17 @@ public final class Heating {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_StringResponse_descriptor,
         new java.lang.String[] { "Text", });
-    internal_static_FloatResponse_descriptor =
+    internal_static_IntResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_FloatResponse_fieldAccessorTable = new
+    internal_static_IntResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_FloatResponse_descriptor,
+        internal_static_IntResponse_descriptor,
         new java.lang.String[] { "Value", });
-    internal_static_FloatRequest_descriptor =
+    internal_static_IntRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_FloatRequest_fieldAccessorTable = new
+    internal_static_IntRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_FloatRequest_descriptor,
+        internal_static_IntRequest_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_Empty_descriptor =
       getDescriptor().getMessageTypes().get(3);

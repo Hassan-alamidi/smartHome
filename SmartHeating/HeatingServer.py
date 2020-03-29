@@ -2,6 +2,8 @@ from concurrent import futures
 import logging
 import heating_pb2
 import heating_pb2_grpc
+import jmDnsHandler_pb2
+import jmDnsHandler_pb2_grpc
 
 import grpc
 
@@ -9,17 +11,22 @@ import grpc
 class HeatingServer(heating_pb2_grpc.HeatingServiceServicer):
 
     systemTemp = 55
+    systemTempMax = 100
+    systemTempMin = 10
     systemOff = True
 
     def getSystemTempSetting(self, request, context):
-        response = heating_pb2.FloatResponse()
+        response = heating_pb2.IntResponse()
         response.value = self.systemTemp
         return response
 
     def changeSystemTempSettings(self, request, context):
-        self.systemTemp = request.value
         response = heating_pb2.StringResponse()
-        response.text = "Temp setting changed"
+        if self.systemTempMin < request.value < self.systemTempMax:
+            self.systemTemp = request.value
+            response.text = "Temp setting changed"
+        else:
+            response.text = "Temp is out of bounds"
         return response
 
     def toggleHeatingSystemStatus(self, request, context):
@@ -34,12 +41,21 @@ class HeatingServer(heating_pb2_grpc.HeatingServiceServicer):
 
 
 def serve():
-    server = grpc.server(futures.ThreadPoolExecutor(max_workers=4))
-    heating_pb2_grpc.add_HeatingServiceServicer_to_server(HeatingServer(), server)
-    server.add_insecure_port('127.0.1.1:4000')
-    server.start()
-    print("Server is listening")
-    server.wait_for_termination()
+    try:
+        server = grpc.server(futures.ThreadPoolExecutor(max_workers=4))
+        heating_pb2_grpc.add_HeatingServiceServicer_to_server(HeatingServer(), server)
+        server.add_insecure_port('127.0.1.1:4000')
+        server.start()
+
+        channel = grpc.insecure_channel('127.0.1.1:9090')
+        stub = jmDnsHandler_pb2_grpc.DnsServiceStub(channel)
+        serverDetails = jmDnsHandler_pb2.details(port=4000, type="_http._tcp.local.", name="Heating", path="path=index.html")
+
+        stub.selfRegistration(serverDetails)
+        print("Server is listening")
+        server.wait_for_termination()
+    except:
+        print("Dns server must be turned on first")
 
 
 serve()

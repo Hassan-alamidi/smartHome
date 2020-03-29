@@ -4,19 +4,20 @@
 package io.grpc.examples.coffee_maker;
 
 /**
- * Protobuf type {@code coffeeMaker.StringResponse}
+ * Protobuf type {@code coffeeMaker.Response}
  */
-public  final class StringResponse extends
+public  final class Response extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:coffeeMaker.StringResponse)
-    StringResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:coffeeMaker.Response)
+    ResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use StringResponse.newBuilder() to construct.
-  private StringResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use Response.newBuilder() to construct.
+  private Response(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private StringResponse() {
+  private Response() {
     text_ = "";
+    progress_ = 0D;
   }
 
   @java.lang.Override
@@ -24,7 +25,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private StringResponse(
+  private Response(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -49,6 +50,11 @@ private static final long serialVersionUID = 0L;
             text_ = s;
             break;
           }
+          case 17: {
+
+            progress_ = input.readDouble();
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -70,15 +76,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.grpc.examples.coffee_maker.CoffeeMakerServiceImpl.internal_static_coffeeMaker_StringResponse_descriptor;
+    return io.grpc.examples.coffee_maker.CoffeeMakerServiceImpl.internal_static_coffeeMaker_Response_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grpc.examples.coffee_maker.CoffeeMakerServiceImpl.internal_static_coffeeMaker_StringResponse_fieldAccessorTable
+    return io.grpc.examples.coffee_maker.CoffeeMakerServiceImpl.internal_static_coffeeMaker_Response_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grpc.examples.coffee_maker.StringResponse.class, io.grpc.examples.coffee_maker.StringResponse.Builder.class);
+            io.grpc.examples.coffee_maker.Response.class, io.grpc.examples.coffee_maker.Response.Builder.class);
   }
 
   public static final int TEXT_FIELD_NUMBER = 1;
@@ -115,6 +121,15 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int PROGRESS_FIELD_NUMBER = 2;
+  private double progress_;
+  /**
+   * <code>double progress = 2;</code>
+   */
+  public double getProgress() {
+    return progress_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -132,6 +147,9 @@ private static final long serialVersionUID = 0L;
     if (!getTextBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_);
     }
+    if (progress_ != 0D) {
+      output.writeDouble(2, progress_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -144,6 +162,10 @@ private static final long serialVersionUID = 0L;
     if (!getTextBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, text_);
     }
+    if (progress_ != 0D) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeDoubleSize(2, progress_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -154,14 +176,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.grpc.examples.coffee_maker.StringResponse)) {
+    if (!(obj instanceof io.grpc.examples.coffee_maker.Response)) {
       return super.equals(obj);
     }
-    io.grpc.examples.coffee_maker.StringResponse other = (io.grpc.examples.coffee_maker.StringResponse) obj;
+    io.grpc.examples.coffee_maker.Response other = (io.grpc.examples.coffee_maker.Response) obj;
 
     boolean result = true;
     result = result && getText()
         .equals(other.getText());
+    result = result && (
+        java.lang.Double.doubleToLongBits(getProgress())
+        == java.lang.Double.doubleToLongBits(
+            other.getProgress()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -175,74 +201,77 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TEXT_FIELD_NUMBER;
     hash = (53 * hash) + getText().hashCode();
+    hash = (37 * hash) + PROGRESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getProgress()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static io.grpc.examples.coffee_maker.StringResponse parseFrom(
+  public static io.grpc.examples.coffee_maker.Response parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.grpc.examples.coffee_maker.StringResponse parseFrom(
+  public static io.grpc.examples.coffee_maker.Response parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grpc.examples.coffee_maker.StringResponse parseFrom(
+  public static io.grpc.examples.coffee_maker.Response parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.grpc.examples.coffee_maker.StringResponse parseFrom(
+  public static io.grpc.examples.coffee_maker.Response parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grpc.examples.coffee_maker.StringResponse parseFrom(byte[] data)
+  public static io.grpc.examples.coffee_maker.Response parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.grpc.examples.coffee_maker.StringResponse parseFrom(
+  public static io.grpc.examples.coffee_maker.Response parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grpc.examples.coffee_maker.StringResponse parseFrom(java.io.InputStream input)
+  public static io.grpc.examples.coffee_maker.Response parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.grpc.examples.coffee_maker.StringResponse parseFrom(
+  public static io.grpc.examples.coffee_maker.Response parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.grpc.examples.coffee_maker.StringResponse parseDelimitedFrom(java.io.InputStream input)
+  public static io.grpc.examples.coffee_maker.Response parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.grpc.examples.coffee_maker.StringResponse parseDelimitedFrom(
+  public static io.grpc.examples.coffee_maker.Response parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.grpc.examples.coffee_maker.StringResponse parseFrom(
+  public static io.grpc.examples.coffee_maker.Response parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.grpc.examples.coffee_maker.StringResponse parseFrom(
+  public static io.grpc.examples.coffee_maker.Response parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -255,7 +284,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.grpc.examples.coffee_maker.StringResponse prototype) {
+  public static Builder newBuilder(io.grpc.examples.coffee_maker.Response prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -271,26 +300,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code coffeeMaker.StringResponse}
+   * Protobuf type {@code coffeeMaker.Response}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:coffeeMaker.StringResponse)
-      io.grpc.examples.coffee_maker.StringResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:coffeeMaker.Response)
+      io.grpc.examples.coffee_maker.ResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.grpc.examples.coffee_maker.CoffeeMakerServiceImpl.internal_static_coffeeMaker_StringResponse_descriptor;
+      return io.grpc.examples.coffee_maker.CoffeeMakerServiceImpl.internal_static_coffeeMaker_Response_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grpc.examples.coffee_maker.CoffeeMakerServiceImpl.internal_static_coffeeMaker_StringResponse_fieldAccessorTable
+      return io.grpc.examples.coffee_maker.CoffeeMakerServiceImpl.internal_static_coffeeMaker_Response_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grpc.examples.coffee_maker.StringResponse.class, io.grpc.examples.coffee_maker.StringResponse.Builder.class);
+              io.grpc.examples.coffee_maker.Response.class, io.grpc.examples.coffee_maker.Response.Builder.class);
     }
 
-    // Construct using io.grpc.examples.coffee_maker.StringResponse.newBuilder()
+    // Construct using io.grpc.examples.coffee_maker.Response.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -310,23 +339,25 @@ private static final long serialVersionUID = 0L;
       super.clear();
       text_ = "";
 
+      progress_ = 0D;
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.grpc.examples.coffee_maker.CoffeeMakerServiceImpl.internal_static_coffeeMaker_StringResponse_descriptor;
+      return io.grpc.examples.coffee_maker.CoffeeMakerServiceImpl.internal_static_coffeeMaker_Response_descriptor;
     }
 
     @java.lang.Override
-    public io.grpc.examples.coffee_maker.StringResponse getDefaultInstanceForType() {
-      return io.grpc.examples.coffee_maker.StringResponse.getDefaultInstance();
+    public io.grpc.examples.coffee_maker.Response getDefaultInstanceForType() {
+      return io.grpc.examples.coffee_maker.Response.getDefaultInstance();
     }
 
     @java.lang.Override
-    public io.grpc.examples.coffee_maker.StringResponse build() {
-      io.grpc.examples.coffee_maker.StringResponse result = buildPartial();
+    public io.grpc.examples.coffee_maker.Response build() {
+      io.grpc.examples.coffee_maker.Response result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -334,9 +365,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public io.grpc.examples.coffee_maker.StringResponse buildPartial() {
-      io.grpc.examples.coffee_maker.StringResponse result = new io.grpc.examples.coffee_maker.StringResponse(this);
+    public io.grpc.examples.coffee_maker.Response buildPartial() {
+      io.grpc.examples.coffee_maker.Response result = new io.grpc.examples.coffee_maker.Response(this);
       result.text_ = text_;
+      result.progress_ = progress_;
       onBuilt();
       return result;
     }
@@ -375,19 +407,22 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.grpc.examples.coffee_maker.StringResponse) {
-        return mergeFrom((io.grpc.examples.coffee_maker.StringResponse)other);
+      if (other instanceof io.grpc.examples.coffee_maker.Response) {
+        return mergeFrom((io.grpc.examples.coffee_maker.Response)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.grpc.examples.coffee_maker.StringResponse other) {
-      if (other == io.grpc.examples.coffee_maker.StringResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.grpc.examples.coffee_maker.Response other) {
+      if (other == io.grpc.examples.coffee_maker.Response.getDefaultInstance()) return this;
       if (!other.getText().isEmpty()) {
         text_ = other.text_;
         onChanged();
+      }
+      if (other.getProgress() != 0D) {
+        setProgress(other.getProgress());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -404,11 +439,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.grpc.examples.coffee_maker.StringResponse parsedMessage = null;
+      io.grpc.examples.coffee_maker.Response parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.grpc.examples.coffee_maker.StringResponse) e.getUnfinishedMessage();
+        parsedMessage = (io.grpc.examples.coffee_maker.Response) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -486,6 +521,32 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+
+    private double progress_ ;
+    /**
+     * <code>double progress = 2;</code>
+     */
+    public double getProgress() {
+      return progress_;
+    }
+    /**
+     * <code>double progress = 2;</code>
+     */
+    public Builder setProgress(double value) {
+      
+      progress_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>double progress = 2;</code>
+     */
+    public Builder clearProgress() {
+      
+      progress_ = 0D;
+      onChanged();
+      return this;
+    }
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -499,41 +560,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:coffeeMaker.StringResponse)
+    // @@protoc_insertion_point(builder_scope:coffeeMaker.Response)
   }
 
-  // @@protoc_insertion_point(class_scope:coffeeMaker.StringResponse)
-  private static final io.grpc.examples.coffee_maker.StringResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:coffeeMaker.Response)
+  private static final io.grpc.examples.coffee_maker.Response DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.grpc.examples.coffee_maker.StringResponse();
+    DEFAULT_INSTANCE = new io.grpc.examples.coffee_maker.Response();
   }
 
-  public static io.grpc.examples.coffee_maker.StringResponse getDefaultInstance() {
+  public static io.grpc.examples.coffee_maker.Response getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<StringResponse>
-      PARSER = new com.google.protobuf.AbstractParser<StringResponse>() {
+  private static final com.google.protobuf.Parser<Response>
+      PARSER = new com.google.protobuf.AbstractParser<Response>() {
     @java.lang.Override
-    public StringResponse parsePartialFrom(
+    public Response parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new StringResponse(input, extensionRegistry);
+      return new Response(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<StringResponse> parser() {
+  public static com.google.protobuf.Parser<Response> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<StringResponse> getParserForType() {
+  public com.google.protobuf.Parser<Response> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public io.grpc.examples.coffee_maker.StringResponse getDefaultInstanceForType() {
+  public io.grpc.examples.coffee_maker.Response getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

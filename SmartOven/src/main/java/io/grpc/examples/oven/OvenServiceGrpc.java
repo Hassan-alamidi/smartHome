@@ -156,21 +156,21 @@ public final class OvenServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<io.grpc.examples.oven.OvenStatus,
-      io.grpc.examples.oven.StringResponse> getStartCookingMethod;
+      io.grpc.examples.oven.OvenStatus> getStartCookingMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "startCooking",
       requestType = io.grpc.examples.oven.OvenStatus.class,
-      responseType = io.grpc.examples.oven.StringResponse.class,
+      responseType = io.grpc.examples.oven.OvenStatus.class,
       methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
   public static io.grpc.MethodDescriptor<io.grpc.examples.oven.OvenStatus,
-      io.grpc.examples.oven.StringResponse> getStartCookingMethod() {
-    io.grpc.MethodDescriptor<io.grpc.examples.oven.OvenStatus, io.grpc.examples.oven.StringResponse> getStartCookingMethod;
+      io.grpc.examples.oven.OvenStatus> getStartCookingMethod() {
+    io.grpc.MethodDescriptor<io.grpc.examples.oven.OvenStatus, io.grpc.examples.oven.OvenStatus> getStartCookingMethod;
     if ((getStartCookingMethod = OvenServiceGrpc.getStartCookingMethod) == null) {
       synchronized (OvenServiceGrpc.class) {
         if ((getStartCookingMethod = OvenServiceGrpc.getStartCookingMethod) == null) {
           OvenServiceGrpc.getStartCookingMethod = getStartCookingMethod = 
-              io.grpc.MethodDescriptor.<io.grpc.examples.oven.OvenStatus, io.grpc.examples.oven.StringResponse>newBuilder()
+              io.grpc.MethodDescriptor.<io.grpc.examples.oven.OvenStatus, io.grpc.examples.oven.OvenStatus>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "oven.OvenService", "startCooking"))
@@ -178,7 +178,7 @@ public final class OvenServiceGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   io.grpc.examples.oven.OvenStatus.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.grpc.examples.oven.StringResponse.getDefaultInstance()))
+                  io.grpc.examples.oven.OvenStatus.getDefaultInstance()))
                   .setSchemaDescriptor(new OvenServiceMethodDescriptorSupplier("startCooking"))
                   .build();
           }
@@ -245,7 +245,7 @@ public final class OvenServiceGrpc {
     /**
      */
     public io.grpc.stub.StreamObserver<io.grpc.examples.oven.OvenStatus> startCooking(
-        io.grpc.stub.StreamObserver<io.grpc.examples.oven.StringResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<io.grpc.examples.oven.OvenStatus> responseObserver) {
       return asyncUnimplementedStreamingCall(getStartCookingMethod(), responseObserver);
     }
 
@@ -284,7 +284,7 @@ public final class OvenServiceGrpc {
             asyncBidiStreamingCall(
               new MethodHandlers<
                 io.grpc.examples.oven.OvenStatus,
-                io.grpc.examples.oven.StringResponse>(
+                io.grpc.examples.oven.OvenStatus>(
                   this, METHODID_START_COOKING)))
           .build();
     }
@@ -343,7 +343,7 @@ public final class OvenServiceGrpc {
     /**
      */
     public io.grpc.stub.StreamObserver<io.grpc.examples.oven.OvenStatus> startCooking(
-        io.grpc.stub.StreamObserver<io.grpc.examples.oven.StringResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<io.grpc.examples.oven.OvenStatus> responseObserver) {
       return asyncBidiStreamingCall(
           getChannel().newCall(getStartCookingMethod(), getCallOptions()), responseObserver);
     }
@@ -498,7 +498,7 @@ public final class OvenServiceGrpc {
       switch (methodId) {
         case METHODID_START_COOKING:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.startCooking(
-              (io.grpc.stub.StreamObserver<io.grpc.examples.oven.StringResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<io.grpc.examples.oven.OvenStatus>) responseObserver);
         default:
           throw new AssertionError();
       }

@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="-13" y="20" width="827" height="450"/>
+      <xy x="-13" y="20" width="845" height="450"/>
     </constraints>
     <properties>
       <alignmentX value="0.0"/>
@@ -84,7 +84,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="ddd2" class="javax.swing.JProgressBar" binding="progressBar1" default-binding="true">
+                  <component id="ddd2" class="javax.swing.JProgressBar" binding="brewingProgressBar">
                     <constraints>
                       <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -151,7 +151,7 @@
                     <properties/>
                     <border type="none"/>
                     <children>
-                      <component id="8dd4a" class="javax.swing.JSlider" binding="slider1" default-binding="true">
+                      <component id="8dd4a" class="javax.swing.JSlider" binding="tempSlider">
                         <constraints>
                           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -161,7 +161,7 @@
                           <value value="55"/>
                         </properties>
                       </component>
-                      <component id="da813" class="javax.swing.JLabel">
+                      <component id="da813" class="javax.swing.JLabel" binding="tempLbl">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -187,12 +187,12 @@
                           <text value="Toggle Heating On/Off"/>
                         </properties>
                       </component>
-                      <component id="a664e" class="javax.swing.JLabel">
+                      <component id="a664e" class="javax.swing.JLabel" binding="heatingStatusTxt">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
-                          <text value="Heating is currently Off"/>
+                          <text value="Heating is currently off"/>
                         </properties>
                       </component>
                       <hspacer id="7d08d">
@@ -389,7 +389,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="98fec" class="javax.swing.JSlider" binding="slider3" default-binding="true">
+                  <component id="98fec" class="javax.swing.JSlider" binding="ovenTimeSlider">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -398,7 +398,7 @@
                       <value value="0"/>
                     </properties>
                   </component>
-                  <component id="3d7b4" class="javax.swing.JLabel">
+                  <component id="3d7b4" class="javax.swing.JLabel" binding="ovenTimerlbl">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -424,7 +424,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="12505" class="javax.swing.JSlider" binding="slider2" default-binding="true">
+                  <component id="12505" class="javax.swing.JSlider" binding="ovenTempSlider">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -433,7 +433,7 @@
                       <value value="0"/>
                     </properties>
                   </component>
-                  <component id="e2f9b" class="javax.swing.JLabel">
+                  <component id="e2f9b" class="javax.swing.JLabel" binding="ovenTempSetting">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -441,7 +441,7 @@
                       <text value="Temp Setting: 0 Degrees"/>
                     </properties>
                   </component>
-                  <component id="d9f2b" class="javax.swing.JLabel">
+                  <component id="d9f2b" class="javax.swing.JLabel" binding="ovenCurrentTemp">
                     <constraints>
                       <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
@@ -463,7 +463,7 @@
               </hspacer>
             </children>
           </grid>
-          <grid id="596ca" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="596ca" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -473,25 +473,84 @@
             <children>
               <component id="bf4c6" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="Output"/>
                 </properties>
               </component>
-              <scrollpane id="5f148">
+              <component id="87e59" class="javax.swing.JTextField" binding="coffeeOutput">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
                 </constraints>
-                <properties/>
-                <border type="none"/>
-                <children>
-                  <component id="4c287" class="javax.swing.JTextArea" binding="Output">
-                    <constraints/>
-                    <properties/>
-                  </component>
-                </children>
-              </scrollpane>
+                <properties>
+                  <editable value="false"/>
+                </properties>
+              </component>
+              <component id="8e15f" class="javax.swing.JTextField" binding="heatingOutput">
+                <constraints>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <editable value="false"/>
+                </properties>
+              </component>
+              <component id="7b8d1" class="javax.swing.JTextField" binding="lightsOutput">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <editable value="false"/>
+                </properties>
+              </component>
+              <component id="dd701" class="javax.swing.JTextField" binding="ovenOutput">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <editable value="false"/>
+                </properties>
+              </component>
+              <component id="9c48b" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Coffee"/>
+                </properties>
+              </component>
+              <component id="20f5b" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Heating"/>
+                </properties>
+              </component>
+              <component id="215ca" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Lights"/>
+                </properties>
+              </component>
+              <component id="6248a" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Oven"/>
+                </properties>
+              </component>
             </children>
           </grid>
         </children>

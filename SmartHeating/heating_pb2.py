@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\rheating.proto\"\x1e\n\x0eStringResponse\x12\x0c\n\x04text\x18\x01 \x01(\t\"\x1e\n\rFloatResponse\x12\r\n\x05value\x18\x01 \x01(\x02\"\x1d\n\x0c\x46loatRequest\x12\r\n\x05value\x18\x01 \x01(\x02\"\x07\n\x05\x45mpty2\xb2\x01\n\x0eHeatingService\x12.\n\x14getSystemTempSetting\x12\x06.Empty\x1a\x0e.FloatResponse\x12:\n\x18\x63hangeSystemTempSettings\x12\r.FloatRequest\x1a\x0f.StringResponse\x12\x34\n\x19toggleHeatingSystemStatus\x12\x06.Empty\x1a\x0f.StringResponseb\x06proto3'
+  serialized_pb=b'\n\rheating.proto\"\x1e\n\x0eStringResponse\x12\x0c\n\x04text\x18\x01 \x01(\t\"\x1c\n\x0bIntResponse\x12\r\n\x05value\x18\x01 \x01(\x05\"\x1b\n\nIntRequest\x12\r\n\x05value\x18\x01 \x01(\x05\"\x07\n\x05\x45mpty2\xae\x01\n\x0eHeatingService\x12,\n\x14getSystemTempSetting\x12\x06.Empty\x1a\x0c.IntResponse\x12\x38\n\x18\x63hangeSystemTempSettings\x12\x0b.IntRequest\x1a\x0f.StringResponse\x12\x34\n\x19toggleHeatingSystemStatus\x12\x06.Empty\x1a\x0f.StringResponseb\x06proto3'
 )
 
 
@@ -55,17 +55,17 @@ _STRINGRESPONSE = _descriptor.Descriptor(
 )
 
 
-_FLOATRESPONSE = _descriptor.Descriptor(
-  name='FloatResponse',
-  full_name='FloatResponse',
+_INTRESPONSE = _descriptor.Descriptor(
+  name='IntResponse',
+  full_name='IntResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='FloatResponse.value', index=0,
-      number=1, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
+      name='value', full_name='IntResponse.value', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -82,21 +82,21 @@ _FLOATRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=49,
-  serialized_end=79,
+  serialized_end=77,
 )
 
 
-_FLOATREQUEST = _descriptor.Descriptor(
-  name='FloatRequest',
-  full_name='FloatRequest',
+_INTREQUEST = _descriptor.Descriptor(
+  name='IntRequest',
+  full_name='IntRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='FloatRequest.value', index=0,
-      number=1, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
+      name='value', full_name='IntRequest.value', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -112,8 +112,8 @@ _FLOATREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=81,
-  serialized_end=110,
+  serialized_start=79,
+  serialized_end=106,
 )
 
 
@@ -136,13 +136,13 @@ _EMPTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=112,
-  serialized_end=119,
+  serialized_start=108,
+  serialized_end=115,
 )
 
 DESCRIPTOR.message_types_by_name['StringResponse'] = _STRINGRESPONSE
-DESCRIPTOR.message_types_by_name['FloatResponse'] = _FLOATRESPONSE
-DESCRIPTOR.message_types_by_name['FloatRequest'] = _FLOATREQUEST
+DESCRIPTOR.message_types_by_name['IntResponse'] = _INTRESPONSE
+DESCRIPTOR.message_types_by_name['IntRequest'] = _INTREQUEST
 DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -153,19 +153,19 @@ StringResponse = _reflection.GeneratedProtocolMessageType('StringResponse', (_me
   })
 _sym_db.RegisterMessage(StringResponse)
 
-FloatResponse = _reflection.GeneratedProtocolMessageType('FloatResponse', (_message.Message,), {
-  'DESCRIPTOR' : _FLOATRESPONSE,
+IntResponse = _reflection.GeneratedProtocolMessageType('IntResponse', (_message.Message,), {
+  'DESCRIPTOR' : _INTRESPONSE,
   '__module__' : 'heating_pb2'
-  # @@protoc_insertion_point(class_scope:FloatResponse)
+  # @@protoc_insertion_point(class_scope:IntResponse)
   })
-_sym_db.RegisterMessage(FloatResponse)
+_sym_db.RegisterMessage(IntResponse)
 
-FloatRequest = _reflection.GeneratedProtocolMessageType('FloatRequest', (_message.Message,), {
-  'DESCRIPTOR' : _FLOATREQUEST,
+IntRequest = _reflection.GeneratedProtocolMessageType('IntRequest', (_message.Message,), {
+  'DESCRIPTOR' : _INTREQUEST,
   '__module__' : 'heating_pb2'
-  # @@protoc_insertion_point(class_scope:FloatRequest)
+  # @@protoc_insertion_point(class_scope:IntRequest)
   })
-_sym_db.RegisterMessage(FloatRequest)
+_sym_db.RegisterMessage(IntRequest)
 
 Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), {
   'DESCRIPTOR' : _EMPTY,
@@ -182,8 +182,8 @@ _HEATINGSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=122,
-  serialized_end=300,
+  serialized_start=118,
+  serialized_end=292,
   methods=[
   _descriptor.MethodDescriptor(
     name='getSystemTempSetting',
@@ -191,7 +191,7 @@ _HEATINGSERVICE = _descriptor.ServiceDescriptor(
     index=0,
     containing_service=None,
     input_type=_EMPTY,
-    output_type=_FLOATRESPONSE,
+    output_type=_INTRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -199,7 +199,7 @@ _HEATINGSERVICE = _descriptor.ServiceDescriptor(
     full_name='HeatingService.changeSystemTempSettings',
     index=1,
     containing_service=None,
-    input_type=_FLOATREQUEST,
+    input_type=_INTREQUEST,
     output_type=_STRINGRESPONSE,
     serialized_options=None,
   ),

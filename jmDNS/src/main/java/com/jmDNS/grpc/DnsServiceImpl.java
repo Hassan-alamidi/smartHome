@@ -33,13 +33,14 @@ public final class DnsServiceImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022jmDnsHandler.proto\022\tDnsServer\"(\n\007detai" +
-      "ls\022\014\n\004port\030\001 \001(\005\022\017\n\007address\030\002 \001(\t\"\007\n\005Emp" +
-      "ty2~\n\nDnsService\0228\n\020selfRegistration\022\022.D" +
-      "nsServer.details\032\020.DnsServer.Empty\0226\n\016se" +
-      "lfUnregister\022\022.DnsServer.details\032\020.DnsSe" +
-      "rver.EmptyB\"\n\016com.jmDNS.grpcB\016DnsService" +
-      "ImplP\001b\006proto3"
+      "\n\022jmDnsHandler.proto\022\tDnsServer\"R\n\007detai" +
+      "ls\022\014\n\004name\030\001 \001(\t\022\014\n\004port\030\002 \001(\005\022\017\n\007addres" +
+      "s\030\003 \001(\t\022\014\n\004type\030\004 \001(\t\022\014\n\004path\030\005 \001(\t\"\007\n\005E" +
+      "mpty2~\n\nDnsService\0228\n\020selfRegistration\022\022" +
+      ".DnsServer.details\032\020.DnsServer.Empty\0226\n\016" +
+      "selfUnregister\022\022.DnsServer.details\032\020.Dns" +
+      "Server.EmptyB\"\n\016com.jmDNS.grpcB\016DnsServi" +
+      "ceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -58,7 +59,7 @@ public final class DnsServiceImpl {
     internal_static_DnsServer_details_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DnsServer_details_descriptor,
-        new java.lang.String[] { "Port", "Address", });
+        new java.lang.String[] { "Name", "Port", "Address", "Type", "Path", });
     internal_static_DnsServer_Empty_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_DnsServer_Empty_fieldAccessorTable = new

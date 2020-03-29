@@ -8,17 +8,47 @@ public interface detailsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 port = 1;</code>
+   * <code>string name = 1;</code>
+   */
+  java.lang.String getName();
+  /**
+   * <code>string name = 1;</code>
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <code>int32 port = 2;</code>
    */
   int getPort();
 
   /**
-   * <code>string address = 2;</code>
+   * <code>string address = 3;</code>
    */
   java.lang.String getAddress();
   /**
-   * <code>string address = 2;</code>
+   * <code>string address = 3;</code>
    */
   com.google.protobuf.ByteString
       getAddressBytes();
+
+  /**
+   * <code>string type = 4;</code>
+   */
+  java.lang.String getType();
+  /**
+   * <code>string type = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getTypeBytes();
+
+  /**
+   * <code>string path = 5;</code>
+   */
+  java.lang.String getPath();
+  /**
+   * <code>string path = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getPathBytes();
 }

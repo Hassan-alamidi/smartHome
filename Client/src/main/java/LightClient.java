@@ -4,7 +4,10 @@ import io.grpc.examples.lights.LightsServiceGrpc;
 import io.grpc.examples.lights.Empty;
 import io.grpc.examples.lights.SintRequest;
 import io.grpc.examples.lights.StringResponse;
+import io.grpc.examples.oven.OvenStatus;
 import io.grpc.stub.StreamObserver;
+
+import java.util.function.Consumer;
 
 
 public class LightClient {
@@ -25,28 +28,30 @@ public class LightClient {
         blockingStub = LightsServiceGrpc.newBlockingStub(channel);
     }
 
-    public String toggleLights(){
+    public String toggleLights() throws io.grpc.StatusRuntimeException{
         StringResponse response = blockingStub.toggleLights(EMPTY);
         return response.getText();
     }
 
-    public void getLightsStatus(){
+    public String getLightsStatus() throws io.grpc.StatusRuntimeException{
         StringResponse response = blockingStub.getLightsStatus(EMPTY);
-        System.out.println(response.getText());
+        return response.getText();
     }
 
-    public void changeLuminosity(int value) {
+    public void changeLuminosity(int value, Consumer<String> callback) throws io.grpc.StatusRuntimeException {
         if (!isStreamActive){
             isStreamActive = true;
             StreamObserver<StringResponse> responseStreamObserver = new StreamObserver<StringResponse>() {
                 @Override
                 public void onNext(StringResponse response) {
-                    System.out.println(response.getText());
+                    callback.accept(response.getText());
                 }
 
                 @Override
                 public void onError(Throwable throwable) {
-
+                    callback.accept("Disconnect From Service");
+                    //TODO change to logger
+                    System.out.println("Disconnect From Service");
                 }
 
                 @Override

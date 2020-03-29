@@ -16,8 +16,11 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private details() {
+    name_ = "";
     port_ = 0;
     address_ = "";
+    type_ = "";
+    path_ = "";
   }
 
   @java.lang.Override
@@ -44,15 +47,33 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
+            break;
+          }
+          case 16: {
 
             port_ = input.readInt32();
             break;
           }
-          case 18: {
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
             address_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            type_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            path_ = s;
             break;
           }
           default: {
@@ -87,19 +108,53 @@ private static final long serialVersionUID = 0L;
             com.jmDNS.grpc.details.class, com.jmDNS.grpc.details.Builder.class);
   }
 
-  public static final int PORT_FIELD_NUMBER = 1;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
+  /**
+   * <code>string name = 1;</code>
+   */
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      name_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string name = 1;</code>
+   */
+  public com.google.protobuf.ByteString
+      getNameBytes() {
+    java.lang.Object ref = name_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PORT_FIELD_NUMBER = 2;
   private int port_;
   /**
-   * <code>int32 port = 1;</code>
+   * <code>int32 port = 2;</code>
    */
   public int getPort() {
     return port_;
   }
 
-  public static final int ADDRESS_FIELD_NUMBER = 2;
+  public static final int ADDRESS_FIELD_NUMBER = 3;
   private volatile java.lang.Object address_;
   /**
-   * <code>string address = 2;</code>
+   * <code>string address = 3;</code>
    */
   public java.lang.String getAddress() {
     java.lang.Object ref = address_;
@@ -114,7 +169,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string address = 2;</code>
+   * <code>string address = 3;</code>
    */
   public com.google.protobuf.ByteString
       getAddressBytes() {
@@ -124,6 +179,74 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       address_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TYPE_FIELD_NUMBER = 4;
+  private volatile java.lang.Object type_;
+  /**
+   * <code>string type = 4;</code>
+   */
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string type = 4;</code>
+   */
+  public com.google.protobuf.ByteString
+      getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PATH_FIELD_NUMBER = 5;
+  private volatile java.lang.Object path_;
+  /**
+   * <code>string path = 5;</code>
+   */
+  public java.lang.String getPath() {
+    java.lang.Object ref = path_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      path_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string path = 5;</code>
+   */
+  public com.google.protobuf.ByteString
+      getPathBytes() {
+    java.lang.Object ref = path_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      path_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -144,11 +267,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    }
     if (port_ != 0) {
-      output.writeInt32(1, port_);
+      output.writeInt32(2, port_);
     }
     if (!getAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, address_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, address_);
+    }
+    if (!getTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, type_);
+    }
+    if (!getPathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, path_);
     }
     unknownFields.writeTo(output);
   }
@@ -159,12 +291,21 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
     if (port_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, port_);
+        .computeInt32Size(2, port_);
     }
     if (!getAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, address_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, address_);
+    }
+    if (!getTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, type_);
+    }
+    if (!getPathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, path_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -182,10 +323,16 @@ private static final long serialVersionUID = 0L;
     com.jmDNS.grpc.details other = (com.jmDNS.grpc.details) obj;
 
     boolean result = true;
+    result = result && getName()
+        .equals(other.getName());
     result = result && (getPort()
         == other.getPort());
     result = result && getAddress()
         .equals(other.getAddress());
+    result = result && getType()
+        .equals(other.getType());
+    result = result && getPath()
+        .equals(other.getPath());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -197,10 +344,16 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + PORT_FIELD_NUMBER;
     hash = (53 * hash) + getPort();
     hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
     hash = (53 * hash) + getAddress().hashCode();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getType().hashCode();
+    hash = (37 * hash) + PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getPath().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -334,9 +487,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      name_ = "";
+
       port_ = 0;
 
       address_ = "";
+
+      type_ = "";
+
+      path_ = "";
 
       return this;
     }
@@ -364,8 +523,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.jmDNS.grpc.details buildPartial() {
       com.jmDNS.grpc.details result = new com.jmDNS.grpc.details(this);
+      result.name_ = name_;
       result.port_ = port_;
       result.address_ = address_;
+      result.type_ = type_;
+      result.path_ = path_;
       onBuilt();
       return result;
     }
@@ -414,11 +576,23 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.jmDNS.grpc.details other) {
       if (other == com.jmDNS.grpc.details.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
       if (other.getPort() != 0) {
         setPort(other.getPort());
       }
       if (!other.getAddress().isEmpty()) {
         address_ = other.address_;
+        onChanged();
+      }
+      if (!other.getType().isEmpty()) {
+        type_ = other.type_;
+        onChanged();
+      }
+      if (!other.getPath().isEmpty()) {
+        path_ = other.path_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -450,15 +624,84 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object name_ = "";
+    /**
+     * <code>string name = 1;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     */
+    public Builder setName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      name_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name = 1;</code>
+     */
+    public Builder clearName() {
+      
+      name_ = getDefaultInstance().getName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string name = 1;</code>
+     */
+    public Builder setNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
     private int port_ ;
     /**
-     * <code>int32 port = 1;</code>
+     * <code>int32 port = 2;</code>
      */
     public int getPort() {
       return port_;
     }
     /**
-     * <code>int32 port = 1;</code>
+     * <code>int32 port = 2;</code>
      */
     public Builder setPort(int value) {
       
@@ -467,7 +710,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int32 port = 1;</code>
+     * <code>int32 port = 2;</code>
      */
     public Builder clearPort() {
       
@@ -478,7 +721,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object address_ = "";
     /**
-     * <code>string address = 2;</code>
+     * <code>string address = 3;</code>
      */
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
@@ -493,7 +736,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string address = 2;</code>
+     * <code>string address = 3;</code>
      */
     public com.google.protobuf.ByteString
         getAddressBytes() {
@@ -509,7 +752,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string address = 2;</code>
+     * <code>string address = 3;</code>
      */
     public Builder setAddress(
         java.lang.String value) {
@@ -522,7 +765,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string address = 2;</code>
+     * <code>string address = 3;</code>
      */
     public Builder clearAddress() {
       
@@ -531,7 +774,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string address = 2;</code>
+     * <code>string address = 3;</code>
      */
     public Builder setAddressBytes(
         com.google.protobuf.ByteString value) {
@@ -541,6 +784,144 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       address_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object type_ = "";
+    /**
+     * <code>string type = 4;</code>
+     */
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string type = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string type = 4;</code>
+     */
+    public Builder setType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string type = 4;</code>
+     */
+    public Builder clearType() {
+      
+      type_ = getDefaultInstance().getType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string type = 4;</code>
+     */
+    public Builder setTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      type_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object path_ = "";
+    /**
+     * <code>string path = 5;</code>
+     */
+    public java.lang.String getPath() {
+      java.lang.Object ref = path_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        path_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string path = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPathBytes() {
+      java.lang.Object ref = path_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        path_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string path = 5;</code>
+     */
+    public Builder setPath(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      path_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string path = 5;</code>
+     */
+    public Builder clearPath() {
+      
+      path_ = getDefaultInstance().getPath();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string path = 5;</code>
+     */
+    public Builder setPathBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      path_ = value;
       onChanged();
       return this;
     }

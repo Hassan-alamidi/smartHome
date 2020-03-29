@@ -26,21 +26,21 @@ public final class HeatingServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<Heating.Empty,
-      Heating.FloatResponse> getGetSystemTempSettingMethod;
+      Heating.IntResponse> getGetSystemTempSettingMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getSystemTempSetting",
       requestType = Heating.Empty.class,
-      responseType = Heating.FloatResponse.class,
+      responseType = Heating.IntResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<Heating.Empty,
-      Heating.FloatResponse> getGetSystemTempSettingMethod() {
-    io.grpc.MethodDescriptor<Heating.Empty, Heating.FloatResponse> getGetSystemTempSettingMethod;
+      Heating.IntResponse> getGetSystemTempSettingMethod() {
+    io.grpc.MethodDescriptor<Heating.Empty, Heating.IntResponse> getGetSystemTempSettingMethod;
     if ((getGetSystemTempSettingMethod = HeatingServiceGrpc.getGetSystemTempSettingMethod) == null) {
       synchronized (HeatingServiceGrpc.class) {
         if ((getGetSystemTempSettingMethod = HeatingServiceGrpc.getGetSystemTempSettingMethod) == null) {
           HeatingServiceGrpc.getGetSystemTempSettingMethod = getGetSystemTempSettingMethod = 
-              io.grpc.MethodDescriptor.<Heating.Empty, Heating.FloatResponse>newBuilder()
+              io.grpc.MethodDescriptor.<Heating.Empty, Heating.IntResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "HeatingService", "getSystemTempSetting"))
@@ -48,7 +48,7 @@ public final class HeatingServiceGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   Heating.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  Heating.FloatResponse.getDefaultInstance()))
+                  Heating.IntResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new HeatingServiceMethodDescriptorSupplier("getSystemTempSetting"))
                   .build();
           }
@@ -57,28 +57,28 @@ public final class HeatingServiceGrpc {
      return getGetSystemTempSettingMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<Heating.FloatRequest,
+  private static volatile io.grpc.MethodDescriptor<Heating.IntRequest,
       Heating.StringResponse> getChangeSystemTempSettingsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "changeSystemTempSettings",
-      requestType = Heating.FloatRequest.class,
+      requestType = Heating.IntRequest.class,
       responseType = Heating.StringResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<Heating.FloatRequest,
+  public static io.grpc.MethodDescriptor<Heating.IntRequest,
       Heating.StringResponse> getChangeSystemTempSettingsMethod() {
-    io.grpc.MethodDescriptor<Heating.FloatRequest, Heating.StringResponse> getChangeSystemTempSettingsMethod;
+    io.grpc.MethodDescriptor<Heating.IntRequest, Heating.StringResponse> getChangeSystemTempSettingsMethod;
     if ((getChangeSystemTempSettingsMethod = HeatingServiceGrpc.getChangeSystemTempSettingsMethod) == null) {
       synchronized (HeatingServiceGrpc.class) {
         if ((getChangeSystemTempSettingsMethod = HeatingServiceGrpc.getChangeSystemTempSettingsMethod) == null) {
           HeatingServiceGrpc.getChangeSystemTempSettingsMethod = getChangeSystemTempSettingsMethod = 
-              io.grpc.MethodDescriptor.<Heating.FloatRequest, Heating.StringResponse>newBuilder()
+              io.grpc.MethodDescriptor.<Heating.IntRequest, Heating.StringResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "HeatingService", "changeSystemTempSettings"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  Heating.FloatRequest.getDefaultInstance()))
+                  Heating.IntRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   Heating.StringResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new HeatingServiceMethodDescriptorSupplier("changeSystemTempSettings"))
@@ -151,13 +151,13 @@ public final class HeatingServiceGrpc {
     /**
      */
     public void getSystemTempSetting(Heating.Empty request,
-        io.grpc.stub.StreamObserver<Heating.FloatResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<Heating.IntResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getGetSystemTempSettingMethod(), responseObserver);
     }
 
     /**
      */
-    public void changeSystemTempSettings(Heating.FloatRequest request,
+    public void changeSystemTempSettings(Heating.IntRequest request,
         io.grpc.stub.StreamObserver<Heating.StringResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getChangeSystemTempSettingsMethod(), responseObserver);
     }
@@ -176,13 +176,13 @@ public final class HeatingServiceGrpc {
             asyncUnaryCall(
               new MethodHandlers<
                 Heating.Empty,
-                Heating.FloatResponse>(
+                Heating.IntResponse>(
                   this, METHODID_GET_SYSTEM_TEMP_SETTING)))
           .addMethod(
             getChangeSystemTempSettingsMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                Heating.FloatRequest,
+                Heating.IntRequest,
                 Heating.StringResponse>(
                   this, METHODID_CHANGE_SYSTEM_TEMP_SETTINGS)))
           .addMethod(
@@ -217,14 +217,14 @@ public final class HeatingServiceGrpc {
     /**
      */
     public void getSystemTempSetting(Heating.Empty request,
-        io.grpc.stub.StreamObserver<Heating.FloatResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<Heating.IntResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGetSystemTempSettingMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void changeSystemTempSettings(Heating.FloatRequest request,
+    public void changeSystemTempSettings(Heating.IntRequest request,
         io.grpc.stub.StreamObserver<Heating.StringResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getChangeSystemTempSettingsMethod(), getCallOptions()), request, responseObserver);
@@ -259,14 +259,14 @@ public final class HeatingServiceGrpc {
 
     /**
      */
-    public Heating.FloatResponse getSystemTempSetting(Heating.Empty request) {
+    public Heating.IntResponse getSystemTempSetting(Heating.Empty request) {
       return blockingUnaryCall(
           getChannel(), getGetSystemTempSettingMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public Heating.StringResponse changeSystemTempSettings(Heating.FloatRequest request) {
+    public Heating.StringResponse changeSystemTempSettings(Heating.IntRequest request) {
       return blockingUnaryCall(
           getChannel(), getChangeSystemTempSettingsMethod(), getCallOptions(), request);
     }
@@ -299,7 +299,7 @@ public final class HeatingServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<Heating.FloatResponse> getSystemTempSetting(
+    public com.google.common.util.concurrent.ListenableFuture<Heating.IntResponse> getSystemTempSetting(
         Heating.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getGetSystemTempSettingMethod(), getCallOptions()), request);
@@ -308,7 +308,7 @@ public final class HeatingServiceGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<Heating.StringResponse> changeSystemTempSettings(
-        Heating.FloatRequest request) {
+        Heating.IntRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getChangeSystemTempSettingsMethod(), getCallOptions()), request);
     }
@@ -345,10 +345,10 @@ public final class HeatingServiceGrpc {
       switch (methodId) {
         case METHODID_GET_SYSTEM_TEMP_SETTING:
           serviceImpl.getSystemTempSetting((Heating.Empty) request,
-              (io.grpc.stub.StreamObserver<Heating.FloatResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<Heating.IntResponse>) responseObserver);
           break;
         case METHODID_CHANGE_SYSTEM_TEMP_SETTINGS:
-          serviceImpl.changeSystemTempSettings((Heating.FloatRequest) request,
+          serviceImpl.changeSystemTempSettings((Heating.IntRequest) request,
               (io.grpc.stub.StreamObserver<Heating.StringResponse>) responseObserver);
           break;
         case METHODID_TOGGLE_HEATING_SYSTEM_STATUS:

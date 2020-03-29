@@ -3,8 +3,10 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.examples.coffee_maker.BrewType;
 import io.grpc.examples.coffee_maker.CoffeeMakerServiceGrpc;
 import io.grpc.examples.coffee_maker.Empty;
-import io.grpc.examples.coffee_maker.StringResponse;
+import io.grpc.examples.coffee_maker.Response;
 import io.grpc.stub.StreamObserver;
+;
+import java.util.function.Consumer;
 
 public class CoffeeMakerClient {
 
@@ -20,22 +22,23 @@ public class CoffeeMakerClient {
         blockingStub = CoffeeMakerServiceGrpc.newBlockingStub(channel);
     }
 
-    public void setBrewingType(){
-        BrewType brewType = BrewType.newBuilder().setBrewType(BrewType.type.SINGLE_CUP).build();
-        StringResponse response = blockingStub.setBrewingType(brewType);
-        System.out.println(response.getText());
+    public String setBrewingType(BrewType.type brewingType){
+        BrewType brewType = BrewType.newBuilder().setBrewType(brewingType).build();
+        return blockingStub.setBrewingType(brewType).getText();
     }
 
-    public void beginBrewing(){
-        StreamObserver<StringResponse> responseStreamObserver = new StreamObserver<StringResponse>() {
+    public void beginBrewing(Consumer<String> output, Consumer<Double> progress){
+        StreamObserver<Response> responseStreamObserver = new StreamObserver<Response>() {
             @Override
-            public void onNext(StringResponse stringResponse) {
-                System.out.println(stringResponse.getText());
+            public void onNext(Response response) {
+                progress.accept(response.getProgress());
+                output.accept(response.getText());
             }
 
             @Override
             public void onError(Throwable throwable) {
-
+                progress.accept(0.0);
+                output.accept("Disconnect From Service");
             }
 
             @Override

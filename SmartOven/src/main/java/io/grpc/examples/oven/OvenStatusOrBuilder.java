@@ -15,4 +15,14 @@ public interface OvenStatusOrBuilder extends
    * <code>.oven.OvenStatus.Status status = 1;</code>
    */
   io.grpc.examples.oven.OvenStatus.Status getStatus();
+
+  /**
+   * <code>float currentTemp = 2;</code>
+   */
+  float getCurrentTemp();
+
+  /**
+   * <code>int32 remainingTime = 3;</code>
+   */
+  int getRemainingTime();
 }

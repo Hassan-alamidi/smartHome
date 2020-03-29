@@ -17,11 +17,11 @@ class HeatingServiceStub(object):
     self.getSystemTempSetting = channel.unary_unary(
         '/HeatingService/getSystemTempSetting',
         request_serializer=heating__pb2.Empty.SerializeToString,
-        response_deserializer=heating__pb2.FloatResponse.FromString,
+        response_deserializer=heating__pb2.IntResponse.FromString,
         )
     self.changeSystemTempSettings = channel.unary_unary(
         '/HeatingService/changeSystemTempSettings',
-        request_serializer=heating__pb2.FloatRequest.SerializeToString,
+        request_serializer=heating__pb2.IntRequest.SerializeToString,
         response_deserializer=heating__pb2.StringResponse.FromString,
         )
     self.toggleHeatingSystemStatus = channel.unary_unary(
@@ -62,11 +62,11 @@ def add_HeatingServiceServicer_to_server(servicer, server):
       'getSystemTempSetting': grpc.unary_unary_rpc_method_handler(
           servicer.getSystemTempSetting,
           request_deserializer=heating__pb2.Empty.FromString,
-          response_serializer=heating__pb2.FloatResponse.SerializeToString,
+          response_serializer=heating__pb2.IntResponse.SerializeToString,
       ),
       'changeSystemTempSettings': grpc.unary_unary_rpc_method_handler(
           servicer.changeSystemTempSettings,
-          request_deserializer=heating__pb2.FloatRequest.FromString,
+          request_deserializer=heating__pb2.IntRequest.FromString,
           response_serializer=heating__pb2.StringResponse.SerializeToString,
       ),
       'toggleHeatingSystemStatus': grpc.unary_unary_rpc_method_handler(

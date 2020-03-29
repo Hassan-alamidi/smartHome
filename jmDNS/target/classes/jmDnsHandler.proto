@@ -12,8 +12,11 @@ service DnsService{
 }
 
 message details{
-    int32 port = 1;
-    string address = 2;
+    string name = 1;
+    int32 port = 2;
+    string address = 3;
+    string type = 4;
+    string path = 5;
 }
 
 message Empty{}

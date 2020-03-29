@@ -11,6 +11,5 @@
 /home/hassan/Documents/CollegeProjects/distributedSystems/smartHome/SmartOven/src/main/java/io/grpc/examples/oven/StringResponseOrBuilder.java
 /home/hassan/Documents/CollegeProjects/distributedSystems/smartHome/SmartOven/src/main/java/io/grpc/examples/oven/StringResponse.java
 /home/hassan/Documents/CollegeProjects/distributedSystems/smartHome/SmartOven/src/main/java/io/grpc/examples/oven/SettingOrBuilder.java
-/home/hassan/Documents/CollegeProjects/distributedSystems/smartHome/SmartOven/src/main/java/io/grpc/examples/oven/OvenClient.java
 /home/hassan/Documents/CollegeProjects/distributedSystems/smartHome/SmartOven/src/main/java/io/grpc/examples/oven/OvenServiceImpl.java
 /home/hassan/Documents/CollegeProjects/distributedSystems/smartHome/SmartOven/src/main/java/io/grpc/examples/oven/OvenServiceGrpc.java

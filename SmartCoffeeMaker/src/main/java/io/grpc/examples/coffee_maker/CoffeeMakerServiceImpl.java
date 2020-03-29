@@ -20,10 +20,10 @@ public final class CoffeeMakerServiceImpl {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_coffeeMaker_BrewType_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_coffeeMaker_StringResponse_descriptor;
+    internal_static_coffeeMaker_Response_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_coffeeMaker_StringResponse_fieldAccessorTable;
+      internal_static_coffeeMaker_Response_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_coffeeMaker_Empty_descriptor;
   static final 
@@ -41,12 +41,12 @@ public final class CoffeeMakerServiceImpl {
       "\n\021coffeeMaker.proto\022\013coffeeMaker\"m\n\010Brew" +
       "Type\022,\n\010BrewType\030\001 \001(\0162\032.coffeeMaker.Bre" +
       "wType.type\"3\n\004type\022\n\n\006CARAFE\020\000\022\017\n\013HALF_C" +
-      "ARAFE\020\001\022\016\n\nSINGLE_CUP\020\002\"\036\n\016StringRespons" +
-      "e\022\014\n\004text\030\001 \001(\t\"\007\n\005Empty2\235\001\n\022CoffeeMaker" +
-      "Service\022D\n\016setBrewingType\022\025.coffeeMaker." +
-      "BrewType\032\033.coffeeMaker.StringResponse\022A\n" +
-      "\014beginBrewing\022\022.coffeeMaker.Empty\032\033.coff" +
-      "eeMaker.StringResponse0\001B9\n\035io.grpc.exam" +
+      "ARAFE\020\001\022\016\n\nSINGLE_CUP\020\002\"*\n\010Response\022\014\n\004t" +
+      "ext\030\001 \001(\t\022\020\n\010progress\030\002 \001(\001\"\007\n\005Empty2\221\001\n" +
+      "\022CoffeeMakerService\022>\n\016setBrewingType\022\025." +
+      "coffeeMaker.BrewType\032\025.coffeeMaker.Respo" +
+      "nse\022;\n\014beginBrewing\022\022.coffeeMaker.Empty\032" +
+      "\025.coffeeMaker.Response0\001B9\n\035io.grpc.exam" +
       "ples.coffee_makerB\026CoffeeMakerServiceImp" +
       "lP\001b\006proto3"
     };
@@ -68,12 +68,12 @@ public final class CoffeeMakerServiceImpl {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_coffeeMaker_BrewType_descriptor,
         new java.lang.String[] { "BrewType", });
-    internal_static_coffeeMaker_StringResponse_descriptor =
+    internal_static_coffeeMaker_Response_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_coffeeMaker_StringResponse_fieldAccessorTable = new
+    internal_static_coffeeMaker_Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_coffeeMaker_StringResponse_descriptor,
-        new java.lang.String[] { "Text", });
+        internal_static_coffeeMaker_Response_descriptor,
+        new java.lang.String[] { "Text", "Progress", });
     internal_static_coffeeMaker_Empty_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_coffeeMaker_Empty_fieldAccessorTable = new

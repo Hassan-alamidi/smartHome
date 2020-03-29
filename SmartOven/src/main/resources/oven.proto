@@ -11,7 +11,7 @@ service OvenService{
     rpc setTimer(IntRequest) returns (StringResponse);
     rpc changeSetting(OvenSetting) returns (StringResponse);
     rpc getCurrentStatus(Empty) returns (OvenStatus);
-    rpc startCooking(stream OvenStatus) returns (stream StringResponse);
+    rpc startCooking(stream OvenStatus) returns (stream OvenStatus);
 }
 
 message IntRequest{
@@ -40,6 +40,8 @@ message OvenStatus{
         COOKING = 3;
     }
     Status status = 1;
+    float currentTemp = 2;
+    int32 remainingTime = 3;
 }
 
 message Empty{

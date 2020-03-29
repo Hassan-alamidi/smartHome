@@ -16,17 +16,19 @@ public class HeatingClient {
         blockingStub = HeatingServiceGrpc.newBlockingStub(channel);
     }
 
-    public void getSystemTempSetting(){
-        Heating.FloatResponse response = blockingStub.getSystemTempSetting(EMPTY);
-        System.out.println(response.getValue());
+    public int getSystemTempSetting() throws io.grpc.StatusRuntimeException{
+        Heating.IntResponse response = blockingStub.getSystemTempSetting(EMPTY);
+        return response.getValue();
     }
 
-    public void changeSystemTempSettings(){
-
+    public void changeSystemTempSettings(int value) throws io.grpc.StatusRuntimeException{
+        Heating.IntRequest request = Heating.IntRequest.newBuilder().setValue(value).build();
+        blockingStub.changeSystemTempSettings(request);
     }
 
-    public void toggleHeatingSystemStatus(){
-
+    public String toggleHeatingSystemStatus() throws io.grpc.StatusRuntimeException{
+        Heating.StringResponse response = blockingStub.toggleHeatingSystemStatus(EMPTY);
+        return response.getText();
     }
 
 }

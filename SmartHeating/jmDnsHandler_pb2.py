@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='DnsServer',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\x12jmDnsHandler.proto\x12\tDnsServer\"(\n\x07\x64\x65tails\x12\x0c\n\x04port\x18\x01 \x01(\x05\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\"\x07\n\x05\x45mpty2~\n\nDnsService\x12\x38\n\x10selfRegistration\x12\x12.DnsServer.details\x1a\x10.DnsServer.Empty\x12\x36\n\x0eselfUnregister\x12\x12.DnsServer.details\x1a\x10.DnsServer.Emptyb\x06proto3'
+  serialized_pb=b'\n\x12jmDnsHandler.proto\x12\tDnsServer\"R\n\x07\x64\x65tails\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\x0c\n\x04path\x18\x05 \x01(\t\"\x07\n\x05\x45mpty2~\n\nDnsService\x12\x38\n\x10selfRegistration\x12\x12.DnsServer.details\x1a\x10.DnsServer.Empty\x12\x36\n\x0eselfUnregister\x12\x12.DnsServer.details\x1a\x10.DnsServer.Emptyb\x06proto3'
 )
 
 
@@ -32,15 +32,36 @@ _DETAILS = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='port', full_name='DnsServer.details.port', index=0,
-      number=1, type=5, cpp_type=1, label=1,
+      name='name', full_name='DnsServer.details.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='port', full_name='DnsServer.details.port', index=1,
+      number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='address', full_name='DnsServer.details.address', index=1,
-      number=2, type=9, cpp_type=9, label=1,
+      name='address', full_name='DnsServer.details.address', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='DnsServer.details.type', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='path', full_name='DnsServer.details.path', index=4,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -58,7 +79,7 @@ _DETAILS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=33,
-  serialized_end=73,
+  serialized_end=115,
 )
 
 
@@ -81,8 +102,8 @@ _EMPTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=75,
-  serialized_end=82,
+  serialized_start=117,
+  serialized_end=124,
 )
 
 DESCRIPTOR.message_types_by_name['details'] = _DETAILS
@@ -111,8 +132,8 @@ _DNSSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=84,
-  serialized_end=210,
+  serialized_start=126,
+  serialized_end=252,
   methods=[
   _descriptor.MethodDescriptor(
     name='selfRegistration',

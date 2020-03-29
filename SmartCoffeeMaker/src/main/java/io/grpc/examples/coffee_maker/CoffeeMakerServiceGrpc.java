@@ -28,21 +28,21 @@ public final class CoffeeMakerServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<io.grpc.examples.coffee_maker.BrewType,
-      io.grpc.examples.coffee_maker.StringResponse> getSetBrewingTypeMethod;
+      io.grpc.examples.coffee_maker.Response> getSetBrewingTypeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "setBrewingType",
       requestType = io.grpc.examples.coffee_maker.BrewType.class,
-      responseType = io.grpc.examples.coffee_maker.StringResponse.class,
+      responseType = io.grpc.examples.coffee_maker.Response.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<io.grpc.examples.coffee_maker.BrewType,
-      io.grpc.examples.coffee_maker.StringResponse> getSetBrewingTypeMethod() {
-    io.grpc.MethodDescriptor<io.grpc.examples.coffee_maker.BrewType, io.grpc.examples.coffee_maker.StringResponse> getSetBrewingTypeMethod;
+      io.grpc.examples.coffee_maker.Response> getSetBrewingTypeMethod() {
+    io.grpc.MethodDescriptor<io.grpc.examples.coffee_maker.BrewType, io.grpc.examples.coffee_maker.Response> getSetBrewingTypeMethod;
     if ((getSetBrewingTypeMethod = CoffeeMakerServiceGrpc.getSetBrewingTypeMethod) == null) {
       synchronized (CoffeeMakerServiceGrpc.class) {
         if ((getSetBrewingTypeMethod = CoffeeMakerServiceGrpc.getSetBrewingTypeMethod) == null) {
           CoffeeMakerServiceGrpc.getSetBrewingTypeMethod = getSetBrewingTypeMethod = 
-              io.grpc.MethodDescriptor.<io.grpc.examples.coffee_maker.BrewType, io.grpc.examples.coffee_maker.StringResponse>newBuilder()
+              io.grpc.MethodDescriptor.<io.grpc.examples.coffee_maker.BrewType, io.grpc.examples.coffee_maker.Response>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "coffeeMaker.CoffeeMakerService", "setBrewingType"))
@@ -50,7 +50,7 @@ public final class CoffeeMakerServiceGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   io.grpc.examples.coffee_maker.BrewType.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.grpc.examples.coffee_maker.StringResponse.getDefaultInstance()))
+                  io.grpc.examples.coffee_maker.Response.getDefaultInstance()))
                   .setSchemaDescriptor(new CoffeeMakerServiceMethodDescriptorSupplier("setBrewingType"))
                   .build();
           }
@@ -60,21 +60,21 @@ public final class CoffeeMakerServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<io.grpc.examples.coffee_maker.Empty,
-      io.grpc.examples.coffee_maker.StringResponse> getBeginBrewingMethod;
+      io.grpc.examples.coffee_maker.Response> getBeginBrewingMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "beginBrewing",
       requestType = io.grpc.examples.coffee_maker.Empty.class,
-      responseType = io.grpc.examples.coffee_maker.StringResponse.class,
+      responseType = io.grpc.examples.coffee_maker.Response.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<io.grpc.examples.coffee_maker.Empty,
-      io.grpc.examples.coffee_maker.StringResponse> getBeginBrewingMethod() {
-    io.grpc.MethodDescriptor<io.grpc.examples.coffee_maker.Empty, io.grpc.examples.coffee_maker.StringResponse> getBeginBrewingMethod;
+      io.grpc.examples.coffee_maker.Response> getBeginBrewingMethod() {
+    io.grpc.MethodDescriptor<io.grpc.examples.coffee_maker.Empty, io.grpc.examples.coffee_maker.Response> getBeginBrewingMethod;
     if ((getBeginBrewingMethod = CoffeeMakerServiceGrpc.getBeginBrewingMethod) == null) {
       synchronized (CoffeeMakerServiceGrpc.class) {
         if ((getBeginBrewingMethod = CoffeeMakerServiceGrpc.getBeginBrewingMethod) == null) {
           CoffeeMakerServiceGrpc.getBeginBrewingMethod = getBeginBrewingMethod = 
-              io.grpc.MethodDescriptor.<io.grpc.examples.coffee_maker.Empty, io.grpc.examples.coffee_maker.StringResponse>newBuilder()
+              io.grpc.MethodDescriptor.<io.grpc.examples.coffee_maker.Empty, io.grpc.examples.coffee_maker.Response>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
                   "coffeeMaker.CoffeeMakerService", "beginBrewing"))
@@ -82,7 +82,7 @@ public final class CoffeeMakerServiceGrpc {
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   io.grpc.examples.coffee_maker.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  io.grpc.examples.coffee_maker.StringResponse.getDefaultInstance()))
+                  io.grpc.examples.coffee_maker.Response.getDefaultInstance()))
                   .setSchemaDescriptor(new CoffeeMakerServiceMethodDescriptorSupplier("beginBrewing"))
                   .build();
           }
@@ -121,14 +121,14 @@ public final class CoffeeMakerServiceGrpc {
     /**
      */
     public void setBrewingType(io.grpc.examples.coffee_maker.BrewType request,
-        io.grpc.stub.StreamObserver<io.grpc.examples.coffee_maker.StringResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<io.grpc.examples.coffee_maker.Response> responseObserver) {
       asyncUnimplementedUnaryCall(getSetBrewingTypeMethod(), responseObserver);
     }
 
     /**
      */
     public void beginBrewing(io.grpc.examples.coffee_maker.Empty request,
-        io.grpc.stub.StreamObserver<io.grpc.examples.coffee_maker.StringResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<io.grpc.examples.coffee_maker.Response> responseObserver) {
       asyncUnimplementedUnaryCall(getBeginBrewingMethod(), responseObserver);
     }
 
@@ -139,14 +139,14 @@ public final class CoffeeMakerServiceGrpc {
             asyncUnaryCall(
               new MethodHandlers<
                 io.grpc.examples.coffee_maker.BrewType,
-                io.grpc.examples.coffee_maker.StringResponse>(
+                io.grpc.examples.coffee_maker.Response>(
                   this, METHODID_SET_BREWING_TYPE)))
           .addMethod(
             getBeginBrewingMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 io.grpc.examples.coffee_maker.Empty,
-                io.grpc.examples.coffee_maker.StringResponse>(
+                io.grpc.examples.coffee_maker.Response>(
                   this, METHODID_BEGIN_BREWING)))
           .build();
     }
@@ -173,7 +173,7 @@ public final class CoffeeMakerServiceGrpc {
     /**
      */
     public void setBrewingType(io.grpc.examples.coffee_maker.BrewType request,
-        io.grpc.stub.StreamObserver<io.grpc.examples.coffee_maker.StringResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<io.grpc.examples.coffee_maker.Response> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSetBrewingTypeMethod(), getCallOptions()), request, responseObserver);
     }
@@ -181,7 +181,7 @@ public final class CoffeeMakerServiceGrpc {
     /**
      */
     public void beginBrewing(io.grpc.examples.coffee_maker.Empty request,
-        io.grpc.stub.StreamObserver<io.grpc.examples.coffee_maker.StringResponse> responseObserver) {
+        io.grpc.stub.StreamObserver<io.grpc.examples.coffee_maker.Response> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getBeginBrewingMethod(), getCallOptions()), request, responseObserver);
     }
@@ -207,14 +207,14 @@ public final class CoffeeMakerServiceGrpc {
 
     /**
      */
-    public io.grpc.examples.coffee_maker.StringResponse setBrewingType(io.grpc.examples.coffee_maker.BrewType request) {
+    public io.grpc.examples.coffee_maker.Response setBrewingType(io.grpc.examples.coffee_maker.BrewType request) {
       return blockingUnaryCall(
           getChannel(), getSetBrewingTypeMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public java.util.Iterator<io.grpc.examples.coffee_maker.StringResponse> beginBrewing(
+    public java.util.Iterator<io.grpc.examples.coffee_maker.Response> beginBrewing(
         io.grpc.examples.coffee_maker.Empty request) {
       return blockingServerStreamingCall(
           getChannel(), getBeginBrewingMethod(), getCallOptions(), request);
@@ -241,7 +241,7 @@ public final class CoffeeMakerServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<io.grpc.examples.coffee_maker.StringResponse> setBrewingType(
+    public com.google.common.util.concurrent.ListenableFuture<io.grpc.examples.coffee_maker.Response> setBrewingType(
         io.grpc.examples.coffee_maker.BrewType request) {
       return futureUnaryCall(
           getChannel().newCall(getSetBrewingTypeMethod(), getCallOptions()), request);
@@ -270,11 +270,11 @@ public final class CoffeeMakerServiceGrpc {
       switch (methodId) {
         case METHODID_SET_BREWING_TYPE:
           serviceImpl.setBrewingType((io.grpc.examples.coffee_maker.BrewType) request,
-              (io.grpc.stub.StreamObserver<io.grpc.examples.coffee_maker.StringResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<io.grpc.examples.coffee_maker.Response>) responseObserver);
           break;
         case METHODID_BEGIN_BREWING:
           serviceImpl.beginBrewing((io.grpc.examples.coffee_maker.Empty) request,
-              (io.grpc.stub.StreamObserver<io.grpc.examples.coffee_maker.StringResponse>) responseObserver);
+              (io.grpc.stub.StreamObserver<io.grpc.examples.coffee_maker.Response>) responseObserver);
           break;
         default:
           throw new AssertionError();

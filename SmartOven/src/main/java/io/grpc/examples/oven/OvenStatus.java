@@ -17,6 +17,8 @@ private static final long serialVersionUID = 0L;
   }
   private OvenStatus() {
     status_ = 0;
+    currentTemp_ = 0F;
+    remainingTime_ = 0;
   }
 
   @java.lang.Override
@@ -47,6 +49,16 @@ private static final long serialVersionUID = 0L;
             int rawValue = input.readEnum();
 
             status_ = rawValue;
+            break;
+          }
+          case 21: {
+
+            currentTemp_ = input.readFloat();
+            break;
+          }
+          case 24: {
+
+            remainingTime_ = input.readInt32();
             break;
           }
           default: {
@@ -214,6 +226,24 @@ private static final long serialVersionUID = 0L;
     return result == null ? io.grpc.examples.oven.OvenStatus.Status.UNRECOGNIZED : result;
   }
 
+  public static final int CURRENTTEMP_FIELD_NUMBER = 2;
+  private float currentTemp_;
+  /**
+   * <code>float currentTemp = 2;</code>
+   */
+  public float getCurrentTemp() {
+    return currentTemp_;
+  }
+
+  public static final int REMAININGTIME_FIELD_NUMBER = 3;
+  private int remainingTime_;
+  /**
+   * <code>int32 remainingTime = 3;</code>
+   */
+  public int getRemainingTime() {
+    return remainingTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -231,6 +261,12 @@ private static final long serialVersionUID = 0L;
     if (status_ != io.grpc.examples.oven.OvenStatus.Status.OFF.getNumber()) {
       output.writeEnum(1, status_);
     }
+    if (currentTemp_ != 0F) {
+      output.writeFloat(2, currentTemp_);
+    }
+    if (remainingTime_ != 0) {
+      output.writeInt32(3, remainingTime_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -243,6 +279,14 @@ private static final long serialVersionUID = 0L;
     if (status_ != io.grpc.examples.oven.OvenStatus.Status.OFF.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, status_);
+    }
+    if (currentTemp_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeFloatSize(2, currentTemp_);
+    }
+    if (remainingTime_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(3, remainingTime_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -261,6 +305,12 @@ private static final long serialVersionUID = 0L;
 
     boolean result = true;
     result = result && status_ == other.status_;
+    result = result && (
+        java.lang.Float.floatToIntBits(getCurrentTemp())
+        == java.lang.Float.floatToIntBits(
+            other.getCurrentTemp()));
+    result = result && (getRemainingTime()
+        == other.getRemainingTime());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -274,6 +324,11 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + STATUS_FIELD_NUMBER;
     hash = (53 * hash) + status_;
+    hash = (37 * hash) + CURRENTTEMP_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(
+        getCurrentTemp());
+    hash = (37 * hash) + REMAININGTIME_FIELD_NUMBER;
+    hash = (53 * hash) + getRemainingTime();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -409,6 +464,10 @@ private static final long serialVersionUID = 0L;
       super.clear();
       status_ = 0;
 
+      currentTemp_ = 0F;
+
+      remainingTime_ = 0;
+
       return this;
     }
 
@@ -436,6 +495,8 @@ private static final long serialVersionUID = 0L;
     public io.grpc.examples.oven.OvenStatus buildPartial() {
       io.grpc.examples.oven.OvenStatus result = new io.grpc.examples.oven.OvenStatus(this);
       result.status_ = status_;
+      result.currentTemp_ = currentTemp_;
+      result.remainingTime_ = remainingTime_;
       onBuilt();
       return result;
     }
@@ -486,6 +547,12 @@ private static final long serialVersionUID = 0L;
       if (other == io.grpc.examples.oven.OvenStatus.getDefaultInstance()) return this;
       if (other.status_ != 0) {
         setStatusValue(other.getStatusValue());
+      }
+      if (other.getCurrentTemp() != 0F) {
+        setCurrentTemp(other.getCurrentTemp());
+      }
+      if (other.getRemainingTime() != 0) {
+        setRemainingTime(other.getRemainingTime());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -557,6 +624,58 @@ private static final long serialVersionUID = 0L;
     public Builder clearStatus() {
       
       status_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private float currentTemp_ ;
+    /**
+     * <code>float currentTemp = 2;</code>
+     */
+    public float getCurrentTemp() {
+      return currentTemp_;
+    }
+    /**
+     * <code>float currentTemp = 2;</code>
+     */
+    public Builder setCurrentTemp(float value) {
+      
+      currentTemp_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>float currentTemp = 2;</code>
+     */
+    public Builder clearCurrentTemp() {
+      
+      currentTemp_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private int remainingTime_ ;
+    /**
+     * <code>int32 remainingTime = 3;</code>
+     */
+    public int getRemainingTime() {
+      return remainingTime_;
+    }
+    /**
+     * <code>int32 remainingTime = 3;</code>
+     */
+    public Builder setRemainingTime(int value) {
+      
+      remainingTime_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 remainingTime = 3;</code>
+     */
+    public Builder clearRemainingTime() {
+      
+      remainingTime_ = 0;
       onChanged();
       return this;
     }

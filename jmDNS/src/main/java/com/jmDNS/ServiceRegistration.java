@@ -1,41 +1,66 @@
 package com.jmDNS;
 
+import com.jmDNS.grpc.DnsServiceGrpc;
+import com.jmDNS.grpc.Empty;
+import com.jmDNS.grpc.details;
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
+import io.grpc.stub.StreamObserver;
+
 import javax.jmdns.JmDNS;
 import javax.jmdns.ServiceInfo;
 import java.io.IOException;
 import java.net.InetAddress;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-public class ServiceRegistration {
+public class ServiceRegistration extends DnsServiceGrpc.DnsServiceImplBase {
 
-    private static final String DEFAULT_TYPE = "_http._tcp.local.";
-    private static final String DEFAULT_PATH = "path=index.html";
+    private static final int PORT = 9090;
     private static JmDNS jmDNS;
+    private static Map<String, ServiceInfo> listOfServices;
 
     public static void main(String[] args){
+        listOfServices = new HashMap<String, ServiceInfo>();
+
         try {
+            ServiceRegistration serviceRegistration = new ServiceRegistration();
+            Server server = ServerBuilder.forPort(PORT)
+                    .addService(serviceRegistration)
+                    .build()
+                    .start();
             jmDNS = JmDNS.create(InetAddress.getLocalHost());
 
-            ServiceInfo serviceInfo = ServiceInfo.create(DEFAULT_TYPE, "SmartOven", 8080, DEFAULT_PATH);
-            jmDNS.registerService(serviceInfo);
-
-            serviceInfo = ServiceInfo.create(DEFAULT_TYPE, "SmartCoffeeMaker", 8000, DEFAULT_PATH);
-            jmDNS.registerService(serviceInfo);
-
-            serviceInfo = ServiceInfo.create(DEFAULT_TYPE, "Lights", 9000, DEFAULT_PATH);
-            jmDNS.registerService(serviceInfo);
-
-            serviceInfo = ServiceInfo.create(DEFAULT_TYPE, "Heating", 4000, DEFAULT_PATH);
-            jmDNS.registerService(serviceInfo);
-        } catch (IOException e) {
+            server.awaitTermination();
+        } catch (IOException | InterruptedException e) {
             //TODO handle this properly
             e.printStackTrace();
         }
     }
 
-    private void unregister(String name){
-        ServiceInfo serviceInfo = jmDNS.getServiceInfo(DEFAULT_TYPE,name);
-        if(serviceInfo != null){
-            jmDNS.unregisterService(serviceInfo);
+    @Override
+    public void selfRegistration(details request, StreamObserver<Empty> responseObserver) throws io.grpc.StatusRuntimeException {
+        try {
+            System.out.println("Service Registered");
+            ServiceInfo serviceInfo = ServiceInfo.create(request.getType(), request.getName(), request.getPort(), request.getPath());
+            jmDNS.registerService(serviceInfo);
+            listOfServices.put(request.getName(), serviceInfo);
+            Empty empty = Empty.newBuilder().build();
+            responseObserver.onNext(empty);
+            responseObserver.onCompleted();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
+
+    @Override
+    public void selfUnregister(details request, StreamObserver<Empty> responseObserver) throws io.grpc.StatusRuntimeException {
+        ServiceInfo info = listOfServices.remove(request.getName());
+        jmDNS.unregisterService(info);
+        Empty empty = Empty.newBuilder().build();
+        responseObserver.onNext(empty);
+        responseObserver.onCompleted();
     }
 }

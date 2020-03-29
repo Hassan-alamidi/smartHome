@@ -7,8 +7,8 @@ option java_outer_classname = "CoffeeMakerServiceImpl";
 package coffeeMaker;
 
 service CoffeeMakerService{
-    rpc setBrewingType(BrewType) returns (StringResponse);
-    rpc beginBrewing(Empty) returns (stream StringResponse);
+    rpc setBrewingType(BrewType) returns (Response);
+    rpc beginBrewing(Empty) returns (stream Response);
 }
 
 message BrewType{
@@ -21,8 +21,9 @@ message BrewType{
     type BrewType = 1;
 }
 
-message StringResponse{
+message Response{
     string text = 1;
+    double progress = 2;
 }
 
 message Empty{
