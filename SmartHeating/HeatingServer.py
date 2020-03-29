@@ -1,5 +1,8 @@
 from concurrent import futures
 import logging
+
+from grpc._channel import _InactiveRpcError
+
 import heating_pb2
 import heating_pb2_grpc
 import jmDnsHandler_pb2
@@ -40,7 +43,12 @@ class HeatingServer(heating_pb2_grpc.HeatingServiceServicer):
         return response
 
 
+serverDetails = None
+stub = None
+
+
 def serve():
+    global serverDetails, stub
     try:
         server = grpc.server(futures.ThreadPoolExecutor(max_workers=4))
         heating_pb2_grpc.add_HeatingServiceServicer_to_server(HeatingServer(), server)
@@ -54,8 +62,11 @@ def serve():
         stub.selfRegistration(serverDetails)
         print("Server is listening")
         server.wait_for_termination()
-    except:
+    except _InactiveRpcError as error:
         print("Dns server must be turned on first")
+    except:
+        print("Shutting down")
+        stub.selfUnregister(serverDetails)
 
 
 serve()

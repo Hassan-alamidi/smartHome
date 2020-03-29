@@ -45,16 +45,25 @@ public class CoffeeMakerServer extends CoffeeMakerServiceImplBase {
                     .setPath(DEFAULT_PATH)
                     .build();
             blockingStub.selfRegistration(serverDetails);
+            createShutdownHook();
 
             System.out.println("Server is listening");
             server.awaitTermination();
         } catch(io.grpc.StatusRuntimeException e){
-            //TODO change with logger
             System.out.println("Error: You must start the dns server first");
         } catch (IOException | InterruptedException e) {
-            //TODO handle this properly
             e.printStackTrace();
         }
+    }
+
+    private static void createShutdownHook(){
+        //this is a shutdown hook to ensure the service gets unregistered when shutting down
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            public void run() {
+                System.out.println("shutdown");
+                blockingStub.selfUnregister(serverDetails);
+            }
+        }));
     }
 
     private static void DnsConnection(){
@@ -102,7 +111,6 @@ public class CoffeeMakerServer extends CoffeeMakerServiceImplBase {
                     responseObserver.onNext(response);
                     System.out.println(percent);
                 } catch (InterruptedException e) {
-                    //TODO handle this properly
                     e.printStackTrace();
                 }
             }

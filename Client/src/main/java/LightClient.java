@@ -50,7 +50,6 @@ public class LightClient {
                 @Override
                 public void onError(Throwable throwable) {
                     callback.accept("Disconnect From Service");
-                    //TODO change to logger
                     System.out.println("Disconnect From Service");
                 }
 

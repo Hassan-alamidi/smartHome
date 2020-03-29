@@ -44,17 +44,26 @@ public class LightServer extends LightsServiceImplBase {
                                     .setPath(DEFAULT_PATH)
                                     .build();
             blockingStub.selfRegistration(serverDetails);
+            createShutdownHook();
             System.out.println("Server is listening");
             server.awaitTermination();
         } catch(io.grpc.StatusRuntimeException e){
-            //TODO change with logger
             System.out.println("Error: You must start the dns server first");
         } catch (IOException | InterruptedException e) {
             blockingStub.selfUnregister(serverDetails);
-            //TODO handle this properly
             e.printStackTrace();
         }
 
+    }
+
+    private static void createShutdownHook(){
+        //this is a shutdown hook to ensure the service gets unregistered when shutting down
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            public void run() {
+                System.out.println("shutdown");
+                blockingStub.selfUnregister(serverDetails);
+            }
+        }));
     }
 
     private static void DnsConnection(){
@@ -113,7 +122,6 @@ public class LightServer extends LightsServiceImplBase {
 
             @Override
             public void onError(Throwable t) {
-                // TODO Auto-generated method stub
                 responseObserver.onNext( StringResponse.newBuilder().setText("Out of bounds").build());
                 responseObserver.onCompleted();
             }

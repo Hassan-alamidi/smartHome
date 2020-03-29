@@ -13,65 +13,59 @@ public class main {
     public static OvenClient ovenClient = new OvenClient();
     public static LightClient lightClient = new LightClient();
     public static HeatingClient heatingClient = new HeatingClient();
-    //PLANNN all services on GUI are grayed out but as they are resolved they will nolonger be grayed out
-    //this will probably solve the issue with java skipping if statements in loops for initializations as no loop will be required
 
     public static void main(String[] args){
-        JmDNS jmdns = null;
         try {
-            jmdns = JmDNS.create(InetAddress.getLocalHost());
-            // Add a service listener
+            //create an instance of jmDns
+            JmDNS jmdns = JmDNS.create(InetAddress.getLocalHost());
+            // Add a service listener, to listen out for services to become available or unavailable
             jmdns.addServiceListener("_http._tcp.local.", new SampleListener());
         } catch (final IOException e) {
-            //TODO handle this properly, in other words, if fails whats plan B
+            //print exception to console, might change this to sl4j logger and store in log file
             e.printStackTrace();
         }
+        //setup the GUI
         JFrame frame = new MainMenu();
         frame.setVisible(true);
     }
 
     private static class SampleListener implements ServiceListener {
-        //TODO move this into its own file when GUI has been implemented
         public void serviceAdded(final ServiceEvent event) {
-            System.out.println(event.getInfo().getName());
+            //print to console a service being added
+            System.out.println(event.getInfo().getName() + " has been added");
         }
 
         public void serviceRemoved(final ServiceEvent event) {
+            //get the removed service information
             final ServiceInfo info = event.getInfo();
-            System.out.println(info.getName());
-            if (info.getName().equals("SmartOven")) {
-                ovenClient.setupClient(info.getHostAddresses()[0],info.getPort());
-                System.out.println("Oven sever removed");
-            }else if(info.getName().equals("SmartCoffeeMaker")){
-                coffeeMakerClient.setupClient(info.getHostAddresses()[0],info.getPort());
-                System.out.println("Coffee sever removed");
-            }else if(info.getName().equals("Lights")){
-                lightClient.setupClient(info.getHostAddresses()[0],info.getPort());
-                System.out.println("Light sever removed");
-            }else if(info.getName().equals("Heating")){
-                System.out.println("Heating sever removed");
-                heatingClient.setupClient(info.getHostAddresses()[0],info.getPort());
-            }else {
-                System.out.println("Service not implemented");
-            }
+            //print the service information
+            System.out.println(info.getName() + " sever removed");
         }
 
         public void serviceResolved(final ServiceEvent event) {
+            //get the resolved service information
             final ServiceInfo info = event.getInfo();
-            if (info.getName().equals("SmartOven")) {
-                ovenClient.setupClient(info.getHostAddresses()[0],info.getPort());
-                System.out.println("Oven sever resolved");
-            }else if(info.getName().equals("SmartCoffeeMaker")){
-                coffeeMakerClient.setupClient(info.getHostAddresses()[0],info.getPort());
-                System.out.println("Coffee sever resolved");
-            }else if(info.getName().equals("Lights")){
-                lightClient.setupClient(info.getHostAddresses()[0],info.getPort());
-                System.out.println("Light sever resolved");
-            }else if(info.getName().equals("Heating")){
-                System.out.println("Heating sever resolved");
-                heatingClient.setupClient(info.getHostAddresses()[0],info.getPort());
-            }else {
-                System.out.println("Service not implemented");
+            //check the service name, this switch is only really to check if service is recognised
+            switch (info.getName()) {
+                case "SmartOven":
+                    ovenClient.setupClient(info.getHostAddresses()[0], info.getPort());
+                    System.out.println("Oven sever resolved");
+                    break;
+                case "SmartCoffeeMaker":
+                    coffeeMakerClient.setupClient(info.getHostAddresses()[0], info.getPort());
+                    System.out.println("Coffee sever resolved");
+                    break;
+                case "Lights":
+                    lightClient.setupClient(info.getHostAddresses()[0], info.getPort());
+                    System.out.println("Light sever resolved");
+                    break;
+                case "Heating":
+                    System.out.println("Heating sever resolved");
+                    heatingClient.setupClient(info.getHostAddresses()[0], info.getPort());
+                    break;
+                default:
+                    System.out.println("Service not implemented");
+                    break;
             }
         }
     }

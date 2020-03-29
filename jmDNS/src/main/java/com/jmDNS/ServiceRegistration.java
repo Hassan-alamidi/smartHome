@@ -35,7 +35,7 @@ public class ServiceRegistration extends DnsServiceGrpc.DnsServiceImplBase {
 
             server.awaitTermination();
         } catch (IOException | InterruptedException e) {
-            //TODO handle this properly
+            //printing to terminal, no need to store in log file
             e.printStackTrace();
         }
     }
@@ -57,6 +57,7 @@ public class ServiceRegistration extends DnsServiceGrpc.DnsServiceImplBase {
 
     @Override
     public void selfUnregister(details request, StreamObserver<Empty> responseObserver) throws io.grpc.StatusRuntimeException {
+        System.out.println("Unregistered");
         ServiceInfo info = listOfServices.remove(request.getName());
         jmDNS.unregisterService(info);
         Empty empty = Empty.newBuilder().build();
