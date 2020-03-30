@@ -32,19 +32,23 @@ public class CoffeeMakerServer extends CoffeeMakerServiceImplBase {
         CoffeeMakerServer coffeeMakerServer = new CoffeeMakerServer();
 
         try {
+            //create server and start the server instance
             Server server = ServerBuilder.forPort(PORT)
                                         .addService(coffeeMakerServer)
                                         .build()
                                         .start();
-
+            //connect to dns server
             DnsConnection();
+            //create a message containing all of the servers details
             serverDetails = details.newBuilder()
                     .setPort(PORT)
                     .setType(DEFAULT_TYPE)
                     .setName(SERVER_NAME)
                     .setPath(DEFAULT_PATH)
                     .build();
+            //pass the server details on to the DNS server for registration
             blockingStub.selfRegistration(serverDetails);
+            //create a shutdown hook to allow the server to unregister itself from the DNS services list
             createShutdownHook();
 
             System.out.println("Server is listening");
@@ -67,6 +71,7 @@ public class CoffeeMakerServer extends CoffeeMakerServiceImplBase {
     }
 
     private static void DnsConnection(){
+        //create connection to dns server
         ManagedChannel channel = ManagedChannelBuilder.forAddress(DNS_SERVER_ADDRESS, DNS_SERVER_PORT)
                 .usePlaintext()
                 .build();
@@ -75,8 +80,10 @@ public class CoffeeMakerServer extends CoffeeMakerServiceImplBase {
 
     @Override
     public void setBrewingType(BrewType request, StreamObserver<Response> responseObserver) {
+        //get the brewing type and set it
         BrewType.type brewType = request.getBrewType();
         String message;
+        //set timer based on brewType passed in
         switch (brewType){
             case CARAFE:
                 timer = FULL_CARAFE_BREW_TIME;
@@ -90,6 +97,7 @@ public class CoffeeMakerServer extends CoffeeMakerServiceImplBase {
                 timer = SINGLE_CUP_BREW_TIME;
                 message = "Coffee maker set to brew single cup";
         }
+        //build a message response and return to client
         response = Response.newBuilder().setText(message).build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
@@ -99,12 +107,14 @@ public class CoffeeMakerServer extends CoffeeMakerServiceImplBase {
     public void beginBrewing(Empty request, StreamObserver<Response> responseObserver) {
 
         if(timer > 0){
+            //let the client know the brewing process has begun
             response = Response.newBuilder().setText("Your coffee is being brewed").build();
             responseObserver.onNext(response);
             response = Response.newBuilder().setText("Please Wait").build();
             responseObserver.onNext(response);
             for (float i = 0; i < timer; i++) {
                 try {
+                    //every second update the client to let them know the current status of the brewing process, passing back the completion percentage
                     Thread.sleep(1000);
                     double percent = Math.ceil((i/timer)*100);
                     response = Response.newBuilder().setText("Brewing").setProgress(percent).build();
@@ -114,6 +124,7 @@ public class CoffeeMakerServer extends CoffeeMakerServiceImplBase {
                     e.printStackTrace();
                 }
             }
+            //let the client know the coffee has been brewed
             response = Response.newBuilder().setText("Your coffee has been brewed").setProgress(100).build();
         }else {
             response = Response.newBuilder().setText("brew type not set").build();

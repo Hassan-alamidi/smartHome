@@ -32,18 +32,23 @@ public class LightServer extends LightsServiceImplBase {
         LightServer lightServer = new LightServer();
 
         try {
+            //create server and start the server instance
             final Server server = ServerBuilder.forPort(PORT)
                                                 .addService(lightServer)
                                                 .build()
                                                 .start();
+            //connect to dns server
             DnsConnection();
+            //create a message containing all of the servers details
             serverDetails = details.newBuilder()
                                     .setPort(PORT)
                                     .setType(DEFAULT_TYPE)
                                     .setName(SERVER_NAME)
                                     .setPath(DEFAULT_PATH)
                                     .build();
+            //pass the server details on to the DNS server for registration
             blockingStub.selfRegistration(serverDetails);
+            //create a shutdown hook to allow the server to unregister itself from the DNS services list
             createShutdownHook();
             System.out.println("Server is listening");
             server.awaitTermination();
@@ -67,6 +72,7 @@ public class LightServer extends LightsServiceImplBase {
     }
 
     private static void DnsConnection(){
+        //create connection to dns server
         ManagedChannel channel = ManagedChannelBuilder.forAddress(DNS_SERVER_ADDRESS, DNS_SERVER_PORT)
                 .usePlaintext()
                 .build();
@@ -75,6 +81,7 @@ public class LightServer extends LightsServiceImplBase {
 
     @Override
     public void toggleLights(final Empty request, final StreamObserver<StringResponse> responseObserver) {
+        //reverse the light status
         lightOn = !lightOn;
         String message;
         if(lightOn){
@@ -82,7 +89,7 @@ public class LightServer extends LightsServiceImplBase {
         }else {
             message = "Lights have been turned off";
         }
-
+        //build a message response and return to client
         StringResponse response = StringResponse.newBuilder()
                                                 .setText(message)
                                                 .build();
@@ -92,13 +99,14 @@ public class LightServer extends LightsServiceImplBase {
 
     @Override
     public void getLightsStatus(final Empty request, final StreamObserver<StringResponse> responseObserver) {
+        //check light status
         String message;
         if(lightOn){
             message = "Lights turned on, current luminosity set to " + currentLuminosity;
         }else {
             message = "Lights are currently turned off";
         }
-
+        //build a message response and return to client
         StringResponse response = StringResponse.newBuilder()
                                                 .setText(message)
                                                 .build();
@@ -113,9 +121,11 @@ public class LightServer extends LightsServiceImplBase {
             int beforeRequest = currentLuminosity;
             @Override
             public void onNext(SintRequest value) {
+                //make sure value passed from client is not out of bounds
                 if(value.getValue() < MAX_LUMENS && value.getValue() > MIN_LUMENS){
                     currentLuminosity = value.getValue();
                 }else {
+                    //build a message response and return to client
                     responseObserver.onNext( StringResponse.newBuilder().setText("Out of bounds").build());
                     responseObserver.onCompleted();
                 }
@@ -136,7 +146,7 @@ public class LightServer extends LightsServiceImplBase {
                 }else{
                     message = "no change";
                 }
-
+                //build a message response and return to client
                 StringResponse response = StringResponse.newBuilder().setText(message).build();
                 responseObserver.onNext(response);
                 responseObserver.onCompleted();

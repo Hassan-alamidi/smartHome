@@ -44,7 +44,7 @@ public class CoffeeMakerClient {
             @Override
             public void onError(Throwable throwable) {
                 //connection to server failed reset and tell user what has happened
-                progress.accept(0.0);
+                progress.accept(-0.1);
                 output.accept("Disconnect From Service");
                 System.out.println("Disconnect From Service");
             }

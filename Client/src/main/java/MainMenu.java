@@ -53,11 +53,17 @@ public class MainMenu extends JFrame {
 
 
     public MainMenu(){
+        //setup GUI
         super(APP_TITLE);
         panel1.setPreferredSize(new Dimension(830,350));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(panel1);
         this.pack();
+        coffeeSettings = new ButtonGroup();
+        coffeeSettings.add(fullCarafeRBtn);
+        coffeeSettings.add(halfCarafeRBtn);
+        coffeeSettings.add(singleCupRBtn);
+        //setup GUI components for each service
         setupLighting();
         setupCoffeeMachine();
         setupHeating();
@@ -69,6 +75,7 @@ public class MainMenu extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
+                    //the brew coffee method, passing in two lambda functions to work as callbacks which update the GUI when an even occurs
                     main.coffeeMakerClient.beginBrewing(output -> coffeeOutput.setText(output), progress -> updateCoffeeProgress(progress));
                 }catch (java.lang.NullPointerException | io.grpc.StatusRuntimeException e){
                     coffeeOutput.setText("Could not connect to service");
@@ -81,6 +88,7 @@ public class MainMenu extends JFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
                     if (singleCupRBtn.isSelected()) {
+                        //select the coffee brew type
                         String response = main.coffeeMakerClient.setBrewingType(BrewType.type.SINGLE_CUP);
                         coffeeOutput.setText(response);
                     }
@@ -95,6 +103,7 @@ public class MainMenu extends JFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
                     if (halfCarafeRBtn.isSelected()) {
+                        //select the coffee brew type
                         String response = main.coffeeMakerClient.setBrewingType(BrewType.type.HALF_CARAFE);
                         coffeeOutput.setText(response);
                     }
@@ -109,6 +118,7 @@ public class MainMenu extends JFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
                     if (fullCarafeRBtn.isSelected()) {
+                        //select the coffee brew type
                         String response = main.coffeeMakerClient.setBrewingType(BrewType.type.CARAFE);
                         coffeeOutput.setText(response);
                     }
@@ -127,6 +137,7 @@ public class MainMenu extends JFrame {
             @Override
             public void stateChanged(ChangeEvent changeEvent) {
                 try{
+                    //this schedules the stream to end after 10 seconds
                     if(!main.lightClient.isStreamActive()){
                         new java.util.Timer().schedule(
                                 new java.util.TimerTask() {
@@ -141,10 +152,10 @@ public class MainMenu extends JFrame {
                                             lightStatusLbl.setText("Light Status: Off");
                                         }
                                     }
-                                },
-                                10000
+                                },10000
                         );
                     }
+                    //change luminosity stream
                     main.lightClient.changeLuminosity((int)spinner1.getValue(), (value) -> lightsOutput.setText(value));
                     currentLumins.setText("Current Luminosity: " + spinner1.getValue());
                 }catch (java.lang.NullPointerException | io.grpc.StatusRuntimeException e){
@@ -157,6 +168,7 @@ public class MainMenu extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
+                    //toggle lights
                     String status = main.lightClient.toggleLights();
                     if (status.contains("on")) {
                         lightStatusLbl.setText("Light Status: On");
@@ -177,6 +189,7 @@ public class MainMenu extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
+                    //turn heating on/off
                     String response = main.heatingClient.toggleHeatingSystemStatus();
                     if (response.contains("on")) {
                         heatingStatusTxt.setText("Heating is currently on");
@@ -195,8 +208,11 @@ public class MainMenu extends JFrame {
             @Override
             public void stateChanged(ChangeEvent changeEvent) {
                 try {
+                    //change the system heat setting
                     main.heatingClient.changeSystemTempSettings(tempSlider.getValue());
+                    //get the setting to ensure value was updated
                     int temp = main.heatingClient.getSystemTempSetting();
+                    //update UI with the values received from the server rather than user input
                     tempSlider.setValue(temp);
                     tempLbl.setText("Temp Setting " + temp + " degrees");
                 }catch (java.lang.NullPointerException | io.grpc.StatusRuntimeException e){
@@ -212,6 +228,7 @@ public class MainMenu extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
+                    //change oven setting
                     String response = main.ovenClient.changeSetting(OvenSetting.Setting.GRILL);
                     ovenOutput.setText(response);
                 }catch (java.lang.NullPointerException | io.grpc.StatusRuntimeException e){
@@ -223,6 +240,7 @@ public class MainMenu extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
+                    //change oven setting
                     String response = main.ovenClient.changeSetting(OvenSetting.Setting.FAN_ASSISTED);
                     ovenOutput.setText(response);
                 }catch (java.lang.NullPointerException | io.grpc.StatusRuntimeException e){
@@ -234,6 +252,7 @@ public class MainMenu extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
+                    //change oven setting
                     String response = main.ovenClient.changeSetting(OvenSetting.Setting.UNASSISTED);
                     ovenOutput.setText(response);
                 }catch (java.lang.NullPointerException | io.grpc.StatusRuntimeException e){
@@ -245,6 +264,7 @@ public class MainMenu extends JFrame {
             @Override
             public void stateChanged(ChangeEvent changeEvent) {
                 try {
+                    //set the oven desired temperature
                     String response = main.ovenClient.setTemp(ovenTempSlider.getValue());
                     if (response != null) {
                         ovenOutput.setText(response);
@@ -260,6 +280,7 @@ public class MainMenu extends JFrame {
             @Override
             public void stateChanged(ChangeEvent changeEvent) {
                 try {
+                    //set the oven timer
                     String response = main.ovenClient.setTimer(ovenTimeSlider.getValue());
                     if (response != null) {
                         ovenOutput.setText(response);
@@ -275,6 +296,7 @@ public class MainMenu extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
+                    //start the cooking stream
                     main.ovenClient.startCooking(status -> updateOvenStatus(status));
                 }catch (java.lang.NullPointerException | io.grpc.StatusRuntimeException e){
                     ovenOutput.setText("Could not connect to service");
@@ -283,11 +305,17 @@ public class MainMenu extends JFrame {
         });
     }
 
+    //this updates the coffee GUI with the current status of the coffee maker
     public void updateCoffeeProgress(double progress){
         brewingProgressBar.setValue((int) progress);
         brewingProgressBar.setString("Brewing Progress " + (int)progress + "%");
+        //if progress is less than 0% (indicates an error) or 100% then deselect any radio buttons
+        if(progress < 0.0 || progress >= 100){
+            coffeeSettings.clearSelection();
+        }
     }
 
+    //this updates the oven GUI with the current status of the oven
     public void updateOvenStatus(OvenStatus currentStatus){
         try {
             if (currentStatus.getStatus().equals(OvenStatus.Status.PRE_HEAT)) {
