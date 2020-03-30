@@ -21,7 +21,7 @@ public class OvenServer extends OvenServiceImplBase {
 
     private static DnsServiceGrpc.DnsServiceBlockingStub blockingStub;
     private static details serverDetails;
-    private OvenStatus.Status ovenStatus = OvenStatus.Status.OFF;
+    private static OvenStatus.Status ovenStatus = OvenStatus.Status.OFF;
     private float desiredTemp = 0;
     private float currentTemp = 0;
     private int timer = 0;
@@ -130,7 +130,7 @@ public class OvenServer extends OvenServiceImplBase {
                         currentStatus = OvenStatus.newBuilder().setCurrentTemp(currentTemp).setRemainingTime(timer).setStatus(ovenStatus).build();
                     }else if(timer > 0 && newStatus.equals(OvenStatus.Status.COOKING)){
                         ovenStatus = newStatus;
-                        for (int i = timer; i > 0; i--) {
+                        for (int i = timer; i > 0 && ovenStatus.equals(OvenStatus.Status.COOKING); i--) {
                             Thread.sleep(1000);
                             currentStatus = OvenStatus.newBuilder().setCurrentTemp(currentTemp).setRemainingTime(i).setStatus(ovenStatus).build();
                             responseObserver.onNext(currentStatus);

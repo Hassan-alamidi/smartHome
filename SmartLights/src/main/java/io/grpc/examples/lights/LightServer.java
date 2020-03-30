@@ -116,14 +116,14 @@ public class LightServer extends LightsServiceImplBase {
                 if(value.getValue() < MAX_LUMENS && value.getValue() > MIN_LUMENS){
                     currentLuminosity = value.getValue();
                 }else {
-                    onError(new Exception());
+                    responseObserver.onNext( StringResponse.newBuilder().setText("Out of bounds").build());
+                    responseObserver.onCompleted();
                 }
             }
 
             @Override
             public void onError(Throwable t) {
-                responseObserver.onNext( StringResponse.newBuilder().setText("Out of bounds").build());
-                responseObserver.onCompleted();
+                t.printStackTrace();
             }
 
             @Override

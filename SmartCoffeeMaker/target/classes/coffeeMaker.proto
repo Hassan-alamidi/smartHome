@@ -26,6 +26,4 @@ message Response{
     double progress = 2;
 }
 
-message Empty{
-
-}
+message Empty{}
